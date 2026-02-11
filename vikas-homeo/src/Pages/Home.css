@@ -1,0 +1,105 @@
+.home {
+  background: #fff;
+}
+
+/* SLIDER */
+.home-slider {
+  position: relative;
+}
+
+.home-slider img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+.slider-text {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 420px;
+}
+
+.slider-text h1 {
+  font-size: 42px;
+  color: #1e7f4f;
+}
+
+.slider-text p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* DOCTOR */
+.doctor-section {
+  display: flex;
+  gap: 60px;
+  padding: 80px;
+  align-items: center;
+}
+
+.doctor-text {
+  flex: 1;
+}
+
+.doctor-image img {
+  width: 420px;
+  border-radius: 6px;
+}
+
+/* TEAM */
+.team-section {
+  padding: 80px;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* CASE TAKING */
+.case-section {
+  padding: 80px;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+/* EVENTS */
+.events-section {
+  padding: 80px;
+  text-align: center;
+}
+
+.updating {
+  color: #1e7f4f;
+  font-weight: 600;
+}
+
+/* TESTIMONIALS */
+.testimonials-section {
+  padding: 80px;
+  background: #fafafa;
+}
+
+.testimonial {
+  max-width: 700px;
+  margin: 30px auto;
+  font-style: italic;
+}
+
+/* FOOTER */
+.footer {
+  padding: 30px;
+  text-align: center;
+  background: #111;
+  color: #fff;
+}
