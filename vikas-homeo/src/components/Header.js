@@ -1,34 +1,45 @@
 import { useState, useEffect } from "react";
-import "./Header.css";
 import { useNavigate } from "react-router-dom";
+import "./Header.css";
+import Logo from "../asessts/logo.jpeg";
+
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navigate = new useNavigate();
-  // Lock scroll when mobile menu is open
+  const navigate = useNavigate();
+
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "auto";
   }, [mobileOpen]);
 
-  // Helper: toggle submenu on mobile
+  // Toggle submenu only on mobile
   const handleMobileToggle = (menu) => {
     if (!mobileOpen) return;
     setActiveMenu(activeMenu === menu ? null : menu);
+  };
+
+  // Navigate + close mobile menu
+  const handleNavigate = (path) => {
+    navigate(path);
+    setMobileOpen(false);
+    setActiveMenu(null);
   };
 
   return (
     <header className="header">
       {/* Logo */}
       <div className="header-left">
-        <div className="logo">
-          <img src="/logo.png" alt="Vikas Clinic" />
+        <div className="logo" onClick={() => handleNavigate("/")}>
+          <img src={Logo} alt="Vikas Homeopathy Clinic" />
         </div>
       </div>
+      
 
       {/* Navigation */}
       <nav className={`nav ${mobileOpen ? "mobile-open" : ""}`}>
         <ul className="menu">
-          <li className="menu-item" onClick={() =>navigate("/")}>
+          <li className="menu-item" onClick={() => handleNavigate("/")}>
             Home
           </li>
 
@@ -42,12 +53,16 @@ export default function Header() {
             <span className="menu-label">About</span>
             {activeMenu === "about" && (
               <ul className="dropdown">
-                <li onClick={() => navigate("/about/vikas-Homeopathy")}>
-                  Vikas Clinic
+                <li onClick={() => handleNavigate("/about/vikas-homeopathy")}>
+                  Vikas Homeopathy Clinic
                 </li>
-                <li>Dr. Vikas</li>
-                <li>Clinic Team</li>
-                <li>Gallery</li>
+                <li onClick={() => handleNavigate("/about/dr-vikas")}>
+                  Dr. Vikas Ballipalli
+                </li>
+                <li onClick={() => handleNavigate("/about/dr-sandhya")}>
+                  Dr. Sandhya Ballipalli
+                </li>
+                <li onClick={() => handleNavigate("/gallery")}>Gallery</li>
               </ul>
             )}
           </li>
@@ -62,13 +77,26 @@ export default function Header() {
             <span className="menu-label">Patient’s Corner</span>
             {activeMenu === "patients" && (
               <ul className="dropdown">
-                <li>FAQs</li>
-                <li>Patient Feedback Video</li>
+                <li onClick={() => handleNavigate("/faqs")}>FAQs</li>
+                <li onClick={() => handleNavigate("/feedback")}>
+                  Patient Feedback
+                </li>
+                <li onClick={() => handleNavigate("/reviews")}>
+                  Google Reviews
+                </li>
+                <li onClick={() => handleNavigate("/case-history")}>
+                  Case History Forms
+                </li>
               </ul>
             )}
           </li>
 
-          <li className="menu-item">Gurukul</li>
+          <li
+            className="menu-item"
+            onClick={() => handleNavigate("/treatments")}
+          >
+            Our Treatments
+          </li>
 
           {/* EDUCATION */}
           <li
@@ -80,7 +108,7 @@ export default function Header() {
             <span className="menu-label">Education & Research</span>
             {activeMenu === "education" && (
               <ul className="dropdown">
-                <li>Upcoming</li>
+                <li onClick={() => handleNavigate("/education")}>Upcoming</li>
               </ul>
             )}
           </li>
@@ -95,23 +123,45 @@ export default function Header() {
             <span className="menu-label">Media</span>
             {activeMenu === "media" && (
               <ul className="dropdown">
-                <li>Awards</li>
-                <li>News</li>
+                <li onClick={() => handleNavigate("/awards")}>Awards</li>
+                <li onClick={() => handleNavigate("/news")}>News</li>
               </ul>
             )}
           </li>
+          <li
+            className="menu-item"
+            onClick={() => handleNavigate("/treatments")}
+          >
+            Contact Form
+          </li>
+          <li
+            className="menu-item"
+            onClick={() => handleNavigate("/treatments")}
+          >
+            Homeopathy kit
+          </li>
 
-          {/* Mobile contact */}
-          <li className="menu-item mobile-only">Contact Us</li>
+          {/* Mobile only */}
+          <li className="menu-item mobile-only">
+  <button
+    className="mobile-appointment-btn"
+    onClick={() => handleNavigate("/appointment")}
+  >
+    Book Appointment
+  </button>
+</li>
         </ul>
       </nav>
 
-      {/* Desktop contact */}
-      <div className="contact-btn desktop-only">
-        <button>Contact Us</button>
+      {/* Desktop button */}
+      
+      <div className="contact-btn">
+        <button onClick={() => handleNavigate("/appointment")}>
+          Book Appointment
+        </button>
       </div>
 
-      {/* Hamburger */}
+      {/* Hamburger (mobile only) */}
       <div
         className="hamburger"
         onClick={() => {

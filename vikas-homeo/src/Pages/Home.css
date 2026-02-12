@@ -1,37 +1,165 @@
+/* =====================
+   GLOBAL SAFETY
+===================== */
 .home {
-  background: #fff;
+  background: #ffffff;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/* SLIDER */
+/* =====================
+   SLIDER (SWIPER WRAPPER)
+===================== */
 .home-slider {
   position: relative;
-}
-
-.home-slider img {
   width: 100%;
   height: 520px;
-  object-fit: cover;
+  overflow: hidden;
 }
 
-.slider-text {
+/* force swiper to respect height */
+.home-slider .swiper,
+.home-slider .swiper-wrapper,
+.home-slider .swiper-slide {
+  height: 100%;
+}
+
+/* =====================
+   CUSTOM SLIDE BASE
+===================== */
+.custom-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* =====================
+   SLIDE BACKGROUNDS
+===================== */
+.slide-homeopathy {
+  background: url("../asessts/bg-homeopathy.png") center / cover no-repeat;
+}
+
+.slide-naturopathy {
+  background: url("../asessts/bg-naturopathy.png") center / cover no-repeat;
+}
+
+.slide-acupuncture {
+  background: url("../asessts/bg-accupunture.png") center / cover no-repeat;
+}
+
+.slide-diet {
+  background: url("../asessts/bg-diet.png") center / cover no-repeat;
+}
+
+.slide-cupping {
+  background: url("../asessts/bg-cupping.png") center / cover no-repeat;
+}
+
+.slide-hospital {
+  background: url("../asessts/bg-hosipital.png") center / cover no-repeat;
+}
+
+/* =====================
+   GRADIENT OVERLAY
+===================== */
+.slide-overlay {
   position: absolute;
-  left: 80px;
-  top: 50%;
-  transform: translateY(-50%);
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(33, 150, 243, 0.7),   /* medical blue */
+    rgba(30, 127, 79, 0.5) ,
+    rgba(33, 150, 243, 0.4)
+  );
+  z-index: 1;
+}
+
+/* =====================
+   SLIDE CONTENT
+===================== */
+.slide-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  
+  
+}
+
+/* text */
+.slide-text {
+  flex: 1;
+}
+
+.slide-text h1 {
+  font-size: 54px;
+  color: #fff;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.slide-text p {
+  font-size: 28px;
+  line-height: 1.4;
+  color: #fff;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+/* image */
+.slide-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.slide-image img {
+  width: 100%;
   max-width: 420px;
+  border-radius: 8px;
+  display: block;
 }
 
-.slider-text h1 {
-  font-size: 42px;
-  color: #1e7f4f;
+/* =====================
+   LAYOUT DIRECTION
+===================== */
+.left-text {
+  flex-direction: row;
+
+}
+.left-text .slide-text {
+  text-align: left;
+}
+.left-text .slide-text h1,
+.left-text .slide-text p {
+  margin-left: 0;
+  margin-right: auto;
 }
 
-.slider-text p {
-  margin-top: 10px;
-  font-size: 18px;
+.right-text {
+  flex-direction: row-reverse;
+}
+.right-text .slide-text {
+  text-align: right;
 }
 
-/* DOCTOR */
+.right-text .slide-text h1,
+.right-text .slide-text p {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* =====================
+   DOCTOR SECTION
+===================== */
 .doctor-section {
   display: flex;
   gap: 60px;
@@ -48,7 +176,9 @@
   border-radius: 6px;
 }
 
-/* TEAM */
+/* =====================
+   TEAM SECTION
+===================== */
 .team-section {
   padding: 80px;
   text-align: center;
@@ -66,14 +196,18 @@
   border-radius: 6px;
 }
 
-/* CASE TAKING */
+/* =====================
+   CASE TAKING
+===================== */
 .case-section {
   padding: 80px;
   background: #f7f7f7;
   text-align: center;
 }
 
-/* EVENTS */
+/* =====================
+   EVENTS
+===================== */
 .events-section {
   padding: 80px;
   text-align: center;
@@ -84,7 +218,9 @@
   font-weight: 600;
 }
 
-/* TESTIMONIALS */
+/* =====================
+   TESTIMONIALS
+===================== */
 .testimonials-section {
   padding: 80px;
   background: #fafafa;
@@ -96,10 +232,90 @@
   font-style: italic;
 }
 
-/* FOOTER */
+/* =====================
+   FOOTER
+===================== */
 .footer {
   padding: 30px;
   text-align: center;
   background: #111;
-  color: #fff;
+  color: #ffffff;
+}
+
+/* =====================
+   TABLET
+===================== */
+
+ 
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .home-slider {
+    height: 480px;
+  }
+
+  .slide-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-top: 100px;
+    
+   
+  }
+  .slide-text p {
+    font-size: 24px;
+    max-width: 100%;
+    
+   
+  }
+  .slide-text h1{
+    font-size: 54px;
+  }
+
+  .slide-image img {
+    max-width: 480px;
+  }
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 767px) {
+  .home-slider {
+    height: 300px;
+  }
+
+  .slide-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-top: 50px;
+   
+  }
+  
+
+  
+
+  .slide-text p {
+    text-align: center;
+    font-size: 18px;
+    max-width: 100%;
+  }
+  .slide-text h1{
+    text-align: center;
+    font-size: 34px;
+  }
+
+  .slide-image img {
+    max-width: 280px;
+  }
+
+  .doctor-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-image img {
+    width: 100%;
+    max-width: 320px;
+  }
 }

@@ -15,6 +15,7 @@
    HEADER BASE
 ===================== */
 .header {
+  background-color: white;
   position: sticky;
   top: 0;
   z-index: 3000;
@@ -25,6 +26,9 @@
   padding: 0 20px;
   background: #ffffff;
   border-bottom: 1px solid #e5e5e5;
+  width: 100%;
+  max-width: 100%;
+ 
 }
 
 /* =====================
@@ -34,15 +38,17 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  z-index: 3600; /* keeps logo visible on mobile */
 }
 
 .logo img {
   height: 44px;
   display: block;
+  cursor: pointer;
 }
 
 /* =====================
-   NAV (DESKTOP)
+   NAV (DESKTOP DEFAULT)
 ===================== */
 .nav {
   flex: 1;
@@ -52,21 +58,23 @@
 
 .menu {
   display: flex;
-  gap: 36px;
+  gap: 24px;
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .menu-item {
   position: relative;
-  font-size: 13px;
+  font-size: 1vw;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--black);
   cursor: pointer;
   padding: 16px 0;
+  white-space: nowrap;
 }
 
 /* =====================
@@ -125,7 +133,7 @@
 }
 
 .contact-btn button {
-  padding: 10px 22px;
+  padding: 10px 10px;
   border: 2px solid var(--green);
   background: transparent;
   color: var(--green);
@@ -134,6 +142,9 @@
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .contact-btn button:hover {
@@ -142,7 +153,7 @@
 }
 
 /* =====================
-   HAMBURGER
+   HAMBURGER (DEFAULT HIDDEN)
 ===================== */
 .hamburger {
   display: none;
@@ -160,15 +171,22 @@
 }
 
 /* =====================
-   TABLET + MOBILE
-   (≤ 1023px)
+   TABLET VIEW (768px–1023px)
+   - FULL MENU
+   - NO HAMBURGER
 ===================== */
-@media (max-width: 1023px) {
+
+
+/* =====================
+   MOBILE VIEW (≤ 767px)
+   - HAMBURGER MENU
+   - SLIDE DOWN NAV
+===================== */
+@media (max-width: 1024px) {
   .hamburger {
     display: flex;
   }
 
-  /* FULL PAGE MENU */
   .nav {
     position: fixed;
     top: 80px;
@@ -190,6 +208,7 @@
     flex-direction: column;
     padding: 20px 0;
     gap: 0;
+    
   }
 
   .menu-item {
@@ -199,12 +218,10 @@
     letter-spacing: 1.5px;
   }
 
-  /* Disable underline on tab/mobile */
   .menu-item::after {
     display: none;
   }
 
-  /* Stack dropdowns */
   .dropdown {
     position: static;
     box-shadow: none;
@@ -218,9 +235,15 @@
   .mobile-only {
     display: block;
   }
+  .contact-btn{
+    display:block;
+    z-index: 7000;
+  }
 }
 
-/* Hide mobile-only on desktop */
+/* =====================
+   UTIL
+===================== */
 .mobile-only {
   display: none;
 }
