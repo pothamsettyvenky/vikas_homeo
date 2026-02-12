@@ -2,18 +2,14 @@
   box-sizing: border-box;
 }
 
-/* =====================
-   THEME
-===================== */
+
 :root {
   --green: #1e7f4f;
   --green-light: #eaf6f0;
   --black: #111111;
 }
 
-/* =====================
-   HEADER BASE
-===================== */
+
 .header {
   background-color: white;
   position: sticky;
@@ -47,9 +43,6 @@
   cursor: pointer;
 }
 
-/* =====================
-   NAV (DESKTOP DEFAULT)
-===================== */
 .nav {
   flex: 1;
   display: flex;
