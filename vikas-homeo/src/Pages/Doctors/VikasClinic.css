@@ -1,0 +1,15 @@
+.clinic-container {
+  padding: 40px;
+  max-width: 900px;
+}
+
+.clinic-container h2 {
+  color: #1e7f4f;
+  margin-bottom: 16px;
+}
+
+.clinic-container p {
+  line-height: 1.7;
+  margin-bottom: 14px;
+  color: #333;
+}

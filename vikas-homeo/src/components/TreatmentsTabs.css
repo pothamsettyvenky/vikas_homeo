@@ -1,0 +1,179 @@
+/* =====================
+   OUR TREATMENTS – TABS
+===================== */
+.treatments-section {
+  padding: 100px 80px;
+  background: #f7f9fc;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1b235a;
+}
+
+.section-subtitle {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* =====================
+   TABS
+===================== */
+.tabs {
+  display: inline-flex;
+  gap: 24px;
+  margin-bottom: 70px;
+}
+
+.tab {
+  padding: 14px 38px;
+  border-radius: 30px;
+  border: 2px solid #1e7f4f;
+  background: transparent;
+  color: #1e7f4f;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background: rgba(30, 127, 79, 0.1);
+}
+
+.tab.active {
+  background: #1e7f4f;
+  color: #ffffff;
+}
+
+/* =====================
+   CARDS GRID
+===================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+/* =====================
+   TREATMENT CARD
+===================== */
+.treatment-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 42px 34px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.treatment-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* icon */
+.treatment-card .icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    #8bc34a,
+    #1e7f4f
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #ffffff;
+  margin: 0 auto 24px;
+}
+
+/* title */
+.treatment-card h3 {
+  font-size: 20px;
+  margin-bottom: 14px;
+  color: #1b235a;
+}
+
+/* description */
+.treatment-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* =====================
+   VIEW ALL BUTTON
+===================== */
+.view-all-btn {
+  margin-top: 60px;
+  padding: 14px 44px;
+  border-radius: 30px;
+  border: 2px solid #1e7f4f;
+  background: transparent;
+  color: #1e7f4f;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+  background: #1e7f4f;
+  color: #ffffff;
+}
+
+/* =====================
+   TABLET
+===================== */
+@media (max-width: 1023px) {
+  .treatments-section {
+    padding: 80px 40px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 767px) {
+  .treatments-section {
+    padding: 70px 20px;
+  }
+
+  /* .tabs {
+    flex-direction: column;
+    gap: 14px;
+  } */
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+  }
+}

@@ -1,52 +1,18 @@
 import "./Home.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
+import AppointmentStrip from "../components/AppointmentStrip";
+import TreatmentsTabs from "../components/TreatmentsTabs";
+import TherapyCards from "../components/TherapyCards";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     
     <div className="home">
-
-      {/* SLIDER */}
-      {/* <section className="home-slider">
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          autoplay={{ delay: 3500 }}
-          pagination={{ clickable: true }}
-          loop
-        >
-          <SwiperSlide>
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" alt="" />
-          </SwiperSlide>
-        </Swiper>
-
-        <div className="slider-text">
-          <h1>Embrace Natural Healing</h1>
-          <p>Your Health, Our Priority</p>
-        </div>
-      </section> */}
-      {/* SLIDER */}
 <section className="home-slider">
   <Swiper
     modules={[Autoplay, Pagination]}
@@ -169,80 +135,66 @@ export default function Home() {
 
 
       {/* DOCTOR SECTION */}
-      <section className="doctor-section">
-        <div className="doctor-text">
-          <h2>Dr. Vikas</h2>
-          <p>
-            Dr. Vikas is a dedicated homeopathic physician with a strong focus
-            on holistic healing, personalized care, and long-term wellness.
-          </p>
-          <p>
-            His approach emphasizes understanding the root cause of illness
-            and guiding patients toward sustainable health.
-          </p>
-        </div>
-
-        <div className="doctor-image">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2" alt="" />
-        </div>
-      </section>
-
-      {/* CLINIC TEAM */}
-      <section className="team-section">
-        <h2>Clinic Team</h2>
-        <div className="team-grid">
-          <div className="team-card">
-            <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6" alt="" />
-            <h4>Doctor Name</h4>
-            <p>Senior Consultant</p>
+     <section className=" our-doctors ">
+     <h2 className=" section-title ">
+          Our Doctors
+     </h2>
+      <div className=" doctor-profile ">
+          <div className="doctor-details">
+            <h3 className="doctor-name"> Dr. Vikas Ballipalli</h3>
+            <p className="doctor-qualifications"> 
+            M.D (HOM), F,Hom</p>
+            <p>
+              Dr. Vikas is a dedicated homeopathic physician with a strong focus on
+        holistic healing, personalized care, and long-term wellness.
+            </p>
+            <p>
+              His clinical practice emphasizes understanding the root cause of illness
+        and guiding patients toward sustainable health through natural therapies.
+            </p>
+            <button onClick={()=> navigate("/about/dr-vikas")} className="read-more-btn"> Read Button </button>
           </div>
-          <div className="team-card">
-            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54" alt="" />
-            <h4>Doctor Name</h4>
-            <p>Homeopathy Specialist</p>
+          <div className="doctor-portrait">
+            <img
+        src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2"
+        alt="Dr. Vikas"
+      />
           </div>
-          <div className="team-card">
-            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="" />
-            <h4>Doctor Name</h4>
-            <p>Clinical Assistant</p>
-          </div>
-        </div>
-      </section>
+      </div>
+      <div className="doctor-profile reverse">
+    <div className="doctor-details">
+      <h3 className="doctor-name">Dr. Sandhya Ballipalli</h3>
 
-      {/* CASE TAKING */}
-      <section className="case-section">
-        <h2>Case Taking</h2>
-        <p>
-          Case taking is the foundation of effective homeopathic treatment.
-          Each patient is carefully evaluated to understand physical,
-          emotional, and lifestyle factors.
-        </p>
-      </section>
+      <p className="doctor-qualifications">
+        Consultant Physician | Holistic Care Specialist
+      </p>
 
-      {/* UPCOMING EVENTS */}
-      <section className="events-section">
-        <h2>Upcoming Events</h2>
-        <p className="updating">Updating Soon</p>
-      </section>
+      <p>
+        Dr. Sandhya brings a compassionate and patient-centered approach to
+        healthcare, with expertise in preventive medicine and lifestyle guidance.
+      </p>
 
-      {/* PATIENTS TALK */}
-      <section className="testimonials-section">
-        <h2>Patients Talk About Vikas Treatments</h2>
-        <div className="testimonial">
-          <p>
-            “I experienced significant improvement after following the
-            treatment plan. The care and attention were exceptional.”
-          </p>
-          <span>— Patient Name</span>
-        </div>
-        <div className="testimonial">
-          <p>
-            “The holistic approach helped me regain balance and confidence
-            in my health.”
-          </p>
-          <span>— Patient Name</span>
-        </div>
-      </section>
+      <p>
+        She believes in empowering patients through education, nutrition, and
+        natural treatment approaches.
+      </p>
+
+      <button onClick={()=> navigate("/about/dr-sandhya")} className="read-more-btn">Read More</button>
+    </div>
+
+    <div className="doctor-portrait">
+      <img
+        src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6"
+        alt="Dr. Sandhya"
+      />
+    </div>
+  </div>
+     </section>
+
+      <AppointmentStrip/>
+      <TreatmentsTabs/>
+      <TherapyCards/>
+     
 
       {/* FOOTER */}
       <footer className="footer">

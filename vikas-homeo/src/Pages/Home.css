@@ -5,6 +5,12 @@
   background: #ffffff;
   width: 100%;
   overflow-x: hidden;
+  
+}
+:root {
+  --green: #1e7f4f;
+  --green-light: #eaf6f0;
+  --black: #111111;
 }
 
 /* =====================
@@ -15,6 +21,7 @@
   width: 100%;
   height: 520px;
   overflow: hidden;
+  margin-top:80px;
 }
 
 /* force swiper to respect height */
@@ -71,8 +78,8 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(33, 150, 243, 0.7),   /* medical blue */
-    rgba(30, 127, 79, 0.5) ,
+    rgba(33, 150, 243, 0.7),
+    /* medical blue */ rgba(30, 127, 79, 0.5),
     rgba(33, 150, 243, 0.4)
   );
   z-index: 1;
@@ -91,8 +98,6 @@
   display: flex;
   align-items: center;
   gap: 60px;
-  
-  
 }
 
 /* text */
@@ -111,7 +116,7 @@
   font-size: 28px;
   line-height: 1.4;
   color: #fff;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 /* image */
@@ -133,7 +138,6 @@
 ===================== */
 .left-text {
   flex-direction: row;
-
 }
 .left-text .slide-text {
   text-align: left;
@@ -246,8 +250,6 @@
    TABLET
 ===================== */
 
- 
-
 @media (max-width: 1023px) and (min-width: 768px) {
   .home-slider {
     height: 480px;
@@ -258,16 +260,12 @@
     text-align: center;
     justify-content: center;
     margin-top: 100px;
-    
-   
   }
   .slide-text p {
     font-size: 24px;
     max-width: 100%;
-    
-   
   }
-  .slide-text h1{
+  .slide-text h1 {
     font-size: 54px;
   }
 
@@ -289,18 +287,14 @@
     text-align: center;
     justify-content: center;
     margin-top: 50px;
-   
   }
-  
-
-  
 
   .slide-text p {
     text-align: center;
     font-size: 18px;
     max-width: 100%;
   }
-  .slide-text h1{
+  .slide-text h1 {
     text-align: center;
     font-size: 34px;
   }
@@ -318,4 +312,129 @@
     width: 100%;
     max-width: 320px;
   }
+}
+/* =====================
+   OUR DOCTORS – PROFILE STYLE
+===================== */
+.our-doctors {
+  padding: 100px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.our-doctors .section-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 80px;
+  font-weight: 600;
+}
+
+.doctor-profile {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 120px;
+}
+
+.doctor-profile.reverse {
+  flex-direction: row-reverse;
+}
+
+.doctor-details {
+  flex: 1;
+}
+
+.doctor-name {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.doctor-qualifications {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #1e7f4f;
+}
+
+.doctor-details p {
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  color: #111;
+}
+
+.read-more-btn {
+  margin-top: 30px;
+  padding: 14px 38px;
+  border: 1.5px solid #1e7f4f;
+  background: transparent;
+  color: #1e7f4f;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  background: #1e7f4f;
+  color: #ffffff;
+}
+
+.doctor-portrait {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.doctor-portrait img {
+  width: 100%;
+  max-width: 560px;
+  object-fit: cover;
+}
+
+/* =====================
+   TABLET
+===================== */
+@media (max-width: 1023px) {
+  .our-doctors {
+    padding: 80px 40px;
+  }
+
+  .doctor-profile {
+    gap: 60px;
+  }
+
+  .doctor-portrait img {
+    max-width: 440px;
+  }
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 767px) {
+  .doctor-profile,
+  .doctor-profile.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-portrait img {
+    max-width: 320px;
+  }
+
+  .our-doctors .section-title {
+    font-size: 26px;
+  }
+}
+.our-doctors {
+  position: relative;
+  background: linear-gradient(
+    0,
+    rgba(243, 159, 33, 0.4),
+    rgba(33, 150, 243, 0.4),
+    rgba(30, 127, 79, 0.4)
+  );
 }

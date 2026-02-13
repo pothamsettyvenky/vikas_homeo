@@ -1,0 +1,208 @@
+/* =====================
+   THERAPY CARDS – LAYOUT
+===================== */
+.therapy-cards {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Full section */
+.therapy-card {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  transform: translateX(-120px);
+  opacity: 0;
+  transition: 
+  transform 1.8s cubic-bezier(0.22,1,0.36,1),
+  opacity 1.2s ease;
+  will-change: transform;
+}
+
+.therapy-card.right-align {
+  justify-content: flex-end;
+}
+.therapy-card.animate{
+    transform: translateX(0);
+    opacity: 1;
+}
+.therapy-card.right-align .therapy-info {
+  margin-left: 0;
+  margin-right: 80px;
+}
+
+/* =====================
+   GRADIENT OVERLAY
+===================== */
+.therapy-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(139, 195, 74, 0.35),
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.15)
+  );
+  z-index: 1;
+}
+
+.therapy-card.right-align::before {
+  background: linear-gradient(
+    to left,
+    rgba(139, 195, 74, 0.35),
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.15)
+  );
+}
+
+/* =====================
+   WHITE INFO CARD
+===================== */
+.therapy-info {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  padding: 60px;
+  max-width: 520px;
+  margin-left: 80px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+
+  /* INITIAL ANIMATION STATE */
+  opacity: 0;
+  transition:
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1.2s ease;
+  will-change: transform, opacity;
+}
+
+/* Direction */
+.therapy-info.from-left {
+  transform: translateX(-160px);
+}
+
+.therapy-info.from-right {
+  transform: translateX(160px);
+}
+
+/* Animate */
+.therapy-card.animate .therapy-info {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.15s;
+}
+
+/* =====================
+   CONTENT
+===================== */
+.therapy-info h2 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #1b235a;
+  margin-bottom: 22px;
+}
+
+.therapy-info p {
+  font-size: 26px;
+  line-height: 1.35;
+  color: #1b235a;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+
+.therapy-info .divider {
+  width: 60px;
+  height: 3px;
+  background: #8bc34a;
+  margin-bottom: 32px;
+}
+
+.therapy-info button {
+  padding: 14px 36px;
+  border-radius: 30px;
+  border: none;
+  background: #8bc34a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+/* =====================
+   BACKGROUNDS
+===================== */
+.acupuncture {
+  background-image: url("../asessts/bg-accupunture.png");
+}
+
+.cupping {
+  background-image: url("../asessts/bg-cupping.png");
+}
+
+.diet {
+  background-image: url("../asessts/bg-diet.png");
+}
+
+/* =====================
+   TABLET
+===================== */
+@media (max-width: 1023px) {
+  .therapy-info {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 50px;
+  }
+
+  .therapy-info h2 {
+    font-size: 40px;
+  }
+
+  .therapy-info p {
+    font-size: 22px;
+  }
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 767px) {
+  .therapy-card {
+    justify-content: center;
+  }
+
+  .therapy-card.right-align {
+    justify-content: center;
+  }
+
+  .therapy-info {
+    margin: 0 20px;
+    padding: 40px 30px;
+  }
+
+  /* Vertical motion for visibility */
+  .therapy-info.from-left,
+  .therapy-info.from-right {
+    transform: translateY(120px);
+  }
+
+  .therapy-card.animate .therapy-info {
+    transform: translateY(0);
+  }
+
+  .therapy-info h2 {
+    font-size: 32px;
+  }
+
+  .therapy-info p {
+    font-size: 18px;
+  }
+}
