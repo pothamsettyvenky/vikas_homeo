@@ -276,12 +276,12 @@
 
   .slide-text p {
     text-align: center;
-    font-size: 18px;
-    max-width: 100%;
+    font-size: 14px;
+    width: 100%;
   }
   .slide-text h1 {
     text-align: center;
-    font-size: 34px;
+    font-size: 24px;
   }
 
   .slide-image img {
@@ -417,7 +417,9 @@
   .doctor-portrait img {
     max-width: 320px;
   }
-
+.doctor-name{
+  line-height: 35px;
+}
   .our-doctors .section-title {
     font-size: 26px;
   }

@@ -175,10 +175,10 @@
     padding: 70px 20px;
   }
 
-  /* .tabs {
+  .tabs {
     flex-direction: column;
     gap: 14px;
-  } */
+  }
 
   .cards-grid {
     grid-template-columns: 1fr;
