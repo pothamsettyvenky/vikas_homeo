@@ -33,100 +33,148 @@ export default function TreatmentsTabs() {
       {/* HOMEOPATHY */}
       {activeTab === "homeopathy" && (
         <>
-          <div className="cards-grid">
-            <div className="treatment-card">
-              <div className="icon">✋</div>
-              <h3>Psoriasis</h3>
-              <p>Natural treatment that addresses the root cause and reduces recurrence.</p>
-            </div>
+          {/* HOMEOPATHY */}
+          {activeTab === "homeopathy" && (
+            <>
+              <div className="cards-grid">
+                <div className="treatment-card">
+                  <div className="icon">🧠</div>
+                  <h3>Anxiety</h3>
+                  <p>
+                    Gentle homeopathic remedies help calm the mind, reduce
+                    stress, and restore emotional balance naturally without
+                    dependency.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">🧠</div>
-              <h3>Migraine / Headaches</h3>
-              <p>Effective relief from chronic headaches without dependency on painkillers.</p>
-            </div>
+                <div className="treatment-card">
+                  <div className="icon">🌿</div>
+                  <h3>Psoriasis</h3>
+                  <p>
+                    Treats the root cause of skin inflammation and supports
+                    long-term relief with improved immunity and skin health.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">🩺</div>
-              <h3>Piles (Haemorrhoids)</h3>
-              <p>Safe and gentle treatment that relieves pain, bleeding, and discomfort.</p>
-            </div>
+                <div className="treatment-card">
+                  <div className="icon">🩺</div>
+                  <h3>Prostate Enlargement</h3>
+                  <p>
+                    Helps reduce urinary discomfort, improves bladder function,
+                    and supports prostate health safely and naturally.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">🌿</div>
-              <h3>Warts</h3>
-              <p>Non-invasive treatment that removes warts by strengthening immunity.</p>
-            </div>
+                <div className="treatment-card">
+                  <div className="icon">🧩</div>
+                  <h3>Autism</h3>
+                  <p>
+                    Supports behavioral balance, emotional stability, and
+                    overall well-being through individualized holistic
+                    treatment.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">🧴</div>
-              <h3>Pityriasis</h3>
-              <p>Holistic care for skin conditions with long-lasting improvement.</p>
-            </div>
+                <div className="treatment-card">
+                  <div className="icon">🧬</div>
+                  <h3>PCOD</h3>
+                  <p>
+                    Helps regulate hormonal balance, improve menstrual health,
+                    and support natural reproductive wellness.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">🌬️</div>
-              <h3>Sinusitis</h3>
-              <p>Reduces sinus inflammation, congestion, and recurrent infections.</p>
-            </div>
-          </div>
+                <div className="treatment-card">
+                  <div className="icon">🩹</div>
+                  <h3>Hemorrhoids</h3>
+                  <p>
+                    Provides safe and effective relief from pain, swelling, and
+                    bleeding while preventing recurrence naturally.
+                  </p>
+                </div>
+              </div>
 
-          <button
-            className="view-all-btn"
-            onClick={() => navigate("/treatments")}
-          >
-            View All Treatments
-          </button>
+              <button
+                className="view-all-btn"
+                onClick={() => navigate("/treatments")}
+              >
+                View All Treatments
+              </button>
+            </>
+          )}
         </>
       )}
 
       {/* NATUROPATHY */}
       {activeTab === "naturopathy" && (
         <>
-          <div className="cards-grid">
-            <div className="treatment-card">
-              <div className="icon">🧬</div>
-              <h3>PCOS</h3>
-              <p>Diet and lifestyle-based support to improve hormonal balance naturally.</p>
-            </div>
+          {/* NATUROPATHY */}
+          {activeTab === "naturopathy" && (
+            <>
+              <div className="cards-grid">
+                <div className="treatment-card">
+                  <div className="icon">⚖️</div>
+                  <h3>Obesity</h3>
+                  <p>
+                    Natural weight management through personalized diet, detox,
+                    and lifestyle correction programs.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">🦋</div>
-              <h3>Thyroid Disorders</h3>
-              <p>Nutritional and lifestyle guidance to support thyroid health.</p>
-            </div>
+                <div className="treatment-card">
+                  <div className="icon">💆</div>
+                  <h3>Pain Management</h3>
+                  <p>
+                    Drug-free therapies to reduce chronic pain and improve
+                    mobility and overall quality of life.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">❤️</div>
-              <h3>Blood Pressure</h3>
-              <p>Natural methods to regulate blood pressure and reduce complications.</p>
-            </div>
+                <div className="treatment-card">
+                  <div className="icon">🦴</div>
+                  <h3>Arthritis</h3>
+                  <p>
+                    Helps reduce joint inflammation, stiffness, and pain using
+                    natural and supportive healing methods.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">⚖️</div>
-              <h3>Obesity-related Hormonal Imbalance</h3>
-              <p>Customized diet plans to improve metabolism and hormonal health.</p>
-            </div>
+                <div className="treatment-card">
+                  <div className="icon">🧍</div>
+                  <h3>Spondylitis</h3>
+                  <p>
+                    Improves spine flexibility, reduces inflammation, and
+                    supports long-term spinal health.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">🥗</div>
-              <h3>Gall Bladder Stones</h3>
-              <p>Diet and lifestyle support to manage symptoms and prevent recurrence.</p>
-            </div>
+                <div className="treatment-card">
+                  <div className="icon">⚡</div>
+                  <h3>Sciatica</h3>
+                  <p>
+                    Relieves nerve compression pain and improves mobility
+                    through targeted natural therapies.
+                  </p>
+                </div>
 
-            <div className="treatment-card">
-              <div className="icon">💧</div>
-              <h3>Nephrolithiasis (Kidney Stones)</h3>
-              <p>Natural dietary guidance to reduce stone formation and pain.</p>
-            </div>
-          </div>
+                <div className="treatment-card">
+                  <div className="icon">🧘</div>
+                  <h3>Stress Management</h3>
+                  <p>
+                    Restores mental and physical balance using holistic
+                    techniques and lifestyle guidance.
+                  </p>
+                </div>
+              </div>
 
-          <button
-            className="view-all-btn"
-            onClick={() => navigate("/treatments")}
-          >
-            View All Treatments
-          </button>
+              <button
+                className="view-all-btn"
+                onClick={() => navigate("/treatments")}
+              >
+                View All Treatments
+              </button>
+            </>
+          )}
         </>
       )}
     </section>

@@ -34,7 +34,6 @@ export default function Header() {
           <img src={Logo} alt="Vikas Homeopathy Clinic" />
         </div>
       </div>
-      
 
       {/* Navigation */}
       <nav className={`nav ${mobileOpen ? "mobile-open" : ""}`}>
@@ -98,21 +97,6 @@ export default function Header() {
             Our Treatments
           </li>
 
-          {/* EDUCATION */}
-          <li
-            className="menu-item has-dropdown"
-            onMouseEnter={() => !mobileOpen && setActiveMenu("education")}
-            onMouseLeave={() => !mobileOpen && setActiveMenu(null)}
-            onClick={() => handleMobileToggle("education")}
-          >
-            <span className="menu-label">Education & Research</span>
-            {activeMenu === "education" && (
-              <ul className="dropdown">
-                <li onClick={() => handleNavigate("/education")}>Upcoming</li>
-              </ul>
-            )}
-          </li>
-
           {/* MEDIA */}
           <li
             className="menu-item has-dropdown"
@@ -136,25 +120,25 @@ export default function Header() {
           </li>
           <li
             className="menu-item"
-            onClick={() => handleNavigate("/treatments")}
+            onClick={() => handleNavigate("/Homeopathy_Kit")}
           >
             Homeopathy kit
           </li>
 
           {/* Mobile only */}
           <li className="menu-item mobile-only">
-  <button
-    className="mobile-appointment-btn"
-    onClick={() => handleNavigate("/appointment")}
-  >
-    Book Appointment
-  </button>
-</li>
+            <button
+              className="mobile-appointment-btn"
+              onClick={() => handleNavigate("/appointment")}
+            >
+              Book Appointment
+            </button>
+          </li>
         </ul>
       </nav>
 
       {/* Desktop button */}
-      
+
       <div className="contact-btn">
         <button onClick={() => handleNavigate("/appointment")}>
           Book Appointment

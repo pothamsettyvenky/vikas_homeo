@@ -5,6 +5,8 @@
   --green: #1e7f4f;
   --green-light: #eaf6f0;
   --black: #111111;
+   --font:"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --parafont:"Poppins", sans-serif
 }
 .appointment-strip {
   position: relative;
@@ -63,6 +65,8 @@
 .appointment-box.emergency h3 {
   font-size: 32px;
   margin-bottom: 10px;
+  font-family: var(--font);
+  text-transform: uppercase;
 }
 
 .appointment-box.emergency .phone {
@@ -76,12 +80,15 @@
 .appointment-box.hours h3 {
   font-size: 26px;
   margin-bottom: 30px;
+  font-family: var(--font);
+  text-transform: uppercase;
 }
 
 .hours-item {
   display: flex;
   gap: 16px;
   margin-bottom: 22px;
+  font-family: var(--parafont)
 }
 
 .hours-item .dot {
@@ -96,11 +103,14 @@
 .appointment-box.form h3 {
   font-size: 26px;
   margin-bottom: 10px;
+  font-family: var(--font);
+  text-transform: uppercase;
 }
 
 .appointment-box.form p {
   font-size: 14px;
   margin-bottom: 30px;
+  font-family: var(--parafont);
 }
 
 .form-grid {
