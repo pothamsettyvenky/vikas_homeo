@@ -48,19 +48,19 @@ export default function Footer() {
           <h3>Follow Us</h3>
 
           <div className="footer-social">
-            <a href="#" target="_blank">
+            <a href="www.faceboook.com" target="_blank">
               Facebook
             </a>
 
-            <a href="#" target="_blank">
+            <a href="www.instagram.com" target="_blank">
               Instagram
             </a>
 
-            <a href="#" target="_blank">
+            <a href="www.youtube.com" target="_blank">
               YouTube
             </a>
 
-            <a href="#" target="_blank">
+            <a href="www.whatsapp.com" target="_blank">
               WhatsApp
             </a>
           </div>
