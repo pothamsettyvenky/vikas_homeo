@@ -101,19 +101,19 @@ export default function Footer() {
 
             <div className="footer-social">
 
-              <a href="#" className="social-circle">
+              <a href="www.facebook.com" className="social-circle">
                 <FaFacebookF />
               </a>
 
-              <a href="#" className="social-circle">
+              <a href="www.instagram.com" className="social-circle">
                 <FaInstagram />
               </a>
 
-              <a href="#" className="social-circle">
+              <a href="www.youtube.com" className="social-circle">
                 <FaYoutube />
               </a>
 
-              <a href="#" className="social-circle">
+              <a href="www.whatsapp.com" className="social-circle">
                 <FaWhatsapp />
               </a>
 
