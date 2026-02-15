@@ -16,7 +16,7 @@ import review8 from "../../asessts/reviews/review8.png";
 import review9 from "../../asessts/reviews/review9.png";
 import review10 from "../../asessts/reviews/review10.png";
 import review11 from "../../asessts/reviews/review11.png";
-
+import { useNavigate } from "react-router-dom";
 export default function VikasHomoeo() {
   const galleryImages = [
     review1,
@@ -34,7 +34,7 @@ export default function VikasHomoeo() {
 
   const [activeTab, setActiveTab] = useState("function");
   const [fade, setFade] = useState(true);
-
+const navigate = useNavigate();
   const changeTab = (tab) => {
     setFade(false);
 
@@ -85,7 +85,7 @@ export default function VikasHomoeo() {
         <div className="about-content">
           <p className="about-subtitle">VIKAS HOMOEOPATHY</p>
 
-          <h2 className="about-title">A Leading Visionary in Homeopathy</h2>
+          <h2 className="about-title">Pioneering Holistic Homeopathic Healing</h2>
 
           <p className="about-text">
             Vikas Homeopathy provides safe, natural, and effective treatments
@@ -190,9 +190,11 @@ export default function VikasHomoeo() {
             </Swiper>
           </div>
         </div>
-        <div className="gallery-more">
-          <a href="/gallery">View More Images →</a>
-        </div>
+       <div className="gallery-more">
+  <button onClick={() => navigate("/gallery")}>
+    View More Images →
+  </button>
+</div>
       </div>
     </section>
   );

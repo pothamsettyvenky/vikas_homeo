@@ -1,109 +1,274 @@
 :root {
+
   --green: #1e7f4f;
-  --green-light: #eaf6f0;
-  --black: #111111;
-  --font:"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  --parafont:"Poppins", sans-serif
+  --green-dark: #0f5d08;
+
+  --glass: rgba(255,255,255,0.65);
+  --glass-border: rgba(255,255,255,0.35);
+
+  --font:"Gill Sans", Calibri, sans-serif;
+  --parafont:"Poppins", sans-serif;
+
 }
+
+
+/* =====================
+   SECTION
+===================== */
+
 .faq-section {
-  padding: 100px 80px 20px;
-  background: #f6f8fb;
-  font-family: var(--font);
+
+  padding: 100px 20px;
+
+  position: relative;
+
+  background: linear-gradient(
+    135deg,
+    rgba(30,127,79,0.06),
+    rgba(15,93,8,0.03)
+  );
+
 }
+
+
+/* =====================
+   HEADINGS
+===================== */
+
 .faq-heading {
-    text-align: center;
-    margin-bottom: 50px;
+
+  text-align: center;
+
+  margin-bottom: 60px;
+
 }
 
 .faq-subtitle {
-    color: var(--green);
-    font-size : 24px;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
-    font-family: var(--parafont);
-    font-weight: 500;
+
+  color: var(--green);
+
+  letter-spacing: 4px;
+
+  font-family: var(--parafont);
+
+  margin-bottom: 10px;
+
 }
 
 .faq-title {
-  font-size: 48px;
-  font-weight: 600;
-  color:#1c2b4a;
-  margin:0;
+
+  font-size: 42px;
+
   font-family: var(--font);
+
+  color: #1c2b4a;
+
+  text-transform: uppercase;
+
 }
+
+
+/* =====================
+   CONTAINER
+===================== */
 
 .faq-container {
-  max-width: 1000px;
+
+  max-width: 900px;
+
   margin: auto;
+
 }
+
+
+/* =====================
+   GLASS FAQ ITEM
+===================== */
 
 .faq-item {
-  margin-bottom: 15px;
+
+  margin-bottom: 20px;
+
+  border-radius: 14px;
+
+  background: var(--glass);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid var(--glass-border);
+
+  box-shadow:
+
+    0 10px 30px rgba(0,0,0,0.08),
+
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  overflow: hidden;
+
+  transition: 0.3s;
+
 }
 
+
+/* HOVER */
+
+.faq-item:hover {
+
+  box-shadow:
+
+    0 20px 40px rgba(30,127,79,0.15);
+
+}
+
+
+/* =====================
+   QUESTION
+===================== */
+
 .faq-question {
-  background: #e9edf5;
-  padding: 18px 20px;
+
+  padding: 20px 25px;
 
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 
-  border-radius: 8px;
+  cursor: pointer;
+
 }
 
 .faq-question span {
+
   font-size: 18px;
-  color: #2a3b5f;
+
+  font-family: var(--parafont);
+
+  color: #1c2b4a;
+
 }
 
+
+/* =====================
+   ICON
+===================== */
+
 .faq-icon {
-  width: 35px;
-  height: 35px;
+
+  width: 36px;
+
+  height: 36px;
 
   border-radius: 50%;
-  border: 2px solid #2a3b5f;
 
-  background: white;
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    var(--green),
+    var(--green-dark)
+  );
+
+  color: white;
+
+  font-size: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   cursor: pointer;
 
-  font-size: 18px;
-  font-weight: bold;
+  transition: 0.3s;
+
 }
 
 .faq-icon.active {
-  border-color: #1e7f4f;
-  color: #1e7f4f;
+
+  transform: rotate(180deg);
+
 }
+
+
+/* =====================
+   ANSWER
+===================== */
 
 .faq-answer {
+
+ 
+
   max-height: 0;
+
   overflow: hidden;
 
-  background: #3d63c8;
+  padding: 0 25px;
+
+  font-family: var(--parafont);
+
   color: white;
 
-  padding: 0 20px;
+  background: linear-gradient(
+  135deg,
+  rgba(30,127,79,0.85),
+  rgba(15,93,8,0.85)
+);
 
-  border-radius: 6px;
+backdrop-filter: blur(10px);
 
-  transition: all 0.3s ease;
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
+
 }
+
+
+
+
+/* SHOW STATE */
 
 .faq-answer.show {
-  max-height: 200px;
-  padding: 15px 20px;
-  margin-top: 8px;
+
+  max-height: 250px;
+
+  padding: 18px 25px 25px;
+   animation: faqSlide 0.4s ease;
+
 }
+
+
+/* =====================
+   MOBILE
+===================== */
 
 @media (max-width: 768px) {
 
   .faq-title {
-    font-size: 32px;
+
+    font-size: 28px;
+
   }
-.faq-container{
-display: flex;
-flex-direction: column;
-justify-content: center;
+
+  .faq-question span {
+
+    font-size: 16px;
+
+  }
+
 }
+@keyframes faqSlide {
+
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 }

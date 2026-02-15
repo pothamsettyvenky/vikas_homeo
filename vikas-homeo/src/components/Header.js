@@ -114,7 +114,7 @@ export default function Header() {
           </li>
           <li
             className="menu-item"
-            onClick={() => handleNavigate("/treatments")}
+            onClick={() => handleNavigate("/Contact")}
           >
             Contact Form
           </li>

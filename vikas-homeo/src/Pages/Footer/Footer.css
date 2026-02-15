@@ -1,153 +1,175 @@
-/* =====================
-   FOOTER BASE
-===================== */
-
 :root {
   --green: #1e7f4f;
+  --opacitygreen: #1e7f4e85;
   --green-light: #eaf6f0;
   --black: #111111;
-  --font:"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --font: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --parafont: "Poppins", sans-serif;
+  --textColor: #1b235a;
 }
+
 .footer {
-  background: linear-gradient(135deg, #0f3d2a, #1e7f4f);
+  background: linear-gradient(
+    to left,
+    rgba(15, 93, 8, 0.9),
+    rgba(15, 93, 8, 0.7),
+    rgba(15, 93, 8, 0.9)
+  );
 
   color: white;
 
   padding-top: 60px;
 }
 
-/* =====================
-   CONTAINER
-===================== */
+/* GLASS PANEL */
 
-.footer-container {
+.footer-glass {
   max-width: 1200px;
 
   margin: auto;
 
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  padding: 40px;
+}
+
+/* GRID */
+
+.footer-container {
   display: grid;
 
-  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
 
   gap: 40px;
-
-  padding: 0 20px 40px;
-  font-family: var(--font);
 }
 
-/* =====================
-   SECTIONS
-===================== */
-
-.footer-section h3 {
-  margin-bottom: 20px;
-
-  font-size: 18px;
-}
-
-/* =====================
-   LEFT
-===================== */
+/* LOGO */
 
 .footer-logo {
   width: 160px;
 
-  margin-bottom: 15px;
-
   cursor: pointer;
+
+  margin-bottom: 15px;
+  align-items: center;
 }
+
+/* TEXT */
 
 .footer-desc {
-  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
 
   line-height: 1.6;
+
+  margin-bottom: 20px;
   font-family: var(--font);
-  color: rgba(255, 255, 255, 0.85);
+  font-weight: bold;
+  font-size: 18px;
 }
 
-/* =====================
-   LINKS
-===================== */
+/* CONTACT INFO */
+
+.footer-contact {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.footer-contact a {
+  color: white;
+
+  text-decoration: none;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+  font-family: var(--parafont);
+}
+
+/* .footer-contact a:hover {
+  color: #8bc34a;
+} */
+
+/* LINKS */
 
 .footer-links {
   list-style: none;
-
+font-family: var(--parafont);
   padding: 0;
 }
 
 .footer-links li {
   margin-bottom: 12px;
-
+font-family: var(--parafont);
   cursor: pointer;
-
-  font-size: 20px;
-
-  transition: 0.3s;
 }
 
 .footer-links li:hover {
   color: #8bc34a;
-
-  transform: translateX(4px);
 }
 
-/* =====================
-   SOCIAL
-===================== */
+/* SOCIAL */
 
 .footer-social {
   display: flex;
 
-  flex-direction: column;
-
-  gap: 12px;
+  gap: 15px;
+}
+.footer-section{
+  font-family: var(--font);
 }
 
-.footer-social a {
-  color: white;
+.social-circle {
+  width: 42px;
 
-  text-decoration: none;
+  height: 42px;
 
-  font-size: 14px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
 
   transition: 0.3s;
+
+  color: white;
 }
 
-.footer-social a:hover {
-  color: #8bc34a;
+.social-circle:hover {
+  background: #8bc34a;
 
-  transform: translateX(4px);
+  transform: translateY(-4px);
 }
 
-/* =====================
-   BOTTOM BAR
-===================== */
+/* BOTTOM */
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-
   text-align: center;
 
-  padding: 18px;
+  padding: 20px;
 
-  font-size: 13px;
+  margin-top: 30px;
 
-  color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* =====================
-   TABLET
-===================== */
-
-@media (max-width: 1024px) {
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* =====================
-   MOBILE
-===================== */
+/* MOBILE */
 
 @media (max-width: 768px) {
   .footer-container {
@@ -156,11 +178,11 @@
     text-align: center;
   }
 
-  .footer-social {
-    align-items: center;
+  .footer-contact a {
+    justify-content: center;
   }
 
-  .footer-links li:hover {
-    transform: none;
+  .footer-social {
+    justify-content: center;
   }
 }

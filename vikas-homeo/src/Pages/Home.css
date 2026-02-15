@@ -5,6 +5,13 @@
   background: #ffffff;
   width: 100%;
   overflow-x: hidden;
+  
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15,93,8,0.05),
+      white 30%
+    );
 }
 :root {
   --green: #1e7f4f;
@@ -202,6 +209,7 @@
 .doctor-text {
   flex: 1;
   font-family: var(--font);
+  
 }
 
 .doctor-image img {
@@ -302,24 +310,45 @@
    OUR DOCTORS – PROFILE STYLE
 ===================== */
 .our-doctors {
-  padding: 100px 80px;
-  max-width: 1400px;
-  margin: 0 auto;
+   padding: 120px 20px;
+
+  background:
+    linear-gradient(
+      to left,
+      rgba(15,93,8,0.25) 0%,
+      rgba(255,255,255,0.95) 35%,
+      rgba(255,255,255,0.95) 65%,
+      rgba(15,93,8,0.25) 100%
+    );
 }
 
 .our-doctors .section-title {
   text-align: center;
-  font-size: 34px;
+  font-size: 38px;
   margin-bottom: 80px;
   font-weight: 600;
   font-family: var(--font);
+    color: #1c2b4a;
 }
 
 .doctor-profile {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 80px;
   display: flex;
   align-items: center;
-  gap: 100px;
-  margin-bottom: 120px;
+  gap: 60px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border:1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  transition: 0.4s;
+}
+.doctor-profile:hover{
+  transform: translateY(-8px);
 }
 
 .doctor-profile.reverse {
@@ -333,43 +362,42 @@
 
 .doctor-name {
   font-size: 28px;
-  letter-spacing: 0px;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   text-transform: uppercase;
+  color: #1c2b4a;
+  
 }
 
 .doctor-qualifications {
-  font-size: 14px;
-  line-height: 1.7;
-  margin-bottom: 30px;
-  color: #1e7f4f;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--green);
 }
 
 .doctor-details p {
-  font-size: 20px;
-  line-height: 1.5;
-  margin-bottom: 18px;
-  color: #111;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444;
   font-family: var(--parafont)
 }
 
 .read-more-btn {
-  margin-top: 30px;
-  padding: 14px 38px;
-  border: 1.5px solid white;
-  background: transparent;
-  background-color: #1e7f4f;
+  margin-top:20px;
+  padding: 14px 32px;
+  border-radius: 30px;
+  border: none;
+  background: var(--green);
   color: white;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: bold;
+  transition: 0.3s;
 }
 
 .read-more-btn:hover {
   background: #1e7f4f;
-  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .doctor-portrait {
@@ -380,7 +408,9 @@
 
 .doctor-portrait img {
   width: 100%;
-  max-width: 560px;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
   object-fit: cover;
 }
 
@@ -393,9 +423,16 @@
   }
 
   .doctor-profile {
-    gap: 60px;
+    flex-direction: column;
+
+    text-align: center;
   }
 
+   .doctor-profile.reverse {
+
+    flex-direction: column;
+
+  }
   .doctor-portrait img {
     max-width: 440px;
   }
@@ -413,25 +450,28 @@
     line-height: 2px;
     gap:0;
   }
+.doctor-profile{
+   padding: 25px;
 
+    gap: 30px;
+}
   .doctor-portrait img {
     max-width: 320px;
   }
 .doctor-name{
-  line-height: 35px;
+  line-height: 30px;
+}
+.doctor-details p{
+  font-size: 15px;
 }
   .our-doctors .section-title {
     font-size: 26px;
   }
   .our-doctors {
-    position: relative;
-    background: linear-gradient(
-      to bottom,
-      rgba(33, 87, 28, 0) 0%,
-      rgba(33, 87, 28, 0) 35%,
-      rgba(255, 255, 255, 0) 70%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    padding: 80px 15px;
+  }
+  .doctor-portrait img{
+    max-width: 280px;
   }
 }
 .our-doctors {

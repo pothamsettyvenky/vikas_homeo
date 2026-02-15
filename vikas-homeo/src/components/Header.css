@@ -7,25 +7,24 @@
   --green: #1e7f4f;
   --green-light: #eaf6f0;
   --black: #111111;
-  --font:"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+ --font:"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --parafont:"Poppins", sans-serif
 }
 
 
 .header {
-  background-color: white;
-  position: sticky;
-  top: 0;
-  z-index: 3000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0 20px;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-  width: 100%;
-  max-width: 100%;
-  position: fixed;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 90px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 0 40px;
+ background: white;
+ border-bottom: 1px solid #eee;
+ z-index: 5000;
  
 }
 
@@ -35,15 +34,14 @@
 .header-left {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
-  z-index: 3600; /* keeps logo visible on mobile */
+  /* flex-shrink: 0;
+  z-index: 3600; keeps logo visible on mobile */
 }
 
 .logo img {
-  height: 90px;
-  display: block;
+  height: 70px;
   cursor: pointer;
-  margin-top: 10px;
+  
 }
 
 .nav {
@@ -55,24 +53,23 @@
 
 .menu {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   list-style: none;
+  align-items: center;
   margin: 0;
   padding: 0;
-  align-items: center;
-    font-family: var(--font);
 }
 
 .menu-item {
   position: relative;
-  font-size: 1vw;
-  letter-spacing: 2px;
+  font-size: 16px;
+  font-family: var(--parafont);
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--black);
   cursor: pointer;
-  padding: 16px 0;
-  white-space: nowrap;
+  padding: 10px 0;
   
 }
 
@@ -83,13 +80,13 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: -4px;
   width: 100%;
   height: 2px;
   background: var(--green);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.35s ease;
+  transition: 0.3s
 }
 
 .menu-item:hover::after,
@@ -110,13 +107,13 @@
   padding: 10px 0;
   margin: 0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  z-index: 4000;
 }
 
 .dropdown li {
   padding: 10px 18px;
   cursor: pointer;
-  white-space: nowrap;
+  font-family: var(--font);
+  text-wrap: nowrap;
 }
 
 .dropdown li:hover {
@@ -132,18 +129,21 @@
 }
 
 .contact-btn button {
-  padding: 10px 10px;
+  padding: 10px 18px;
+
   border: 2px solid var(--green);
+
   background: transparent;
+
   color: var(--green);
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+
+  font-size: 13px;
+
   font-weight: 600;
+
   cursor: pointer;
-  height: 40px;
-  display: flex;
-  align-items: center;
+
+  border-radius: 4px;
 }
 
 .contact-btn button:hover {
@@ -159,12 +159,10 @@
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  z-index: 3500;
-  flex-shrink: 0;
 }
 
 .hamburger span {
-  width: 26px;
+  width: 25px;
   height: 2px;
   background: var(--black);
 }
@@ -182,12 +180,18 @@
    - SLIDE DOWN NAV
 ===================== */
 @media (max-width: 1024px) {
+  .menu{
+    gap: 18px;
+  }
+  .menu-item{
+    font-size: 13px;
+  }
   .hamburger {
     display: flex;
   }
 
   .nav {
-    position: fixed;
+    /* position: fixed;
     top: 80px;
     left: 0;
     width: 100%;
@@ -196,7 +200,19 @@
     transform: translateY(-100%);
     transition: transform 0.35s ease;
     overflow-y: auto;
-    z-index: 2500;
+    z-index: 2500; */
+      position: fixed;
+
+    top: 90px;
+    left: 0;
+
+    width: 100%;
+
+    background: white;
+
+    transform: translateY(-120%);
+
+    transition: 0.3s;
   }
 
   .nav.mobile-open {
@@ -205,16 +221,14 @@
 
   .menu {
     flex-direction: column;
-    padding: 20px 0;
-    gap: 0;
+
     
   }
 
   .menu-item {
-    padding: 18px 24px;
-    border-bottom: 1px solid #f2f2f2;
-    font-size: 14px;
-    letter-spacing: 1.5px;
+       padding: 16px;
+
+    border-bottom: 1px solid #eee;
   }
 
   .menu-item::after {
@@ -245,4 +259,195 @@
 ===================== */
 .mobile-only {
   display: none;
+}
+/* =====================
+   MOBILE HEADER FIX
+===================== */
+
+@media (max-width: 768px) {
+
+  .header {
+
+    height: 100px;
+
+    padding: 0 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+  }
+
+
+  /* LOGO */
+
+  .logo img {
+
+    height: 70px;
+
+    margin-top: 0;
+
+  }
+
+
+  /* CENTER BUTTON */
+
+  .contact-btn {
+
+    position: absolute;
+
+    left: 55%;
+
+    transform: translateX(-50%);
+
+    z-index: 5001;
+
+  }
+
+  .contact-btn button {
+
+    font-size: 12px;
+
+    padding: 8px 16px;
+
+    height: auto;
+
+    border-radius: 6px;
+
+  }
+
+
+  /* HAMBURGER RIGHT */
+
+  .hamburger {
+
+    display: flex;
+
+    position: relative;
+
+    z-index: 5002;
+
+  }
+
+
+  .hamburger span {
+
+    width: 22px;
+
+    height: 2px;
+
+  }
+
+
+  /* NAV DROPDOWN POSITION */
+
+  .nav {
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rbga(255,255,255,0.98);
+    backdrop-filter: blur(12px);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease,
+    opacity 0.35s ease;
+  }
+  .nav.mobile-open{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .menu{
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    gap: 0;
+  }
+  .menu-item{
+    width: 100%;
+    text-align: center;
+    padding: center;
+    padding: 18px;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
+  }
+  .menu-item:hover{
+    background: #f7f7f7;
+  }
+  .dropdown{
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 10px;
+    animation: fadeSlideDown 0.35s ease;
+  }
+.dropdown li {
+
+    padding: 12px;
+
+    font-size: 14px;
+
+    color: #444;
+
+    opacity: 0.9;
+
+    transform: translateY(-5px);
+
+    animation: fadeItem 0.4s ease forwards;
+
+  }
+  .dropdown li:hover {
+
+    background: var(--green-light);
+
+    color: var(--green);
+
+  }
+  @keyframes fadeSlideDown {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(-10px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+@keyframes fadeItem {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(-8px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
 }

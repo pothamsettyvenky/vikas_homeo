@@ -1,209 +1,360 @@
-/* =====================
-   APPOINTMENT STRIP
-===================== */
 :root {
   --green: #1e7f4f;
-  --green-light: #eaf6f0;
-  --black: #111111;
-   --font:"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  --parafont:"Poppins", sans-serif
+  --green-dark: #0f5d08;
+
+  --glass: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.25);
+
+  --font: "Gill Sans", Calibri, sans-serif;
+  --parafont: "Poppins", sans-serif;
 }
+
+/* =====================
+   STRIP BASE
+===================== */
+
 .appointment-strip {
   position: relative;
+
   margin-top: -120px;
-  padding-bottom: 80px;
-  z-index: 5;
+
+  padding: 0 20px 80px;
+
+  z-index: 10;
+
   opacity: 0;
-  transform: translateX(-80px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  transform: translateY(60px);
+
+  transition: all 0.8s ease;
 }
+
 .appointment-strip.animate {
   opacity: 1;
-  transform: translateX(0);
+
+  transform: translateY(0);
 }
 
-/* ONE CONTINUOUS GRADIENT */
+/* =====================
+   GLASS WRAPPER
+===================== */
+
 .appointment-wrapper {
-  max-width: 1360px;
-  margin: 0 auto;
+  position: relative;
+
+  max-width: 1300px;
+
+  margin: auto;
+
   display: grid;
-  grid-template-columns: 1fr 1fr 1.2fr;
-  border-radius: 16px;
+
+  grid-template-columns: 1fr 1fr 1.3fr;
+
+  border-radius: 18px;
+
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+  /* GLASS GREEN BASE */
 
   background: linear-gradient(
-    90deg,
-    #0a6fb6 0%,
-    #0aa0dc 45%,
-    #8bc34a 100%
+    135deg,
+    rgba(30, 127, 79, 0.75),
+    rgba(15, 93, 8, 0.75)
   );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid var(--glass-border);
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-/* COMMON */
+/* GLASS LIGHT OVERLAY */
+
+.appointment-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.15)
+  );
+
+  pointer-events: none;
+}
+
+/* GLASS SHINE ANIMATION */
+
+.appointment-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -60%;
+
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: glassShine 7s infinite;
+}
+
+@keyframes glassShine {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 130%;
+  }
+}
+
+/* =====================
+   COMMON BOX
+===================== */
+
 .appointment-box {
   padding: 50px 40px;
-  color: #ffffff;
-  background: transparent;
-  
+
+  color: white;
+
+  position: relative;
 }
 
-/* SUBTLE DIVIDERS */
-.appointment-box + .appointment-box {
-  border-left: 1px solid rgba(255, 255, 255, 0.25);
+/* GLASS DIVIDER */
+
+.appointment-box:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  top: 20%;
+
+  height: 60%;
+
+  width: 1px;
+
+  background: var(--glass-border);
 }
 
-/* EMERGENCY */
-.appointment-box.emergency {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+/* =====================
+   TITLES (UPPERCASE)
+===================== */
 
-.appointment-box.emergency h3 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  font-family: var(--font);
-  text-transform: uppercase;
-}
-
-.appointment-box.emergency .phone {
-  display: block;
-  margin-top: 20px;
-  font-size: 32px;
-  font-weight: 600;
-}
-
-/* OPENING HOURS */
-.appointment-box.hours h3 {
+.appointment-box h3 {
   font-size: 26px;
-  margin-bottom: 30px;
-  font-family: var(--font);
+
+  margin-bottom: 15px;
+
   text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+
+  font-family: var(--font);
 }
 
+/* =====================
+   EMERGENCY BLOCK
+===================== */
+
+.appointment-box.emergency {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.appointment-box.emergency p {
+  opacity: 0.9;
+}
+
+.phone {
+  font-size: 32px;
+
+  font-weight: bold;
+
+  margin-top: 12px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+font-family: var(--font);
+  transition: 0.3s;
+}
+
+.phone:hover {
+  transform: scale(1.05);
+
+  color: #eaf6f0;
+}
+
+/* =====================
+   HOURS BLOCK
+===================== */
+.hours h3{
+  text-align: center;
+}
 .hours-item {
   display: flex;
-  gap: 16px;
-  margin-bottom: 22px;
-  font-family: var(--parafont)
+  gap: 12px;
+
+  margin-bottom: 18px;
+
+  align-items: flex-start;
+
+  font-family: var(--parafont);
 }
 
-.hours-item .dot {
-  width: 22px;
-  height: 22px;
+.dot {
+  width: 12px;
+
+  height: 12px;
+
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  margin-top: 4px;
+
+  background: white;
+
+  margin-top: 6px;
 }
 
-/* FORM */
-.appointment-box.form h3 {
-  font-size: 26px;
-  margin-bottom: 10px;
-  font-family: var(--font);
-  text-transform: uppercase;
-}
+/* =====================
+   FORM BLOCK
+===================== */
 
 .appointment-box.form p {
-  font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+
+  opacity: 0.9;
+
   font-family: var(--parafont);
 }
 
 .form-grid {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+
+  gap: 14px;
 }
 
 .form-grid input,
 .form-grid select {
-  padding: 14px 18px;
-  border-radius: 30px;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  background: #ffffff;
-  color: #333;
-}
+  padding: 12px 16px;
 
-.form-grid select {
-  appearance: none;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%23666' stroke-width='2'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 12px;
+  border-radius: 10px;
+
+  border: none;
+
+  font-family: var(--parafont);
 }
 
 .submit-btn {
-  margin-top: 20px;
+  margin-top: 15px;
+
   width: 100%;
+
   padding: 14px;
-  border-radius: 30px;
+
+  border-radius: 10px;
+
   border: none;
-  background: #000;
-  color: #ffffff;
-  font-size: 15px;
+
+  background: black;
+
+  color: white;
+
+  font-weight: bold;
+
   cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #222;
+
+  transform: translateY(-2px);
 }
 
 /* =====================
-   RESPONSIVE
+   TABLET
 ===================== */
-@media (max-width: 1023px) and (min-width: 768px) {
+
+@media (max-width: 1024px) {
   .appointment-wrapper {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "emergency hours"
-      "form form";
-  }
-
-  .appointment-box.emergency {
-    grid-area: emergency;
-  }
-
-  .appointment-box.hours {
-    grid-area: hours;
   }
 
   .appointment-box.form {
-    grid-area: form;
+    grid-column: span 2;
   }
+  .form h3{
+    text-align: center;
+  }
+}
 
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 768px) {
   .appointment-strip {
-    margin-top: -80px;
+    margin-top: -60px;
+
+    padding: 0 15px 60px;
   }
 
-  /* remove vertical divider logic */
-  .appointment-box + .appointment-box {
-    border-left: none;
+  .appointment-wrapper {
+    display: flex;
+    flex-direction: column;
+    
+   
+  }
+  
+
+  .appointment-box {
+    padding: 30px 20px;
+    
+  }
+.appointment-box:not(:first-child) {
+
+    border-top: 2px solid rgba(255,255,255,0.35);
+    
+  }
+  .appointment-box::after {
+    display: none;
   }
 
-  /* add subtle horizontal divider above form */
-  .appointment-box.form {
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .phone {
+    font-size: 26px;
   }
 }
-@media (max-width: 768px){
-
-    .appointment-wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-       
-    }
-    .appointment-box.form{
-        border-top: 1px solid rgba(255, 255, 255, 0.25);
-
-    }
-    .appointment-box + .appointment-box {
-        border-left:none;
-        border-top: 1px solid rgba(255, 255, 255, 0.25);
-    }
-}
-
-

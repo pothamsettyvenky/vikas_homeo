@@ -1,0 +1,262 @@
+{
+  "homeopathy": [
+    {
+      "name": "Psoriasis",
+      "image": "/asessts/logo.jpeg",
+      "description": "Helps reduce skin inflammation, itching, and scaling by correcting immune imbalance naturally."
+    },
+    {
+      "name": "Schizophrenia",
+      "image": "/asessts/logo.jpeg",
+      "description": "Supports mental stability, emotional balance, and improves overall neurological health."
+    },
+    {
+      "name": "Prostate enlargement",
+      "image": "/asessts/logo.jpeg",
+      "description": "Improves urinary flow, reduces prostate swelling, and restores normal prostate function."
+    },
+    {
+      "name": "Pneumonia",
+      "image": "/asessts/logo.jpeg",
+      "description": "Strengthens lung function and supports faster recovery from respiratory infections."
+    },
+    {
+      "name": "Paralysis",
+      "image": "/asessts/logo.jpeg",
+      "description": "Stimulates nerve healing, improves muscle strength, and supports mobility recovery."
+    },
+    {
+      "name": "Infertility",
+      "image": "/asessts/logo.jpeg",
+      "description": "Addresses hormonal imbalance and improves reproductive health naturally."
+    },
+    {
+      "name": "Migraine",
+      "image": "/asessts/logo.jpeg",
+      "description": "Reduces frequency and severity of headaches by treating root causes."
+    },
+    {
+      "name": "Tumors",
+      "image": "/asessts/logo.jpeg",
+      "description": "Supports immune function and helps control abnormal tissue growth."
+    },
+    {
+      "name": "Ankylosing spondylitis",
+      "image": "/asessts/logo.jpeg",
+      "description": "Helps relieve joint stiffness, inflammation, and improves spinal flexibility."
+    },
+    {
+      "name": "Haemorrhoids (Piles)",
+      "image": "/asessts/logo.jpeg",
+      "description": "Relieves pain, bleeding, and swelling while promoting healing naturally."
+    },
+    {
+      "name": "Varicose veins",
+      "image": "/asessts/logo.jpeg",
+      "description": "Improves blood circulation and reduces vein swelling and discomfort."
+    },
+    {
+      "name": "Burns",
+      "image": "/asessts/logo.jpeg",
+      "description": "Promotes faster healing, reduces pain, and minimizes scar formation."
+    },
+    {
+      "name": "Ulcers",
+      "image": "/asessts/logo.jpeg",
+      "description": "Supports healing of stomach lining and reduces acidity and discomfort."
+    },
+    {
+      "name": "Thyroid problems",
+      "image": "/asessts/logo.jpeg",
+      "description": "Helps regulate thyroid hormones and improve metabolism naturally."
+    },
+    {
+      "name": "Autism",
+      "image": "/asessts/logo.jpeg",
+      "description": "Supports cognitive development, behavior improvement, and emotional balance."
+    },
+    {
+      "name": "Skin infections",
+      "image": "/asessts/logo.jpeg",
+      "description": "Promotes faster skin healing and strengthens immunity against infections."
+    },
+    {
+      "name": "Asthma",
+      "image": "/asessts/logo.jpeg",
+      "description": "Improves breathing capacity and reduces frequency of asthma attacks."
+    },
+    {
+      "name": "Allergies",
+      "image": "/asessts/logo.jpeg",
+      "description": "Strengthens immune system and reduces allergic reactions naturally."
+    },
+    {
+      "name": "Autoimmune diseases",
+      "image": "/asessts/logo.jpeg",
+      "description": "Balances immune response and reduces inflammation naturally."
+    },
+    {
+      "name": "Fibroids",
+      "image": "/asessts/logo.jpeg",
+      "description": "Helps shrink fibroids and restores hormonal balance naturally."
+    },
+    {
+      "name": "Tuberculosis",
+      "image": "/asessts/logo.jpeg",
+      "description": "Supports recovery, improves lung strength, and boosts immunity."
+    },
+    {
+      "name": "Acne / warts",
+      "image": "/asessts/logo.jpeg",
+      "description": "Clears skin naturally and prevents recurrence without side effects."
+    },
+    {
+      "name": "Gallstones",
+      "image": "/asessts/logo.jpeg",
+      "description": "Supports gallbladder health and reduces stone formation naturally."
+    },
+    {
+      "name": "Renal stones",
+      "image": "/asessts/logo.jpeg",
+      "description": "Helps dissolve kidney stones and prevents recurrence."
+    },
+    {
+      "name": "Hypertension (High BP)",
+      "image": "/asessts/logo.jpeg",
+      "description": "Regulates blood pressure and improves cardiovascular health."
+    },
+    {
+      "name": "Diabetes",
+      "image": "/asessts/logo.jpeg",
+      "description": "Helps regulate blood sugar and improve metabolic balance."
+    },
+    {
+      "name": "Sinusitis",
+      "image": "/asessts/logo.jpeg",
+      "description": "Reduces sinus inflammation and improves breathing."
+    },
+    {
+      "name": "Adenoids",
+      "image": "/asessts/logo.jpeg",
+      "description": "Reduces swelling and improves breathing naturally."
+    },
+    {
+      "name": "Polyps",
+      "image": "/asessts/logo.jpeg",
+      "description": "Helps reduce abnormal tissue growth naturally."
+    },
+    {
+      "name": "PCOD / PCOS",
+      "image": "/asessts/logo.jpeg",
+      "description": "Restores hormonal balance and improves reproductive health."
+    },
+    {
+      "name": "Sexual problems",
+      "image": "/asessts/logo.jpeg",
+      "description": "Improves reproductive function and restores hormonal balance."
+    },
+    {
+      "name": "UTI",
+      "image": "/asessts/logo.jpeg",
+      "description": "Helps eliminate infection and prevents recurrence."
+    },
+    {
+      "name": "Vitiligo",
+      "image": "/asessts/logo.jpeg",
+      "description": "Supports skin pigmentation and immune system balance."
+    },
+    {
+      "name": "Stricture",
+      "image": "/asessts/logo.jpeg",
+      "description": "Improves urinary flow and reduces narrowing naturally."
+    },
+    {
+      "name": "Anxiety",
+      "image": "/asessts/logo.jpeg",
+      "description": "Promotes emotional stability and improves mental well-being."
+    }
+  ],
+
+  "naturopathy": [
+    {
+      "name": "Arthritis",
+      "image": "/asessts/logo.jpeg",
+      "description": "Reduces joint inflammation and improves mobility naturally."
+    },
+    {
+      "name": "PCOD",
+      "image": "/asessts/logo.jpeg",
+      "description": "Restores hormonal balance through diet and natural therapy."
+    },
+    {
+      "name": "Thyroid disorders",
+      "image": "/asessts/logo.jpeg",
+      "description": "Improves thyroid function and metabolism naturally."
+    },
+    {
+      "name": "BP (Hypertension)",
+      "image": "/asessts/logo.jpeg",
+      "description": "Helps regulate blood pressure and improve heart health."
+    },
+    {
+      "name": "DM (Diabetes Mellitus)",
+      "image": "/asessts/logo.jpeg",
+      "description": "Supports healthy blood sugar levels naturally."
+    },
+    {
+      "name": "Obesity",
+      "image": "/asessts/logo.jpeg",
+      "description": "Promotes natural weight loss and metabolic balance."
+    },
+    {
+      "name": "Hormonal imbalance",
+      "image": "/asessts/logo.jpeg",
+      "description": "Restores hormonal balance through natural therapy."
+    },
+    {
+      "name": "Stress management",
+      "image": "/asessts/logo.jpeg",
+      "description": "Reduces stress and improves mental wellness."
+    },
+    {
+      "name": "Pain management",
+      "image": "/asessts/logo.jpeg",
+      "description": "Relieves pain and improves body function naturally."
+    },
+    {
+      "name": "Fatigue",
+      "image": "/asessts/logo.jpeg",
+      "description": "Improves energy levels and overall vitality."
+    },
+    {
+      "name": "Fatty liver",
+      "image": "/asessts/logo.jpeg",
+      "description": "Supports liver detoxification and improves liver health."
+    },
+    {
+      "name": "Sciatica",
+      "image": "/asessts/logo.jpeg",
+      "description": "Relieves nerve pain and improves mobility."
+    },
+    {
+      "name": "Migraine",
+      "image": "/asessts/logo.jpeg",
+      "description": "Reduces headache frequency naturally."
+    },
+    {
+      "name": "Spondylitis",
+      "image": "/asessts/logo.jpeg",
+      "description": "Improves spine flexibility and reduces inflammation."
+    },
+    {
+      "name": "Back pain",
+      "image": "/asessts/logo.jpeg",
+      "description": "Relieves muscle tension and improves spinal health."
+    },
+    {
+      "name": "Anxiety",
+      "image": "/asessts/logo.jpeg",
+      "description": "Promotes relaxation and emotional balance naturally."
+    }
+  ]
+}
