@@ -471,7 +471,10 @@
     max-width: 320px;
   }
   .doctor-name {
-    line-height: 25px;
+    line-height: 35px;
+    font-size: 32px;
+    text-wrap: wrap;
+    
   }
   .doctor-details p {
     font-size: 15px;

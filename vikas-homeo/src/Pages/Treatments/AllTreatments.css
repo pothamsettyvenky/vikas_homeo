@@ -17,7 +17,7 @@
 
 .treatments-page {
   min-height: 100vh;
-
+  margin-top: 150px;
   padding: 100px 20px;
 
   background: linear-gradient(
@@ -54,6 +54,13 @@
   text-align: center;
 }
 
+.treatment-card h3{
+  color: black;
+}
+.treatment-card p{
+  color: black;
+}
+
 /* =====================
    TITLE
 ===================== */
@@ -64,7 +71,7 @@
   letter-spacing: 3px;
 
   font-family: var(--body);
-font-size: 24px;
+  font-size: 24px;
   font-weight: bold;
 
   margin-bottom: 10px;
@@ -72,9 +79,9 @@ font-size: 24px;
 
 .treatments-title {
   font-size: 38px;
-text-transform: uppercase;
+  text-transform: uppercase;
   font-family: var(--heading);
-letter-spacing: 2px;
+  letter-spacing: 2px;
   color: #1c2b4a;
 
   margin-bottom: 50px;
@@ -112,9 +119,9 @@ letter-spacing: 2px;
   font-family: var(--body);
 
   font-size: 24px;
-font-family: var(--heading);
-text-transform: uppercase;
-font-weight: bold;
+  font-family: var(--heading);
+  text-transform: uppercase;
+  font-weight: bold;
   cursor: pointer;
 
   transition: all 0.3s ease;
@@ -222,7 +229,7 @@ font-weight: bold;
 
   font-family: var(--body);
 
-  color: #444;
+  color: black;
 
   line-height: 1.6;
 }
@@ -249,7 +256,12 @@ font-weight: bold;
   .treatments-container {
     padding: 25px;
   }
-
+.treatment-card h3{
+  font-size: 22px;
+}
+.treatment-card p{
+ font-size: 18px;
+}
   .treatments-title {
     font-size: 28px;
   }
@@ -270,9 +282,11 @@ font-weight: bold;
 @media (max-width: 480px) {
   .treatment-name {
     font-size: 18px;
+    color: black;
   }
 
   .treatment-description {
     font-size: 14px;
+    color: black;
   }
 }
