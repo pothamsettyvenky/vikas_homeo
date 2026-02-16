@@ -9,9 +9,7 @@ import review5 from "../../asessts/reviews/review5.png";
 import review6 from "../../asessts/reviews/review6.png";
 import review7 from "../../asessts/reviews/review7.png";
 import review8 from "../../asessts/reviews/review8.png";
-import review9 from "../../asessts/reviews/review9.png";
-import review10 from "../../asessts/reviews/review10.png";
-import review11 from "../../asessts/reviews/review11.png";
+
 
 import bgImage from "../../asessts/background/bg-testimonials.jpg"; // your background image
 
@@ -23,7 +21,7 @@ import "swiper/css/pagination";
 
 const reviews = [
   review1, review2, review3, review4, review5,
-  review6, review7, review8, review9, review10, review11
+  review6, review7, review8
 ];
 
 export default function Testimonials() {

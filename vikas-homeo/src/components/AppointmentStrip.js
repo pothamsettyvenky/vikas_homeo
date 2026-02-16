@@ -32,32 +32,25 @@ export default function AppointmentStrip() {
         </div>
 
         <div className="appointment-box hours">
-          <h3>Opening Hours</h3>
+  <h3>Opening Hours</h3>
 
-          <div className="hours-item">
-            <span className="dot"></span>
-            <div>
-              <strong>Dwarakanagar</strong>
-              <p>10 AM - 8 PM</p>
-            </div>
-          </div>
+  <div className="hours-item">
+    {/* <span className="dot"></span> */}
+    <div className="hours-text">
+      <strong>Mon–Sat:</strong>
+      <p>9:30 am–1:30 pm | <br/>5:30 pm–9:00 pm</p>
+    </div>
+  </div>
 
-          <div className="hours-item">
-            <span className="dot"></span>
-            <div>
-              <strong>Gopalapatnam</strong>
-              <p>9 AM - 10 AM, 9 PM - 10 PM</p>
-            </div>
-          </div>
+  <div className="hours-item">
+    {/* <span className="dot"></span> */}
+    <div className="hours-text">
+      <strong>Sunday:</strong>
+      <p>9:30 am–1:30 pm</p>
+    </div>
+  </div>
 
-          <div className="hours-item">
-            <span className="dot"></span>
-            <div>
-              <strong>Sunday</strong>
-              <p>On Appointments Based Only</p>
-            </div>
-          </div>
-        </div>
+</div>
 
         <div className="appointment-box form">
           <h3>Book an Appointment</h3>

@@ -13,9 +13,7 @@ import review5 from "../../asessts/reviews/review5.png";
 import review6 from "../../asessts/reviews/review6.png";
 import review7 from "../../asessts/reviews/review7.png";
 import review8 from "../../asessts/reviews/review8.png";
-import review9 from "../../asessts/reviews/review9.png";
-import review10 from "../../asessts/reviews/review10.png";
-import review11 from "../../asessts/reviews/review11.png";
+
 import { useNavigate } from "react-router-dom";
 export default function VikasHomoeo() {
   const galleryImages = [
@@ -27,9 +25,6 @@ export default function VikasHomoeo() {
     review6,
     review7,
     review8,
-    review9,
-    review10,
-    review11,
   ];
 
   const [activeTab, setActiveTab] = useState("function");

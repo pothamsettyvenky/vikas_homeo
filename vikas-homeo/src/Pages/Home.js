@@ -21,14 +21,14 @@ export default function Home() {
           pagination={{ clickable: true }}
           loop
         >
-          {/* SLIDE 1 – HOMEOPATHY */}
+          {/* SLIDE 1 – homoeopathy */}
           <SwiperSlide>
             <div className="custom-slide slide-hospital">
               <div className="slide-overlay"></div>
               <div className="slide-content left-text">
                 <div className="slide-text">
-                  <h1 className="title">
-                    Vikas Homoeopathy & Naturopathy Clinic
+                  <h1 className="title" id="main">
+                    Dr Vikas Homoeopathy & Naturopathy Clinic
                   </h1>
                   <p>
                     A trusted center for holistic healthcare, combining gentle,
@@ -37,7 +37,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="slide-image">
-                  {/* <img src="/images/hospital.jpg" alt="Vikas Homeopathy" /> */}
+                  {/* <img src="/images/hospital.jpg" alt="Vikas homoeopathy" /> */}
                 </div>
               </div>
             </div>
@@ -48,7 +48,7 @@ export default function Home() {
               <div className="slide-content left-text">
                 <div className="slide-text">
                   <h1 className="title">
-                    Healing from the roots through homeopathy
+                    Healing from the roots through homoeopathy
                   </h1>
                   <p>
                     Using an integrated system of medicine improves patients
@@ -57,7 +57,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="slide-image">
-                  {/* <img src="/images/hospital.jpg" alt="Vikas Homeopathy" /> */}
+                  {/* <img src="/images/hospital.jpg" alt="Vikas homoeopathy" /> */}
                 </div>
               </div>
             </div>
@@ -75,13 +75,13 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="slide-image">
-                  {/* <img src="/images/hospital.jpg" alt="Vikas Homeopathy" /> */}
+                  {/* <img src="/images/hospital.jpg" alt="Vikas homoeopathy" /> */}
                 </div>
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="custom-slide slide-homeopathy">
+          {/* <SwiperSlide>
+            <div className="custom-slide slide-homoeopathy">
               <div className="slide-overlay"></div>
               <div className="slide-content left-text">
                 <div className="slide-text">
@@ -93,11 +93,11 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="slide-image">
-                  {/* <img src="/images/homeopathy.jpg" alt="Homeopathy" /> */}
+                 
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
 
           {/* SLIDE 2 – NATUROPATHY */}
           <SwiperSlide>
@@ -125,7 +125,7 @@ export default function Home() {
               <div className="slide-overlay"></div>
               <div className="slide-content left-text">
                 <div className="slide-text">
-                  <h1>Acupuncture</h1>
+                  <h1>Acupuncture </h1>
                   <p>
                     Effective therapy for pain relief, stress reduction, and
                     energy balance. Helps improve circulation, mobility, and
@@ -223,7 +223,7 @@ export default function Home() {
               className="read-more-btn"
             >
               {" "}
-              Read Button{" "}
+              Read More{" "}
             </button>
           </div>
           <div className="doctor-portrait">

@@ -26,13 +26,30 @@
   position: relative;
 
   background: linear-gradient(
-    135deg,
-    rgba(30,127,79,0.08),
-    rgba(15,93,8,0.05)
+     135deg,
+    #1c2b4a 0%,
+    #1c2b4a 40%,
+    #0b930b75 100%
   );
 
 }
+.treatments-section::before {
 
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0)
+  );
+
+  pointer-events: none;
+
+}
 
 /* =====================
    TITLE
@@ -44,7 +61,7 @@
 
   margin-bottom: 10px;
 
-  color: #1c2b4a;
+  color: white;
 
   font-family: var(--font);
 
@@ -62,7 +79,7 @@
 
   font-size: 18px;
 
-  color: #555;
+  color: rgba(255,255,255,0.85);;
 
   font-family: var(--parafont);
 
@@ -99,9 +116,9 @@ font-size: 20px;
 
   border: none;
 
-  background: transparent;
+  background-color: #0b930b75;
 
-  color: var(--green);
+  color: white;
 
   font-weight: 600;
 
@@ -115,8 +132,7 @@ font-size: 20px;
 font-size: 36px;
   background: linear-gradient(
     135deg,
-    var(--green),
-    var(--green-dark)
+   #1c2b4a
   );
 
   color: white;
@@ -264,11 +280,11 @@ font-size: 36px;
 
 .treatment-card h3 {
 
-  font-size: 18px;
+  font-size: 20px;
 
   margin-bottom: 12px;
 
-  color: #1c2b4a;
+  color: white;
 
   font-family: var(--font);
 
@@ -285,7 +301,7 @@ font-size: 36px;
 
   font-size: 14px;
 
-  color: #555;
+  color: white;
 
   font-family: var(--parafont);
 
@@ -356,6 +372,12 @@ font-size: 36px;
 
     padding: 70px 20px;
 
+  }
+  .tab{
+    font-size: 14px;
+  }
+  .tab.active{
+    font-size: 18px;
   }
 
   .cards-grid {
