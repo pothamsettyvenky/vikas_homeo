@@ -2,6 +2,7 @@ import "./Home.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import AppointmentStrip from "../components/AppointmentStrip";
@@ -11,6 +12,37 @@ import Testimonials from "./Testmonials/Testimonials";
 import FAQ from "./Faq/Faq";
 
 export default function Home() {
+  const doctorRef = useRef([]);
+
+useEffect(() => {
+
+  const observer = new IntersectionObserver(
+
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("show");
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.25
+    }
+
+  );
+
+  doctorRef.current.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+
+}, []);
   const navigate = useNavigate();
   return (
     <div className="home">
@@ -28,7 +60,8 @@ export default function Home() {
               <div className="slide-content left-text">
                 <div className="slide-text">
                   <h1 className="title" id="main">
-                    Dr Vikas Homoeopathy & Naturopathy Clinic
+                      <span className="doctor-main">Dr Vikas</span><br/>
+  <span className="doctor-sub">Homoeopathy & Naturopathy Clinic</span>
                   </h1>
                   <p>
                     A trusted center for holistic healthcare, combining gentle,
@@ -67,7 +100,7 @@ export default function Home() {
               <div className="slide-overlay"></div>
               <div className="slide-content left-text">
                 <div className="slide-text">
-                  <h1 className="title">Homoeopathy for metal health</h1>
+                  <h1 className="title">Homoeopathy for mental health</h1>
                   <p>
                     Soothing the mind how Homoeopathy enhances emotional health
                     Homoeopathy offers a safe and effective approach to long
@@ -205,7 +238,7 @@ export default function Home() {
       {/* DOCTOR SECTION */}
       <section className=" our-doctors ">
         <h2 className=" section-title ">Our Doctors</h2>
-        <div className=" doctor-profile ">
+        <div className=" doctor-profile " ref={(el) => (doctorRef.current[0] = el)}>
           <div className="doctor-details">
             <h3 className="doctor-name"> Dr. Vikas Ballipalli</h3>
             <p className="doctor-qualifications">M.D (HOM), F,Hom</p>
@@ -233,7 +266,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="doctor-profile reverse">
+        <div className="doctor-profile reverse" ref={(el) => (doctorRef.current[1] = el)} >
           <div className="doctor-details">
             <h3 className="doctor-name">Dr. Sandhya Ballipalli</h3>
 

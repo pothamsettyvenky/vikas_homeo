@@ -29,7 +29,7 @@ export default function Header() {
       {/* ROW 1 → LOGO */}
       <div className="header-top">
         <div className="logo" onClick={() => handleNavigate("/")}>
-          <img src={Logo} alt="Vikas Homeopathy Clinic" />
+          <img src={Logo} alt="Vikas homoeopathy Clinic" />
         </div>
       </div>
 
@@ -67,8 +67,8 @@ export default function Header() {
               About
               {activeMenu === "about" && (
                 <ul className="dropdown">
-                  <li onClick={() => handleNavigate("/about/vikas-homeopathy")}>
-                    Vikas Homeopathy Clinic
+                  <li onClick={() => handleNavigate("/about/vikas-homoeopathy")}>
+                    Vikas homoeopathy Clinic
                   </li>
                   <li onClick={() => handleNavigate("/about/dr-vikas")}>
                     Dr. Vikas Ballipalli
@@ -130,9 +130,9 @@ export default function Header() {
 
             <li
               className="menu-item"
-              onClick={() => handleNavigate("/Homeopathy_Kit")}
+              onClick={() => handleNavigate("/homoeopathy_Kit")}
             >
-              Homeopathy Kit
+              homoeopathy Kit
             </li>
 
           </ul>

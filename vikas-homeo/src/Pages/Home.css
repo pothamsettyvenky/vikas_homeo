@@ -1,4 +1,4 @@
-/* =====================
+/* ====================
    GLOBAL SAFETY
 ===================== */
 .home {
@@ -12,6 +12,7 @@
 :root {
   --green: #1e7f4f;
   --green-light: #eaf6f0;
+  --blue: #004aad;
   --black: #111111;
   --font: "SN Pro", sans-serif;
   --parafont: "Poppins", sans-serif;
@@ -226,11 +227,114 @@
   width: 420px;
   border-radius: 6px;
 }
+.doctor-profile:nth-child(2) {
+
+  background-color: var(--blue);
+
+  box-shadow:
+    0 20px 50px rgba(0,74,173,0.25);
+
+}
+.doctor-profile:nth-child(2).show{
+  transition-delay: 0.2s;
+}
+
+/* button color doctor 1 */
+
+.doctor-profile:nth-child(2) .read-more-btn {
+
+  border: 2px solid white;
+  background-color: green;
+
+  color: white;
+
+}
+.doctor-profile:nth-child(3) {
+
+  background: linear-gradient(
+    135deg,
+    rgba(11,147,11,0.85),
+    rgba(11,147,11,0.65)
+  );
+
+  box-shadow:
+    0 20px 50px rgba(11,147,11,0.25);
+
+}
+.doctor-profile:nth-child(3).show{
+   transition-delay: 0.4s;
+}
+
+/* button color doctor 2 */
+
+.doctor-profile:nth-child(3) .read-more-btn {
+
+  border: 2px solid white;
+
+  color: white;
+  background-color:var(--blue);
+
+}
+
+/* .doctor-profile:nth-child(3) .read-more-btn:hover {
+
+  background: #ffd700;
+
+  color: black;
+
+} */
+
+/* .doctor-profile:nth-child(2) .read-more-btn:hover {
+
+  background: #00d4ff;
+
+  color: white;
+
+} */
+
+.doctor-main {
+
+  display: block;
+
+  font-size: 56px;
+
+  font-weight: bold;
+
+  line-height: 0;
+
+}
+.doctor-sub {
+
+  display: block;
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  margin-top: 0px;
+
+}
+
+
+@keyframes shineMove {
+
+  from {
+    transform: translateX(-60%) rotate(25deg);
+  }
+
+  to {
+    transform: translateX(60%) rotate(25deg);
+  }
+
+}
 
 @media (max-width: 1023px) and (min-width: 768px) {
   .home-slider {
     height: 480px;
   }
+ 
 
   .slide-content {
     flex-direction: column;
@@ -243,7 +347,8 @@
     max-width: 100%;
   }
   .slide-text h1 {
-    font-size: 54px;
+    font-size: 56px;
+    font-weight: bold;
   }
 
   .slide-image img {
@@ -282,7 +387,17 @@
   .home-slider {
     height: 300px;
   }
+  .doctor-main {
 
+    font-size: 26px;
+
+  }
+
+  .doctor-sub {
+
+    font-size: 16px;
+
+  }
   .slide-content {
     flex-direction: column;
     text-align: center;
@@ -328,36 +443,72 @@
   font-size: 54px;
   margin-bottom: 80px;
   font-weight: 600;
+  color:green;
 }
 
 .doctor-profile {
+  
+
   position: relative;
   display: flex;
   align-items: center;
   gap: 100px;
   margin-bottom: 120px;
 
-  /* glass effect */
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
   border-radius: 20px;
   padding: 50px;
 
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  overflow: hidden;
 
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.08),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.25);
+
+  transition: all 0.8s ease;
+
+  /* animation initial state */
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.8s ease;
+}
+.doctor-profile.show{
+   opacity: 1;
+  transform: translateX(0);
+}
+.doctor-profile::before{
+  content: "";
+
+  position: absolute;
+
+  top: -50%;
+  left: -50%;
+
+  width: 200%;
+  height: 200%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.25),
+    transparent 70%
+  );
+  transform: rotate(25deg);
+
+  opacity: 0;
+
+  transition: 0.6s;
+}
+.doctor-profile:hover::before {
+
+  opacity: 1;
+
+  animation: shineMove 1.2s ease;
+
 }
 
 .doctor-profile:hover {
-  transform: translateY(-6px);
+   transform: translateX(0) translateY(-6px);
 
   box-shadow:
     0 18px 50px rgba(30, 127, 79, 0.18),
@@ -365,6 +516,12 @@
 }
 .doctor-profile.reverse {
   flex-direction: row-reverse;
+  transform: translateX(0) translateY(-6px);
+  transform: translateX(80px);
+
+}
+.doctor-profile.reverse.show{
+  transform: translateX(0);
 }
 
 .doctor-details {
@@ -444,6 +601,16 @@
 
     text-align: center;
   }
+   .doctor-main {
+
+    font-size: 42px;
+
+  }
+  .doctor-sub {
+
+    font-size: 22px;
+
+  }
 
   .doctor-profile.reverse {
     flex-direction: column;
@@ -479,11 +646,15 @@
     text-wrap: wrap;
     
   }
+  
+  .Clinic{
+    color:red;
+  }
   .doctor-details p {
     font-size: 15px;
   }
   .our-doctors .section-title {
-    font-size: 26px;
+    font-size: 48px;
   }
   .our-doctors {
     padding: 80px 15px;
@@ -494,13 +665,6 @@
 }
 .our-doctors {
   position: relative;
-  background: linear-gradient(
-    0,
-    rgba(2,95,173),
-    rgba(2,95,173),
-    rgba(2,95,173),
-    green
-    
-  );
+ 
 
 }
