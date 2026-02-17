@@ -2,7 +2,7 @@
   "homeopathy": [
     {
       "name": "Psoriasis",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Psoriasis.svg",
       "description": "Helps reduce skin inflammation, itching, and scaling by correcting immune imbalance naturally."
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "name": "Prostate enlargement",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Prostate.png",
       "description": "Improves urinary flow, reduces prostate swelling, and restores normal prostate function."
     },
     {
@@ -172,7 +172,7 @@
     },
     {
       "name": "Anxiety",
-      "image": "/asessts/logo.jpeg",
+      "image": "/asessts/Treatments/Anxiety.jpg",
       "description": "Promotes emotional stability and improves mental well-being."
     }
   ],
@@ -255,7 +255,7 @@
     },
     {
       "name": "Anxiety",
-      "image": "/asessts/logo.jpeg",
+      "image": "/asessts/Treatments/Anxiety.jpg",
       "description": "Promotes relaxation and emotional balance naturally."
     }
   ]

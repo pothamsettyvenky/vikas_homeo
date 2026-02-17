@@ -17,8 +17,6 @@
   --font1:
     -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font2: "DM Sans", sans-serif;
-  --font: "TT Drugs", sans-serif;
   --parafont: "Poppins", sans-serif;
 }
 
@@ -78,7 +76,7 @@
     no-repeat;
 }
 .slide-mental {
-  background: url("../asessts/background/bg-mental_health.jpg") center/ cover
+  background: url("../asessts/background/bg-homeopathy.png") center/ cover
     no-repeat;
 }
 .slide-healing {
@@ -90,7 +88,7 @@
 }
 
 .slide-hospital {
-  background: url("../asessts/background/bg-title.jpg");
+  background: url("../asessts//background/bg-title.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -151,7 +149,7 @@
   /* letter-spacing: 1px; */
   margin-bottom: 16px;
   text-transform: uppercase;
-  font-family: var(--font);
+  font-family: var(--font1);
 }
 
 .slide-text p {
@@ -381,12 +379,12 @@
 
   .slide-text p {
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
     width: 100%;
   }
   .slide-text h1 {
     text-align: center;
-    font-size: 24px;
+    font-size: 38px;
   }
 
   .slide-image img {
@@ -607,7 +605,8 @@
   }
   .doctor-name {
     line-height: 35px;
-    font-size: 32px;
+    font-size:30px;
+    letter-spacing: 0px;
     text-wrap: wrap;
   }
 
@@ -615,10 +614,10 @@
     color: red;
   }
   .doctor-details p {
-    font-size: 15px;
+    font-size: 18px;
   }
   .our-doctors .section-title {
-    font-size: 48px;
+    font-size: 42px;
   }
   .our-doctors {
     padding: 80px 15px;

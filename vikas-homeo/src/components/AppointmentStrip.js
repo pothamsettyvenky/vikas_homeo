@@ -11,7 +11,7 @@ export default function AppointmentStrip() {
           stripRef.current.classList.add("animate");
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.25 },
     );
 
     if (stripRef.current) {
@@ -24,37 +24,40 @@ export default function AppointmentStrip() {
   return (
     <section className="appointment-strip" ref={stripRef}>
       <div className="appointment-wrapper">
-
         <div className="appointment-box emergency">
-          <h3>Emergency?</h3>
-          <p>Please Call Us at</p>
+          <h3>Please Call Us at</h3>
           <span className="phone">+91 73968 03203</span>
+           <span className="phone">+91 80960 50488</span>
         </div>
 
         <div className="appointment-box hours">
-  <h3>Opening Hours</h3>
+          <h3>Opening Hours</h3>
 
-  <div className="hours-item">
-    {/* <span className="dot"></span> */}
-    <div className="hours-text">
-      <strong>Mon–Sat:</strong>
-      <p>9:30 am–1:30 pm | <br/>5:30 pm–9:00 pm</p>
-    </div>
-  </div>
+          <div className="hours-item">
+            {/* <span className="dot"></span> */}
+            <div className="hours-text">
+              <strong>Mon–Sat:</strong>
+              <p>
+                9:30 am–1:30 pm | <br />
+                5:30 pm–9:00 pm
+              </p>
+            </div>
+          </div>
 
-  <div className="hours-item">
-    {/* <span className="dot"></span> */}
-    <div className="hours-text">
-      <strong>Sunday:</strong>
-      <p>9:30 am–1:30 pm</p>
-    </div>
-  </div>
-
-</div>
+          <div className="hours-item">
+            {/* <span className="dot"></span> */}
+            <div className="hours-text">
+              <strong>Sunday:</strong>
+              <p>9:30 am–1:30 pm</p>
+            </div>
+          </div>
+        </div>
 
         <div className="appointment-box form">
           <h3>Book an Appointment</h3>
-          <p>Fill the form and our team will schedule the appointment for you</p>
+          <p>
+            Fill the form and our team will schedule the appointment for you
+          </p>
 
           <div className="form-grid">
             <input type="text" placeholder="Name" />
@@ -75,7 +78,6 @@ export default function AppointmentStrip() {
 
           <button className="submit-btn">Submit</button>
         </div>
-
       </div>
     </section>
   );

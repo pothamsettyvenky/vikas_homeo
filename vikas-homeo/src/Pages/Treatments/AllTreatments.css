@@ -7,7 +7,9 @@
 
   --glass-border: rgba(255, 255, 255, 0.3);
 
-  --heading: "Gill Sans", Calibri, sans-serif;
+  --heading:   -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   --body: "Poppins", sans-serif;
 }
 

@@ -3,7 +3,8 @@
   --green-dark: #0f5d08;
   --green-light: #eaf6f0;
   --black: #111;
-  --heading: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  --heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   --body: "Poppins", sans-serif;
 }
 
