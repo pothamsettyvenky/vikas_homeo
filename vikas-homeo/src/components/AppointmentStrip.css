@@ -80,7 +80,10 @@
   border-radius: 16px;
   overflow: hidden;
 
-  background: linear-gradient(90deg, #1c2b4a, #1c2b4a, #0b930b75);
+  background: linear-gradient(90deg, rgba(2,95,173),
+    rgba(2,95,173),
+    rgba(2,95,173),
+    green);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);

@@ -37,7 +37,7 @@ export default function TreatmentsTabs() {
           {activeTab === "homeopathy" && (
             <>
               <div className="cards-grid">
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">🧠</div>
                   <h3>Anxiety</h3>
                   <p>
@@ -47,7 +47,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">🌿</div>
                   <h3>Psoriasis</h3>
                   <p>
@@ -56,7 +56,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">🩺</div>
                   <h3>Prostate Enlargement</h3>
                   <p>
@@ -65,7 +65,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">🧩</div>
                   <h3>Autism</h3>
                   <p>
@@ -75,7 +75,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">🧬</div>
                   <h3>PCOD</h3>
                   <p>
@@ -84,7 +84,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">🩹</div>
                   <h3>Hemorrhoids</h3>
                   <p>
@@ -112,7 +112,7 @@ export default function TreatmentsTabs() {
           {activeTab === "naturopathy" && (
             <>
               <div className="cards-grid">
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">⚖️</div>
                   <h3>Obesity</h3>
                   <p>
@@ -121,7 +121,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">💆</div>
                   <h3>Pain Management</h3>
                   <p>
@@ -130,7 +130,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">🦴</div>
                   <h3>Arthritis</h3>
                   <p>
@@ -139,7 +139,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">🧍</div>
                   <h3>Spondylitis</h3>
                   <p>
@@ -148,7 +148,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">⚡</div>
                   <h3>Sciatica</h3>
                   <p>
@@ -157,7 +157,7 @@ export default function TreatmentsTabs() {
                   </p>
                 </div>
 
-                <div className="treatment-card">
+                <div className="treatment-cards">
                   <div className="icon">🧘</div>
                   <h3>Stress Management</h3>
                   <p>
