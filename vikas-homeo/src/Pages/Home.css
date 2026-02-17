@@ -325,7 +325,7 @@
 
 .our-doctors .section-title {
   text-align: center;
-  font-size: 34px;
+  font-size: 54px;
   margin-bottom: 80px;
   font-weight: 600;
 }
@@ -502,4 +502,5 @@
     green
     
   );
+
 }
