@@ -1,6 +1,12 @@
+@font-face {
+  font-family: "TT Drugs";
+  src: url("./fonts/TT Drugs Trial Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
 
-@media (max-width:768px){
+/* @media (max-width:768px){
     body{
         padding-right :20px;
     }
-}
+} */

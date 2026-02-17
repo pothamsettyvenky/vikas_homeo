@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Footer.css";
-import Logo from "../../asessts/background/bg-hosipital.png";
+import Logo from "../../asessts/logo.jpeg";
 
 import {
   FaFacebookF,

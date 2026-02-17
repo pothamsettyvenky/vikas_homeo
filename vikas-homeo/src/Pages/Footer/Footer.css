@@ -3,6 +3,7 @@
   --opacitygreen: #1e7f4e85;
   --green-light: #eaf6f0;
   --black: #111111;
+  --blue:#004aad;
   --font: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   --parafont: "Poppins", sans-serif;
   --textColor: #1b235a;
@@ -11,9 +12,8 @@
 .footer {
   background: linear-gradient(
     to left,
-    rgba(15, 93, 8, 0.9),
-    rgba(15, 93, 8, 0.7),
-    rgba(15, 93, 8, 0.9)
+   /* green, */
+  var(--blue)
   );
 
   color: white;
@@ -24,7 +24,7 @@
 /* GLASS PANEL */
 
 .footer-glass {
-  max-width: 1200px;
+  max-width: 1600px;
 
   margin: auto;
 
@@ -52,8 +52,8 @@
 /* LOGO */
 
 .footer-logo {
-  width: 160px;
-
+  width: 500px;
+height: 100px;
   cursor: pointer;
 
   margin-bottom: 15px;

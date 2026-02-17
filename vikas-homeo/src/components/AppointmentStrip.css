@@ -74,8 +74,8 @@
   grid-template-rows: auto auto;
 
   grid-template-areas:
-    "hours form"
-    "emergency emergency";
+    "form form"
+    "hours emergency";
 
   border-radius: 16px;
   overflow: hidden;
@@ -251,22 +251,16 @@
   font-family: var(--parafont);
 }
 
-.dot {
-  width: 12px;
 
-  height: 12px;
-
-  border-radius: 50%;
-
-  background: white;
-
-  margin-top: 6px;
-}
 
 /* =====================
    FORM BLOCK
 ===================== */
-
+.appointment-box.form {
+  grid-area: form;
+ text-align: center;
+ height: 120%;
+}
 .appointment-box.form p {
   margin-bottom: 20px;
   grid-area: form;
@@ -286,7 +280,7 @@
 .form-grid input,
 .form-grid select {
   padding: 12px 16px;
-
+font-size: 18px;
   border-radius: 10px;
 
   border: none;
@@ -295,8 +289,8 @@
 }
 
 .submit-btn {
-  margin-top: 15px;
-
+  margin-top: 30px;
+font-size: 24px;
   width: 100%;
 
   padding: 14px;
@@ -371,6 +365,7 @@
       "emergency";
   }
   .appointment-box.hours {
+    grid-area:hours;
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   }

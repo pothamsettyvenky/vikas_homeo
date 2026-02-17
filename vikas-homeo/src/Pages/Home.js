@@ -60,7 +60,7 @@ useEffect(() => {
               <div className="slide-content left-text">
                 <div className="slide-text">
                   <h1 className="title" id="main">
-                      <span className="doctor-main">Dr Vikas</span><br/>
+                      <span className="doctor-main">Dr  Vikas</span><br/>
   <span className="doctor-sub">Homoeopathy & Naturopathy Clinic</span>
                   </h1>
                   <p>
