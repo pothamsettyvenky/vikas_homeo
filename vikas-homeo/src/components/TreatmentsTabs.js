@@ -4,7 +4,7 @@ import "./TreatmentsTabs.css";
 
 import Anxitey from "../asessts/Treatments/Anxiety.jpg";
 import Pcod from "../asessts/Treatments/Pcod.jpg";
-import Autism from "../asessts/Treatments/Autism.png";
+import Autism from "../asessts/Treatments/Autism.jpg";
 import Hemorrhoids from "../asessts/Treatments/Hemorrhoids.jpg";
 import Prostate from "../asessts/Treatments/Prostate.png";
 import Psorisas1 from "../asessts/Treatments/Psoriasis.svg";
