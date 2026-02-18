@@ -6,7 +6,10 @@ export default function News() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_KEY = "6236eb8a5be86832896372d77515edea";
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const articlesPerPage = 9;
 
   useEffect(() => {
 
@@ -14,9 +17,12 @@ export default function News() {
 
       try {
 
-        const response = await fetch(
-          `https://gnews.io/api/v4/search?q=homoeopathy OR naturopathy&lang=en&max=12&token=${API_KEY}`
-        );
+         const baseURL =
+          window.location.port === "3000"
+            ? "http://192.168.0.127:5000"
+            : "";
+
+        const response = await fetch(`${baseURL}/api/news`);
 
         const data = await response.json();
 
@@ -25,7 +31,7 @@ export default function News() {
         }
 
       } catch (error) {
-        console.error("Error fetching news:", error);
+        console.error("Fetch error:", error);
       }
 
       setLoading(false);
@@ -36,8 +42,26 @@ export default function News() {
 
   }, []);
 
-  return (
+  // Calculate pagination indexes
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
 
+  const currentArticles = articles.slice(
+    indexOfFirstArticle,
+    indexOfLastArticle
+  );
+
+  const totalPages = Math.ceil(articles.length / articlesPerPage);
+
+  const goToPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
+  return (
     <section className="news-page">
 
       <div className="news-container">
@@ -52,49 +76,68 @@ export default function News() {
 
         ) : (
 
-          <div className="news-grid">
+          <>
+            <div className="news-grid">
 
-            {articles.map((article, index) => (
+              {currentArticles.map((article, index) => (
 
-              <a
-                key={index}
-                href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="news-card"
-              >
+                <a
+                  key={index}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="news-card"
+                >
 
-                <img
-                  src={article.image || "/default-news.jpg"}
-                  alt=""
-                  className="news-image"
-                />
+                  <div className="news-content">
 
-                <div className="news-content">
+                    <h3>{article.title}</h3>
 
-                  <h3>{article.title}</h3>
+                    <p>{article.description}</p>
 
-                  <p>{article.description}</p>
+                    <span className="news-date">
+                      {new Date(article.publishedAt)
+                        .toLocaleDateString()}
+                    </span>
 
-                  <span className="news-date">
-                    {new Date(article.publishedAt)
-                      .toLocaleDateString()}
-                  </span>
+                  </div>
 
-                </div>
+                </a>
 
-              </a>
+              ))}
 
-            ))}
+            </div>
 
-          </div>
+            {/* Pagination buttons */}
+            {totalPages > 1 && (
+              <div className="pagination">
+
+                {Array.from({ length: totalPages }, (_, i) => (
+
+                  <button
+                    key={i}
+                    onClick={() => goToPage(i + 1)}
+                    className={
+                      currentPage === i + 1
+                        ? "page-btn active"
+                        : "page-btn"
+                    }
+                  >
+                    {i + 1}
+                  </button>
+
+                ))}
+
+              </div>
+            )}
+
+          </>
 
         )}
 
       </div>
 
     </section>
-
   );
 
 }
