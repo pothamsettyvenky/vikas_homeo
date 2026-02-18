@@ -1,294 +1,402 @@
 :root {
+
   --green: #1e7f4f;
-  --green-dark: #0f5d08;
 
-  --glass-bg: rgba(255, 255, 255, 0.15);
-  --glass-bg-light: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255,255,255,0.30);
 
-  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-overlay: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.30),
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.18)
+  );
 
-  --heading:   -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --main-gradient: linear-gradient(
+    to right,
+    rgba(2, 96, 173, 1) 0%,
+    rgba(2, 95, 173, 0.95) 35%,
+    rgba(2, 95, 173, 0.5) 70%,
+    rgba(0, 128, 0, 0.45) 100%
+  );
 
-  --body: "Poppins", sans-serif;
+  --font:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "Helvetica Neue", Arial, sans-serif;
+
+  --parafont: "Poppins", sans-serif;
+
 }
+
 
 /* =====================
    PAGE BACKGROUND
 ===================== */
 
 .treatments-page {
-  min-height: 100vh;
-  margin-top: 150px;
+
+  margin-top: 180px;
+
   padding: 100px 20px;
 
-  background: linear-gradient(
-    to left,
-    rgba(15, 93, 8, 0.3) 0%,
-    rgba(255, 255, 255, 0.9) 35%,
-    rgba(255, 255, 255, 0.9) 65%,
-    rgba(15, 93, 8, 0.3) 100%
-  );
+  position: relative;
+
+  background:
+
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,0.18), transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,0.12), transparent 45%),
+    radial-gradient(circle at 70% 20%, rgba(0,128,0,0.18), transparent 40%),
+
+    var(--main-gradient);
+
 }
+
 
 /* =====================
    GLASS CONTAINER
 ===================== */
 
 .treatments-container {
+
   max-width: 1200px;
 
   margin: auto;
 
-  padding: 50px;
+  padding: 60px;
 
-  border-radius: 20px;
+  position: relative;
 
-  background: var(--glass-bg);
+  border-radius: 26px;
 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.08)
+  );
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
 
   border: 1px solid var(--glass-border);
 
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 20px 60px rgba(2,96,173,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.25);
 
-  text-align: center;
 }
 
-.treatment-card h3{
-  color: black;
+
+/* LIGHT OVERLAY */
+
+.treatments-container::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: var(--glass-overlay);
+
+  pointer-events: none;
+
+  z-index: 1;
+
 }
-.treatment-card p{
-  color: black;
+
+
+/* SHINY ANIMATION */
+
+.treatments-container::after {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -60%;
+
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.40),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: treatmentsShine 7s infinite;
+
+  z-index: 2;
 }
+
+
+@keyframes treatmentsShine {
+
+  0% { left: -60%; }
+
+  100% { left: 130%; }
+
+}
+
+
+/* keep content above shine */
+
+.treatments-container > * {
+
+  position: relative;
+
+  z-index: 3;
+
+}
+
 
 /* =====================
-   TITLE
+   TITLES
 ===================== */
 
 .treatments-subtitle {
-  color: var(--green);
+
+  text-align: center;
+
+  color: white;
 
   letter-spacing: 3px;
 
-  font-family: var(--body);
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 38px;
+font-weight: 600;
+  font-family: var(--parafont);
 
-  margin-bottom: 10px;
 }
 
 .treatments-title {
-  font-size: 38px;
-  text-transform: uppercase;
-  font-family: var(--heading);
-  letter-spacing: 2px;
-  color: #1c2b4a;
 
-  margin-bottom: 50px;
+  text-align: center;
+
+  font-size: 54px;
+
+  color: white;
+
+  margin-bottom: 40px;
+
+  font-family: var(--font);
+
 }
 
+
 /* =====================
-   GLASS TABS
+   TABS
 ===================== */
 
 .treatments-tabs {
+
   display: flex;
 
   justify-content: center;
 
   gap: 20px;
 
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 
-  flex-wrap: wrap;
 }
 
 .tab-button {
-  padding: 12px 30px;
+
+  padding: 12px 26px;
 
   border-radius: 30px;
 
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255,255,255,0.35);
 
-  background: var(--glass-bg-light);
+  background: rgba(255,255,255,0.15);
+  font-size: 18px;
+
+  color: black;
+
+  cursor: pointer;
 
   backdrop-filter: blur(10px);
 
-  color: var(--green-dark);
+  transition: 0.3s;
 
-  font-family: var(--body);
-
-  font-size: 24px;
-  font-family: var(--heading);
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
-
-.tab-button:hover {
-  background: var(--green);
-
-  color: white;
-
-  transform: translateY(-2px);
 }
 
 .tab-button.active {
-  background: var(--green);
+
+  background: rgba(255,255,255,0.35);
+  background-color: orange;
+  font-size: 28px;
 
   color: white;
 
-  box-shadow: 0 5px 20px rgba(30, 127, 79, 0.5);
+  font-weight: bold;
+
 }
+
+.tab-button:hover {
+
+  transform: translateY(-2px);
+
+}
+
 
 /* =====================
    GRID
 ===================== */
 
 .treatments-grid {
+
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
   gap: 30px;
+
 }
 
+
 /* =====================
-   GLASS CARD
+   CARD GLASS EFFECT
 ===================== */
 
 .treatment-card {
-  display: flex;
 
-  flex-direction: column;
-
-  background: rgba(255, 255, 255, 0.25);
-
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-
-  border-radius: 18px;
-
-  border: 1px solid var(--glass-border);
+  border-radius: 20px;
 
   overflow: hidden;
 
-  cursor: pointer;
+  position: relative;
 
-  transition: all 0.4s ease;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.08)
+  );
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.30);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  transition: 0.4s;
+
 }
+
 
 .treatment-card:hover {
-  transform: translateY(-10px) scale(1.02);
 
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 30px 60px rgba(2,96,173,0.45);
+
 }
 
-/* =====================
-   IMAGE
-===================== */
+
+/* CARD IMAGE */
 
 .treatment-img {
-  width: 100%;
+
+width: 100%;
 
   height: 180px;
 
-  object-fit: cover;
+  object-fit: contain;
 
-  transition: 0.4s;
+  background: rgba(255,255,255,0.95);
+
+  border-radius: 14px;
+
+  padding: 12px;
+
+  margin-bottom: 15px;
+
+  /* glass border */
+  border: 1px solid rgba(255,255,255,0.6);
+
+  /* glass shadow */
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 -1px 0 rgba(0,0,0,0.05);
+
+  transition: all 0.35s ease;
+
 }
-
 .treatment-card:hover .treatment-img {
-  transform: scale(1.05);
+
+
+
+  transform: scale(1.06);
+
+  box-shadow:
+    0 15px 40px rgba(2,96,173,0.35),
+    inset 0 1px 0 rgba(255,255,255,1);
+
 }
 
-/* =====================
-   CONTENT
-===================== */
+
+/* CONTENT */
 
 .treatment-content {
+
   padding: 20px;
-
-  text-align: center;
-}
-
-.treatment-name {
-  font-size: 20px;
-
-  font-family: var(--heading);
-
-  color: #1c2b4a;
-
-  margin-bottom: 10px;
-}
-
-.treatment-description {
-  font-size: 15px;
-
-  font-family: var(--body);
 
   color: black;
 
-  line-height: 1.6;
 }
 
-/* =====================
-   TABLET VIEW
-===================== */
+.treatment-name {
 
-@media (max-width: 1024px) {
-  .treatments-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  font-size: 28px;
+
+  margin-bottom: 10px;
+
+  font-family: var(--font);
+
 }
 
+.treatment-description {
+
+  font-size: 20px;
+
+  opacity: 0.95;
+  font-weight: bold;
+
+  font-family: var(--parafont);
+
+}
+
+
 /* =====================
-   MOBILE VIEW
+   MOBILE
 ===================== */
 
 @media (max-width: 768px) {
-  .treatments-page {
-    padding: 60px 15px;
+  .treatments-tabs{
+    flex-direction: column;
   }
 
   .treatments-container {
-    padding: 25px;
+
+    padding: 30px;
+
   }
-.treatment-card h3{
-  font-size: 22px;
-}
-.treatment-card p{
- font-size: 18px;
-}
+
   .treatments-title {
-    font-size: 28px;
+
+    font-size: 34px;
+    font-weight: bold;
+
+
   }
 
-  .treatments-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .treatment-img {
-    height: 200px;
-  }
-}
-
-/* =====================
-   SMALL MOBILE
-===================== */
-
-@media (max-width: 480px) {
-  .treatment-name {
-    font-size: 18px;
-    color: black;
-  }
-
-  .treatment-description {
-    font-size: 14px;
-    color: black;
-  }
 }

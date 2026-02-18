@@ -587,6 +587,9 @@
    MOBILE
 ===================== */
 @media (max-width: 767px) {
+  .home{
+    margin-top: 170px;
+  }
   .doctor-profile,
   .doctor-profile.reverse {
     flex-direction: column;
@@ -625,6 +628,12 @@
   .doctor-portrait img {
     max-width: 280px;
   }
+  .slide-content{
+    margin-top: 20px;
+  }
+  .slide-text h1{
+    font-size: 38px;
+  }
 }
 .our-doctors {
   position: relative;
@@ -635,4 +644,16 @@
     rgba(2, 95, 173) 70%,
     rgba(0, 128, 0, 0.96) 100%
   );
+}
+@media (max-width: 468px){
+  .slide-text h1{
+    font-size: 28px;
+  }
+  
+.slide-text p{
+ line-height: 1.2;
+}
+    .slide-content{
+      margin-top: 20px;
+    }
 }

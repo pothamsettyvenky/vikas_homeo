@@ -7,7 +7,7 @@
     },
     {
       "name": "Schizophrenia",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/scc.jpg",
       "description": "Supports mental stability, emotional balance, and improves overall neurological health."
     },
     {
@@ -17,62 +17,62 @@
     },
     {
       "name": "Pneumonia",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/pnenumonia.jpg",
       "description": "Strengthens lung function and supports faster recovery from respiratory infections."
     },
     {
       "name": "Paralysis",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/paralasis.jpg",
       "description": "Stimulates nerve healing, improves muscle strength, and supports mobility recovery."
     },
     {
       "name": "Infertility",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/fertility.jpg",
       "description": "Addresses hormonal imbalance and improves reproductive health naturally."
     },
     {
       "name": "Migraine",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/migrane.jpg",
       "description": "Reduces frequency and severity of headaches by treating root causes."
     },
     {
       "name": "Tumors",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/tumor.jpg",
       "description": "Supports immune function and helps control abnormal tissue growth."
     },
     {
       "name": "Ankylosing spondylitis",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Spondylitis.jpg",
       "description": "Helps relieve joint stiffness, inflammation, and improves spinal flexibility."
     },
     {
       "name": "Haemorrhoids (Piles)",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Hemorrhoids.jpg",
       "description": "Relieves pain, bleeding, and swelling while promoting healing naturally."
     },
     {
       "name": "Varicose veins",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/veins.jpg",
       "description": "Improves blood circulation and reduces vein swelling and discomfort."
     },
     {
       "name": "Burns",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/burns.png",
       "description": "Promotes faster healing, reduces pain, and minimizes scar formation."
     },
     {
       "name": "Ulcers",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/ulcers.jpg",
       "description": "Supports healing of stomach lining and reduces acidity and discomfort."
     },
     {
       "name": "Thyroid problems",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/thyroid.png",
       "description": "Helps regulate thyroid hormones and improve metabolism naturally."
     },
     {
       "name": "Autism",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Autism.jpg",
       "description": "Supports cognitive development, behavior improvement, and emotional balance."
     },
     {
@@ -180,17 +180,17 @@
   "naturopathy": [
     {
       "name": "Arthritis",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Arthritis.png",
       "description": "Reduces joint inflammation and improves mobility naturally."
     },
     {
       "name": "PCOD",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Pcod.jpg",
       "description": "Restores hormonal balance through diet and natural therapy."
     },
     {
       "name": "Thyroid disorders",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/thyroid.png",
       "description": "Improves thyroid function and metabolism naturally."
     },
     {
@@ -205,7 +205,7 @@
     },
     {
       "name": "Obesity",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Obesity.jpg",
       "description": "Promotes natural weight loss and metabolic balance."
     },
     {
@@ -215,12 +215,12 @@
     },
     {
       "name": "Stress management",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/stress.jpg",
       "description": "Reduces stress and improves mental wellness."
     },
     {
       "name": "Pain management",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/pain.jpg",
       "description": "Relieves pain and improves body function naturally."
     },
     {
@@ -235,27 +235,27 @@
     },
     {
       "name": "Sciatica",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/sciatica.jpg",
       "description": "Relieves nerve pain and improves mobility."
     },
     {
       "name": "Migraine",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/migrane.jpg",
       "description": "Reduces headache frequency naturally."
     },
     {
       "name": "Spondylitis",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Spondylitis.jpg",
       "description": "Improves spine flexibility and reduces inflammation."
     },
     {
       "name": "Back pain",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images",
       "description": "Relieves muscle tension and improves spinal health."
     },
     {
       "name": "Anxiety",
-      "image": "/asessts/Treatments/Anxiety.jpg",
+      "image": "/images/Anxiety.jpg",
       "description": "Promotes relaxation and emotional balance naturally."
     }
   ]

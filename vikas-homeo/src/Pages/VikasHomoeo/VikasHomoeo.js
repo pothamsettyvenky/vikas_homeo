@@ -78,7 +78,7 @@ const navigate = useNavigate();
         </div>
 
         <div className="about-content">
-          <p className="about-subtitle">VIKAS HOMOEOPATHY</p>
+          <p className="about-subtitle">Dr VIKAS <span className="subtitle-line">HOMOEOPATHY & NATUROPATHY</span></p>
 
           <h2 className="about-title">Pioneering Holistic Homeopathic Healing</h2>
 

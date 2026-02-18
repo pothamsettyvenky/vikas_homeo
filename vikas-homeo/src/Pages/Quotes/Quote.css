@@ -1,0 +1,264 @@
+:root {
+  --gradient: linear-gradient(
+    to right,
+    rgba(2, 96, 173, 1) 0%,
+    rgba(2, 95, 173, 0.95) 35%,
+    rgba(2, 95, 173, 0.5) 70%,
+    rgba(0, 128, 0, 0.45) 100%
+  );
+
+  --glass: rgba(255, 255, 255, 0.12);
+
+  --border: rgba(255, 255, 255, 0.3);
+  --font1:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --parafont: "Poppins", sans-serif;
+}
+
+/* PAGE BACKGROUND */
+
+.quotes-page {
+  margin-top: 170px;
+  padding: 120px 20px;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.18), transparent),
+    radial-gradient(circle at 80% 70%, rgba(0, 128, 0, 0.18), transparent),
+    var(--gradient);
+}
+
+/* CONTAINER */
+
+.quotes-container {
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 60px;
+
+  border-radius: 24px;
+
+  background: var(--glass);
+
+  backdrop-filter: blur(25px);
+
+  border: 1px solid var(--border);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* SHINE EFFECT */
+
+.quotes-container::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -60%;
+
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: shine 8s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 130%;
+  }
+}
+
+/* TITLE */
+
+.quotes-title {
+  text-align: center;
+  font-family: var(--font1);
+  font-size: 42px;
+
+  color: white;
+
+  margin-bottom: 60px;
+}
+
+/* CARD */
+
+.quote-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 40px;
+
+  margin-bottom: 60px;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ALTERNATING */
+
+.quote-card.right {
+  flex-direction: row-reverse;
+}
+
+/* IMAGE */
+
+.quote-image {
+  width: 260px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border-radius: 18px;
+
+  padding: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.quote-image img {
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 12px;
+}
+
+/* TEXT */
+
+.quote-content {
+  flex: 1;
+
+  color: white;
+}
+
+.quote-text {
+  font-size: 28px;
+
+  line-height: 1.6;
+}
+
+.quote-author {
+  margin-top: 15px;
+
+  font-size: 22px;
+
+  font-weight: bold;
+}
+@media (max-width: 1024px) {
+  .quote-card {
+    gap: 25px;
+
+    padding: 25px;
+  }
+
+  .quote-image {
+    width: 220px;
+
+    padding: 12px;
+  }
+
+  .quote-text {
+    font-size: 24px;
+  }
+
+  .quote-author {
+    font-size: 20px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .quote-card {
+    flex-direction: column;
+
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .quote-card.right {
+    flex-direction: column;
+  }
+  .quote-image {
+    width: 200px;
+
+    padding: 12px;
+  }
+
+  .quote-text {
+    font-size: 22px;
+  }
+
+  .quote-author {
+    font-size: 18px;
+  }
+}
+@media (max-width: 468px) {
+  .quotes-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .quote-card {
+    width: calc(90% + 12px);
+
+    margin-left: 10px; /* balance left */
+    margin-right: -10px; /* balance right */
+
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+  .quote-image {
+    width: 170px;
+
+    padding: 10px;
+  }
+
+  .quote-text {
+    font-size: 24px;
+
+    line-height: 1.5;
+  }
+
+  .quote-author {
+    font-size: 16px;
+  }
+}

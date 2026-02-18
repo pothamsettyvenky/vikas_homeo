@@ -67,7 +67,7 @@ export default function Header() {
               About
               {activeMenu === "about" && (
                 <ul className="dropdown">
-                  <li onClick={() => handleNavigate("/about/vikas-homoeopathy")}>
+                  <li onClick={() => handleNavigate("/about/vikas-homeopathy")}>
                     Vikas homoeopathy Clinic
                   </li>
                   <li onClick={() => handleNavigate("/about/dr-vikas")}>
@@ -130,7 +130,7 @@ export default function Header() {
 
             <li
               className="menu-item"
-              onClick={() => handleNavigate("/homoeopathy_Kit")}
+              onClick={() => handleNavigate("/Homeopathy_Kit")}
             >
               homoeopathy Kit
             </li>

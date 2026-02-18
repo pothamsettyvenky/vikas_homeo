@@ -2,11 +2,13 @@
 
   --green: #1e7f4f;
   --green-dark: #0f5d08;
-
+--blue: #004aad;
   --glass: rgba(255,255,255,0.18);
   --glass-border: rgba(255,255,255,0.35);
 --fontcolor: #1c2b4a;
-  --font:"Gill Sans", Calibri, sans-serif;
+   --font1:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   --parafont:"Poppins", sans-serif;
 
 }
@@ -66,8 +68,8 @@
 
   background: linear-gradient(
     135deg,
-    rgba(30,127,79,0.65),
-    rgba(15,93,8,0.4)
+    rgba(30,127,79,0.3),
+    rgba(15,93,8,0.7)
   );
 
   backdrop-filter: blur(6px);
@@ -104,13 +106,13 @@
 
   color: #ffffff;
 
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 
   margin-bottom: 10px;
 
   font-family: var(--parafont);
 
-  font-size: 24px;
+  font-size: 32px;
 font-weight: bold;
   opacity: 0.9;
 
@@ -122,7 +124,7 @@ font-weight: bold;
 
   margin-bottom: 60px;
 
-  color: var(--fontcolor);
+  color: var(--blue);
 
   font-family: var(--font);
 
@@ -285,10 +287,14 @@ font-weight: bold;
     padding: 70px 0;
 
   }
+  .subtitle{
+    font-size: 24px;
+    font-weight: bold;
+  }
 
   .title {
 
-    font-size: 28px;
+    font-size: 38px;
 
   }
 

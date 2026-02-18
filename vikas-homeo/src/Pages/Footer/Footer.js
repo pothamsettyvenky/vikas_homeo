@@ -25,12 +25,12 @@ export default function Footer() {
         <div className="footer-container">
 
 
-          {/* LEFT */}
-          <div className="footer-section">
+          {/* LEFT COLUMN */}
+          <div className="footer-left">
 
             <img
               src={Logo}
-              alt="Vikas Homeopathy"
+              alt="Vikas Homoeopathy"
               className="footer-logo"
               onClick={() => navigate("/")}
             />
@@ -40,23 +40,25 @@ export default function Footer() {
               restoring balance and improving overall wellness.
             </p>
 
-
             <div className="footer-contact">
 
               <a href="tel:+917396803203">
-                <FaPhoneAlt /> +91 7396803203
+                <FaPhoneAlt />
+                +91 7396803203
               </a>
 
               <a href="mailto:vikashomoeopathy@gmail.com">
-                <FaEnvelope /> vikashomoeopathy@gmail.com
+                <FaEnvelope />
+                vikashomoeopathy@gmail.com
               </a>
 
               <a
-                href="https://www.google.com/maps/place/DR+VIKAS+HOMOEOPATHY+AND+NATUROPATHY+CLINIC/@15.833542,80.361158,17z"
+                href="https://www.google.com/maps/place/DR+VIKAS+HOMOEOPATHY+AND+NATUROPATHY+CLINIC"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaMapMarkerAlt /> Chirala, Andhra Pradesh
+                <FaMapMarkerAlt />
+                Chirala, Andhra Pradesh
               </a>
 
             </div>
@@ -64,58 +66,83 @@ export default function Footer() {
           </div>
 
 
-          {/* CENTER */}
-          <div className="footer-section">
+          {/* RIGHT COLUMN */}
+          <div className="footer-right">
 
-            <h3>Quick Links</h3>
+            <div>
 
-            <ul className="footer-links">
+              <h3 className="footer-heading">Quick Links</h3>
 
-              <li onClick={() => navigate("/")}>Home</li>
+              <ul className="footer-links">
 
-              <li onClick={() => navigate("/about/vikas-homeopathy")}>
-                About Clinic
-              </li>
+                <li onClick={() => navigate("/")}>
+                  Home
+                </li>
 
-              <li onClick={() => navigate("/treatments")}>
-                Treatments
-              </li>
+                <li onClick={() => navigate("/about/vikas-homeopathy")}>
+                  About Clinic
+                </li>
 
-              <li onClick={() => navigate("/appointment")}>
-                Book Appointment
-              </li>
+                <li onClick={() => navigate("/treatments")}>
+                  Treatments
+                </li>
 
-              <li onClick={() => navigate("/contact")}>
-                Contact
-              </li>
+                <li onClick={() => navigate("/appointment")}>
+                  Book Appointment
+                </li>
 
-            </ul>
+                <li onClick={() => navigate("/contact")}>
+                  Contact
+                </li>
 
-          </div>
+              </ul>
+
+            </div>
 
 
-          {/* RIGHT */}
-          <div className="footer-section">
+            <div>
 
-            <h3>Follow Us</h3>
+              <h3 className="footer-heading">Follow Us</h3>
 
-            <div className="footer-social">
+              <div className="footer-social">
 
-              <a href="www.facebook.com" className="social-circle">
-                <FaFacebookF />
-              </a>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-circle"
+                >
+                  <FaFacebookF />
+                </a>
 
-              <a href="www.instagram.com" className="social-circle">
-                <FaInstagram />
-              </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-circle"
+                >
+                  <FaInstagram />
+                </a>
 
-              <a href="www.youtube.com" className="social-circle">
-                <FaYoutube />
-              </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-circle"
+                >
+                  <FaYoutube />
+                </a>
 
-              <a href="www.whatsapp.com" className="social-circle">
-                <FaWhatsapp />
-              </a>
+                <a
+                  href="https://whatsapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-circle"
+                >
+                  <FaWhatsapp />
+                </a>
+
+              </div>
 
             </div>
 
@@ -127,7 +154,7 @@ export default function Footer() {
       </div>
 
 
-      {/* Bottom */}
+      {/* COPYRIGHT */}
 
       <div className="footer-bottom">
 

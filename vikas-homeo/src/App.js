@@ -9,6 +9,8 @@ import Footer from "../src/Pages/Footer/Footer"
 import VikasHomoeo from "./Pages/VikasHomoeo/VikasHomoeo";
 import Contact from "./Pages/Contact/Contact";
 import AllTreatments from "./Pages/Treatments/AllTreatments";
+import Quotes from "./Pages/Quotes/Quotes"
+import News from "./Pages/News/News"
 function App() {
   return (
     <>
@@ -21,6 +23,8 @@ function App() {
         <Route path="/about/vikas-homeopathy" element={<VikasHomoeo/>}/>
         <Route path = "/Contact" element={<Contact/>}/>
         <Route path = "/treatments" element={<AllTreatments/>}/>
+        <Route path="/quotes" element= {<Quotes/>}/>
+        <Route path="/news" element = {<News/>}/>
       </Routes>
       <Footer />
     </>
