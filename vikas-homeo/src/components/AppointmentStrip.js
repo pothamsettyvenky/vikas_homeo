@@ -1,20 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AppointmentStrip.css";
-import emailjs from "@emailjs/browser"
 import AddressAutocomplete from "./AddressAutocomplete";
 
 export default function AppointmentStrip() {
 
   const stripRef = useRef();
 
-  const sendEmails = (e) =>{
-    emailjs.sendForm("service_dubal8n",
-        "template_2y08i23",
-        stripRef.current,
-        "sr-EteUtO99BCzWtv",).then(()=>{
-alert("Appointment request sent successfully");
-        })
-  }
+
 
   const [formData, setFormData] = useState({
     name: "",

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./News.css";
 
 import { db } from "../../firebase";
@@ -15,12 +15,20 @@ export default function News() {
 
   const today = new Date().toISOString().split("T")[0];
 
-  // Upload image to Cloudinary
-  const uploadImage = async (imageUrl) => {
+
+  /* --------------------------
+     Upload image to Cloudinary
+  -------------------------- */
+
+  const uploadImage = useCallback(async (imageUrl) => {
 
     try {
 
       if (!imageUrl) return null;
+
+      if (imageUrl.includes("res.cloudinary.com")) {
+        return imageUrl;
+      }
 
       const fd = new FormData();
 
@@ -37,36 +45,25 @@ export default function News() {
 
       const data = await res.json();
 
-      if (data.secure_url) {
+      return data.secure_url || imageUrl;
 
-        console.log("Cloudinary success:", data.secure_url);
-
-        return data.secure_url;
-
-      } else {
-
-        console.log("Cloudinary failed, using original");
-
-        return imageUrl;
-
-      }
-
-    } catch (err) {
-
-      console.log("Cloudinary error:", err);
+    }
+    catch {
 
       return imageUrl;
 
     }
 
-  };
+  }, []);
 
-  // Fetch backup from Firestore
-  const fetchFromFirestore = async () => {
+
+  /* --------------------------
+     Fetch Firestore backup
+  -------------------------- */
+
+  const fetchFromFirestore = useCallback(async () => {
 
     try {
-
-      console.log("Fetching from Firestore backup");
 
       const ref = doc(db, "news", today);
 
@@ -76,137 +73,148 @@ export default function News() {
 
         const data = snap.data().articles;
 
-        console.log("Firestore data:", data);
-
         setArticles(data);
 
       } else {
-
-        console.log("No Firestore backup found");
 
         setArticles([]);
 
       }
 
-    } catch (err) {
-
-      console.log("Firestore error:", err);
+    }
+    catch {
 
       setArticles([]);
 
     }
 
-  };
+  }, [today]);
 
-  // Fetch from GNews
-  const fetchFromGNews = async () => {
 
-  try {
+  /* --------------------------
+     Fetch from GNews
+  -------------------------- */
 
-    const res = await fetch(
-      `https://gnews.io/api/v4/search?q=homeopathy OR homoeopathy OR naturopathy OR ayurveda&max=12&token=${API_KEY}`
-    );
+  const fetchFromGNews = useCallback(async () => {
 
-    const data = await res.json();
+    try {
 
-    let gnewsArticles = [];
+      const res = await fetch(
+        `https://gnews.io/api/v4/search?q=homeopathy OR homoeopathy OR naturopathy OR ayurveda&max=12&token=${API_KEY}`
+      );
 
-    if (data.articles?.length > 0) {
+      const data = await res.json();
 
-      gnewsArticles = data.articles;
+      let gnewsArticles = [];
+
+      if (data.articles?.length > 0) {
+
+        gnewsArticles = data.articles;
+
+      }
+      else if (
+        data.articlesRemovedFromResponse?.historicalArticles
+      ) {
+
+        gnewsArticles =
+          data.articlesRemovedFromResponse.historicalArticles;
+
+      }
+      else {
+
+        await fetchFromFirestore();
+        return;
+
+      }
+
+
+      /* show instantly */
+
+      const instantArticles =
+        gnewsArticles.map(article => ({
+
+          title: article.title,
+          description: article.description,
+          url: article.url,
+          image: article.image,
+          publishedAt: article.publishedAt
+
+        }));
+
+      setArticles(instantArticles);
+
+      setLoading(false);
+
+
+      /* upload images in background */
+
+      const processed = await Promise.all(
+
+        gnewsArticles.map(async article => {
+
+          const imageUrl =
+            await uploadImage(article.image);
+
+          return {
+
+            title: article.title,
+            description: article.description,
+            url: article.url,
+            image: imageUrl,
+            publishedAt: article.publishedAt
+
+          };
+
+        })
+
+      );
+
+
+      /* save backup */
+
+      await setDoc(doc(db, "news", today), {
+
+        articles: processed,
+        createdAt: new Date()
+
+      });
 
     }
-    else if (data.articlesRemovedFromResponse?.historicalArticles) {
-
-      gnewsArticles =
-        data.articlesRemovedFromResponse.historicalArticles;
-
-    }
-    else {
+    catch {
 
       await fetchFromFirestore();
-      return;
+
+      setLoading(false);
 
     }
 
-    // STEP 1: show instantly using original images
-    const instantArticles = gnewsArticles.map(article => ({
-      title: article.title,
-      description: article.description,
-      url: article.url,
-      image: article.image,
-      publishedAt: article.publishedAt
-    }));
+  }, [API_KEY, today, fetchFromFirestore, uploadImage]);
 
-    setArticles(instantArticles);
 
-    setLoading(false);
-
-    // STEP 2: upload images in background (no waiting)
-    const processed = await Promise.all(
-
-  gnewsArticles.map(async article => {
-
-    let imageUrl = article.image;
-
-    // ✅ Prevent duplicate upload
-    if (
-      imageUrl &&
-      !imageUrl.includes("res.cloudinary.com")
-    ) {
-      imageUrl = await uploadImage(imageUrl);
-    }
-
-    return {
-      title: article.title,
-      description: article.description,
-      url: article.url,
-      image: imageUrl,
-      publishedAt: article.publishedAt
-    };
-
-  })
-
-);
-
-    // STEP 3: save to Firestore
-    await setDoc(doc(db, "news", today), {
-
-      articles: processed,
-      createdAt: new Date()
-
-    });
-
-    console.log("Saved to Firestore");
-
-  }
-  catch {
-
-    await fetchFromFirestore();
-
-    setLoading(false);
-
-  }
-
-};
+  /* --------------------------
+     useEffect
+  -------------------------- */
 
   useEffect(() => {
 
-  const load = async () => {
+    const load = async () => {
 
-    // ✅ Load Firestore backup instantly
-    await fetchFromFirestore();
+      await fetchFromFirestore();
 
-    // ✅ Then update from GNews silently
-    await fetchFromGNews();
+      await fetchFromGNews();
 
-    setLoading(false);
+      setLoading(false);
 
-  };
+    };
 
-  load();
+    load();
 
-}, []);
+  }, [fetchFromFirestore, fetchFromGNews]);
+
+
+  /* --------------------------
+     Render
+  -------------------------- */
 
   return (
 
@@ -218,11 +226,25 @@ export default function News() {
           Latest Homoeopathy & Naturopathy News
         </h2>
 
-        {loading ? (
 
-          <p>Loading...</p>
+        {loading  ? (
 
-        ) : articles.length === 0 ? (
+  <div className="homeo-loader-container">
+
+    <div className="homeo-bottle">
+
+      <div className="globule g1"></div>
+      <div className="globule g2"></div>
+      <div className="globule g3"></div>
+      <div className="globule g4"></div>
+
+    </div>
+
+    <h3 className="homeo-loading-text">
+      Preparing your remedies...
+    </h3>
+
+  </div>) : articles.length === 0 ? (
 
           <p>No news available</p>
 
@@ -257,10 +279,9 @@ export default function News() {
                   <p>{article.description}</p>
 
                   <span>
-
-                    {new Date(article.publishedAt)
-                      .toLocaleDateString()}
-
+                    {new Date(
+                      article.publishedAt
+                    ).toLocaleDateString()}
                   </span>
 
                 </div>
