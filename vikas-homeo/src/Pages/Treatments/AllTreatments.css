@@ -14,10 +14,10 @@
 
   --main-gradient: linear-gradient(
     to right,
-    rgba(2, 96, 173, 1) 0%,
-    rgba(2, 95, 173, 0.95) 35%,
-    rgba(2, 95, 173, 0.5) 70%,
-    rgba(0, 128, 0, 0.45) 100%
+    rgba(2, 95, 173) 0%,
+    rgba(2, 95, 173) 35%,
+    rgba(2, 95, 173) 50%,
+    rgba(0, 128, 0) 100%
   );
 
   --font:
@@ -43,9 +43,9 @@
 
   background:
 
-    radial-gradient(circle at 15% 30%, rgba(255,255,255,0.18), transparent 40%),
+    /* radial-gradient(circle at 15% 30%, rgba(255,255,255,0.18), transparent 40%),
     radial-gradient(circle at 85% 70%, rgba(255,255,255,0.12), transparent 45%),
-    radial-gradient(circle at 70% 20%, rgba(0,128,0,0.18), transparent 40%),
+    radial-gradient(circle at 70% 20%, rgba(0,128,0,0.18), transparent 40%), */
 
     var(--main-gradient);
 
@@ -356,8 +356,9 @@ width: 100%;
 
 .treatment-name {
 
-  font-size: 28px;
-
+  font-size: 24px;
+  font-weight: bold;
+color: white;
   margin-bottom: 10px;
 
   font-family: var(--font);
@@ -366,7 +367,7 @@ width: 100%;
 
 .treatment-description {
 
-  font-size: 20px;
+  font-size: 18px;
 
   opacity: 0.95;
   font-weight: bold;

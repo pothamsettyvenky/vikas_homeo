@@ -8,6 +8,7 @@
   --font:
     -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   --parafont: "Poppins", sans-serif;
 }
 
@@ -17,67 +18,37 @@
 
 .appointment-strip {
   position: relative;
-
   margin-top: -120px;
-
   padding: 0 20px 80px;
-
   z-index: 10;
 
   opacity: 0;
-
   transform: translateY(60px);
-
   transition: all 0.8s ease;
 }
 
 .appointment-strip.animate {
   opacity: 1;
-
   transform: translateY(0);
 }
 
 /* =====================
-   GLASS WRAPPER
+   WRAPPER GRID
 ===================== */
 
 .appointment-wrapper {
-  /* position: relative;
-
-  max-width: 1300px;
-
-  margin: auto;
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr 1.3fr;
-
-  border-radius: 18px;
-
-  overflow: hidden;
-
-
-
-  background: linear-gradient(
-    135deg,
-    rgba(30, 127, 79, 0.75),
-    rgba(15, 93, 8, 0.75)
-  ); 
-  */
-
   position: relative;
-
   max-width: 1360px;
   margin: 0 auto;
 
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
 
   grid-template-areas:
-    "form form"
-    "hours emergency";
+    "form form form"
+    "hours address emergency";
 
   border-radius: 16px;
   overflow: hidden;
@@ -100,13 +71,11 @@
     inset 0 1px 0 rgba(254, 93, 93, 0.25);
 }
 
-/* GLASS LIGHT OVERLAY */
+/* LIGHT OVERLAY */
 
 .appointment-wrapper::before {
   content: "";
-
   position: absolute;
-
   inset: 0;
 
   background: linear-gradient(
@@ -120,11 +89,10 @@
   pointer-events: none;
 }
 
-/* GLASS SHINE ANIMATION */
+/* SHINE ANIMATION */
 
 .appointment-wrapper::after {
   content: "";
-
   position: absolute;
 
   top: 0;
@@ -141,7 +109,6 @@
   );
 
   transform: skewX(-20deg);
-
   animation: glassShine 7s infinite;
 }
 
@@ -149,7 +116,6 @@
   0% {
     left: -60%;
   }
-
   100% {
     left: 130%;
   }
@@ -160,50 +126,270 @@
 ===================== */
 
 .appointment-box {
-  padding: 50px 40px;
-
+  padding: 25px 30px;
   color: white;
-
   position: relative;
+  text-align: center;
 }
+
+/* =====================
+   FORM BLOCK
+===================== */
+
+.appointment-box.form {
+  grid-area: form;
+  padding: 40px;
+}
+/* =========================
+   AUTOCOMPLETE CONTAINER
+========================= */
+
+.react-autosuggest__container {
+  position: relative;
+  width: 100%;
+  font-family: var(--parafont);
+}
+
+/* INPUT FIELD */
+
+.react-autosuggest__input {
+  width: 100%;
+  padding: 12px 16px;
+
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  font-size: 16px;
+  font-family: var(--parafont);
+
+  background: rgba(255,255,255,0.95);
+  color: #222;
+
+  transition: all 0.25s ease;
+}
+
+.react-autosuggest__input:focus {
+  background: white;
+  box-shadow: 0 0 0 2px rgba(30,127,79,0.35);
+}
+
+/* DROPDOWN CONTAINER */
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+
+  display: block;
+
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+
+  background: rgba(255,255,255,0.98);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.15);
+
+  max-height: 220px;
+
+  overflow-y: auto;
+
+  z-index: 9999;
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+}
+
+/* LIST */
+
+.react-autosuggest__suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+}
+
+/* EACH ITEM */
+
+.react-autosuggest__suggestion {
+
+  padding: 12px 16px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  color: #222;
+
+  transition: all 0.2s ease;
+
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+
+}
+
+/* LAST ITEM REMOVE BORDER */
+
+.react-autosuggest__suggestion:last-child {
+  border-bottom: none;
+}
+
+/* HOVER */
+
+.react-autosuggest__suggestion--highlighted {
+
+  background: linear-gradient(
+    90deg,
+    rgba(30,127,79,0.08),
+    rgba(30,127,79,0.15)
+  );
+
+  color: var(--green-dark);
+
+  padding-left: 20px;
+
+}
+
+/* SCROLLBAR */
+
+.react-autosuggest__suggestions-container--open::-webkit-scrollbar {
+  width: 6px;
+}
+
+.react-autosuggest__suggestions-container--open::-webkit-scrollbar-thumb {
+  background: rgba(30,127,79,0.4);
+  border-radius: 10px;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+  .react-autosuggest__input{
+    font-size:16px;
+    padding:14px;
+  }
+
+  .react-autosuggest__suggestion{
+    font-size:16px;
+    padding:14px;
+  }
+
+}
+
+.appointment-box.form h3 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-family: var(--font);
+}
+
+.appointment-box.form p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  font-family: var(--parafont);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 20px 0;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  font-family: var(--parafont);
+}
+
+.submit-btn {
+  margin-top: 20px;
+  font-size: 20px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+
+  background: orange;
+  color: black;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #222;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   HOURS BLOCK
+===================== */
+
 .appointment-box.hours {
   grid-area: hours;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   border-right: 1px solid rgba(255, 255, 255, 0.25);
-  text-align: center;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.appointment-box.hours,
-.appointment-box.emergency {
-  padding: 20px 30px; 
-  min-height: 120px; /* controls row height */
-}
-.appointment-box.emergency h3,
-.appointment-box.hours h3{
-  font-size: 48px;
+
+.appointment-box.hours h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
   font-family: var(--font);
-  font-weight: 500;
-}
-.hours-text {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--parafont);
-  font-size: 28px;
-  text-align: center;
-  font-weight: 500;
 }
 
-/* GLASS DIVIDER */
+.hours-item {
+  margin-bottom: 6px;
+}
+
+.hours-text {
+  font-family: var(--parafont);
+  font-size: 18px;
+  line-height: 1.4;
+}
 
 /* =====================
-   TITLES (UPPERCASE)
+   ADDRESS BLOCK
 ===================== */
 
-.appointment-box h3 {
-  font-size: 48px;
-  margin-bottom: 18px;
-  font-family: var(--font);
+.appointment-box.address {
+  grid-area: address;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.appointment-box.address h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+   font-family: var(--font);
+}
+
+.address-text {
+  font-family: var(--parafont);
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 /* =====================
@@ -212,27 +398,25 @@
 
 .appointment-box.emergency {
   grid-area: emergency;
+
   border-top: 1px solid rgba(255, 255, 255, 0.25);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 40px;
 }
 
-.appointment-box.emergency p {
-  opacity: 0.9;
+.appointment-box.emergency h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+   font-family: var(--font);
 }
 
 .phone {
-  font-size: 28px;
-
+  font-size: 20px;
   font-weight: 500;
-
-  margin-top: 12px;
-
-  letter-spacing: 1px;
-
+  margin-top: 6px;
+  letter-spacing: 0.5px;
   cursor: pointer;
   font-family: var(--font);
   transition: 0.3s;
@@ -240,87 +424,7 @@
 
 .phone:hover {
   transform: scale(1.05);
-
   color: #eaf6f0;
-}
-
-/* =====================
-   HOURS BLOCK
-===================== */
-.hours h3 {
-  text-align: center;
-}
-.hours-item {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 10px;
-  align-items: center;
-
-  font-family: var(--parafont);
-}
-
-/* =====================
-   FORM BLOCK
-===================== */
-.appointment-box.form {
-  grid-area: form;
-  text-align: center;
-  height: 120%;
-}
-.appointment-box.form p {
-  margin-bottom: 20px;
-  grid-area: form;
-  opacity: 0.9;
-
-  font-family: var(--parafont);
-}
-
-.form-grid {
-  display: grid;
-padding: 50px 0px;
-  grid-template-columns: 1fr 1fr;
-
-  gap: 14px;
-}
-
-.form-grid input,
-.form-grid select {
-  padding: 12px 16px;
-  font-size: 18px;
-  border-radius: 10px;
-
-  border: none;
-
-  font-family: var(--parafont);
-}
-
-.submit-btn {
-  margin-top: 30px;
-  font-size: 24px;
-  width: 100%;
-
-  padding: 14px;
-
-  border-radius: 10px;
-
-  border: none;
-
-  background: orange;
-
-  color: black;
-
-  font-weight: bold;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.submit-btn:hover {
-  background: #222;
-
-  transform: translateY(-2px);
 }
 
 /* =====================
@@ -328,28 +432,17 @@ padding: 50px 0px;
 ===================== */
 
 @media (max-width: 1024px) {
+
   .appointment-wrapper {
-    grid-template-columns: 1fr;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas:
+      "form form"
+      "hours address"
+      "emergency emergency";
   }
 
-  .appointment-box.form {
-    grid-column: span 2;
-  }
-  .form h3 {
-    text-align: center;
-  }
-  .hours-item {
-    align-items: center;
-  }
-  .hours-text {
-   font-size: 20px;
-    flex-direction: row;
-    gap: 8px;
-  }
-  .hours-text p {
-    margin: 0;
-    
-  }
 }
 
 /* =====================
@@ -357,67 +450,61 @@ padding: 50px 0px;
 ===================== */
 
 @media (max-width: 768px) {
+
   .appointment-strip {
     margin-top: -60px;
-
     padding: 0 15px 60px;
   }
 
   .appointment-wrapper {
-    display: flex;
-    flex-direction: column;
+
     grid-template-columns: 1fr;
 
     grid-template-areas:
-      "hours"
       "form"
+      "hours"
+      "address"
       "emergency";
-  }
-  .appointment-box.hours {
-    grid-area: hours;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   }
 
   .appointment-box {
-    padding: 30px 20px;
+    padding: 25px 20px;
   }
+
   .appointment-box:not(:first-child) {
-    border-top: 2px solid rgba(255, 255, 255, 0.35);
-  }
-  .appointment-box::after {
-    display: none;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    border-right: none;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
   }
 
-  .phone {
-    font-size: 26px;
-  }
-  .appointment-box.form h3,
-  .appointment-box.hours h3,
-  .appointment-box.emergency h3{
-    font-size: 42px;
-    letter-spacing: 0px;
-  }
-  .appointment-box.form p
-  {
-    font-size: 20px;
-  }
-  
 }
-@media (max-width: 468px){
-.appointment-box.form h3,
-  .appointment-box.hours h3,
-  .appointment-box.emergency h3{
-    font-size: 38px;
-    font-family: var(--font);
-    font-weight: 600;
-    letter-spacing: 0px;
+
+/* =====================
+   SMALL MOBILE
+===================== */
+
+@media (max-width: 468px) {
+
+  .appointment-box h3 {
+    font-size: 24px;
   }
-   .hours-text {
-    font-size: 18px;
-   }
+
+  .hours-text,
+  .address-text,
+  .phone {
+    font-size: 16px;
+  }
+
+  .appointment-box.form h3 {
+    font-size: 26px;
+    
+  }
+
+  .appointment-box.form p {
+    font-size: 16px;
+  }
+
 }

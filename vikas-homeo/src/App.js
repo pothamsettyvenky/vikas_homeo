@@ -11,10 +11,12 @@ import Contact from "./Pages/Contact/Contact";
 import AllTreatments from "./Pages/Treatments/AllTreatments";
 import Quotes from "./Pages/Quotes/Quotes"
 import News from "./Pages/News/News"
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <>
       <Header />
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about/dr-vikas" element={<VikasClinic />} />

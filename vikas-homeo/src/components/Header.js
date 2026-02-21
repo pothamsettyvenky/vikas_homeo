@@ -134,6 +134,12 @@ export default function Header() {
             >
               homoeopathy Kit
             </li>
+             <li
+              className="menu-item"
+              onClick={() => handleNavigate("/Contact")}
+            >
+              Contact
+            </li>
 
           </ul>
         </nav>

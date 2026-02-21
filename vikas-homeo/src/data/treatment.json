@@ -77,57 +77,57 @@
     },
     {
       "name": "Skin infections",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/skin.jpg",
       "description": "Promotes faster skin healing and strengthens immunity against infections."
     },
     {
       "name": "Asthma",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/",
       "description": "Improves breathing capacity and reduces frequency of asthma attacks."
     },
     {
       "name": "Allergies",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/allergy.jpg",
       "description": "Strengthens immune system and reduces allergic reactions naturally."
     },
     {
       "name": "Autoimmune diseases",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Autoimmune.jpg",
       "description": "Balances immune response and reduces inflammation naturally."
     },
     {
       "name": "Fibroids",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Fibroids.jpg",
       "description": "Helps shrink fibroids and restores hormonal balance naturally."
     },
     {
       "name": "Tuberculosis",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/tuber.svg",
       "description": "Supports recovery, improves lung strength, and boosts immunity."
     },
     {
       "name": "Acne / warts",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/acne.jpg",
       "description": "Clears skin naturally and prevents recurrence without side effects."
     },
     {
       "name": "Gallstones",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/gall.jpg",
       "description": "Supports gallbladder health and reduces stone formation naturally."
     },
     {
       "name": "Renal stones",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/renal.jpg",
       "description": "Helps dissolve kidney stones and prevents recurrence."
     },
     {
       "name": "Hypertension (High BP)",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Hyper.jpg",
       "description": "Regulates blood pressure and improves cardiovascular health."
     },
     {
       "name": "Diabetes",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Diabetis.jpg",
       "description": "Helps regulate blood sugar and improve metabolic balance."
     },
     {

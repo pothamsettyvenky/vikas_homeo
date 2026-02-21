@@ -150,7 +150,8 @@ font-weight: bold;
 
   font-family: var(--parafont);
 
-  color: #1c2b4a;
+  color: white;
+  font-weight: bold;
 
 }
 

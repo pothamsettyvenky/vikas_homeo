@@ -1,67 +1,215 @@
 import React, { useEffect, useState } from "react";
 import "./News.css";
 
+import { db } from "../../firebase";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+
+import { CLOUDINARY_CONFIG } from "../../cloudinary";
+
 export default function News() {
 
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Pagination state
-  const [currentPage, setCurrentPage] = useState(1);
+  const API_KEY = "6236eb8a5be86832896372d77515edea";
 
-  const articlesPerPage = 9;
+  const today = new Date().toISOString().split("T")[0];
+
+  // Upload image to Cloudinary
+  const uploadImage = async (imageUrl) => {
+
+    try {
+
+      if (!imageUrl) return null;
+
+      const fd = new FormData();
+
+      fd.append("file", imageUrl);
+      fd.append("upload_preset", CLOUDINARY_CONFIG.uploadPreset);
+
+      const res = await fetch(
+        `https://api.cloudinary.com/v1_1/${CLOUDINARY_CONFIG.cloudName}/image/upload`,
+        {
+          method: "POST",
+          body: fd
+        }
+      );
+
+      const data = await res.json();
+
+      if (data.secure_url) {
+
+        console.log("Cloudinary success:", data.secure_url);
+
+        return data.secure_url;
+
+      } else {
+
+        console.log("Cloudinary failed, using original");
+
+        return imageUrl;
+
+      }
+
+    } catch (err) {
+
+      console.log("Cloudinary error:", err);
+
+      return imageUrl;
+
+    }
+
+  };
+
+  // Fetch backup from Firestore
+  const fetchFromFirestore = async () => {
+
+    try {
+
+      console.log("Fetching from Firestore backup");
+
+      const ref = doc(db, "news", today);
+
+      const snap = await getDoc(ref);
+
+      if (snap.exists()) {
+
+        const data = snap.data().articles;
+
+        console.log("Firestore data:", data);
+
+        setArticles(data);
+
+      } else {
+
+        console.log("No Firestore backup found");
+
+        setArticles([]);
+
+      }
+
+    } catch (err) {
+
+      console.log("Firestore error:", err);
+
+      setArticles([]);
+
+    }
+
+  };
+
+  // Fetch from GNews
+  const fetchFromGNews = async () => {
+
+  try {
+
+    const res = await fetch(
+      `https://gnews.io/api/v4/search?q=homeopathy OR homoeopathy OR naturopathy OR ayurveda&max=12&token=${API_KEY}`
+    );
+
+    const data = await res.json();
+
+    let gnewsArticles = [];
+
+    if (data.articles?.length > 0) {
+
+      gnewsArticles = data.articles;
+
+    }
+    else if (data.articlesRemovedFromResponse?.historicalArticles) {
+
+      gnewsArticles =
+        data.articlesRemovedFromResponse.historicalArticles;
+
+    }
+    else {
+
+      await fetchFromFirestore();
+      return;
+
+    }
+
+    // STEP 1: show instantly using original images
+    const instantArticles = gnewsArticles.map(article => ({
+      title: article.title,
+      description: article.description,
+      url: article.url,
+      image: article.image,
+      publishedAt: article.publishedAt
+    }));
+
+    setArticles(instantArticles);
+
+    setLoading(false);
+
+    // STEP 2: upload images in background (no waiting)
+    const processed = await Promise.all(
+
+  gnewsArticles.map(async article => {
+
+    let imageUrl = article.image;
+
+    // ✅ Prevent duplicate upload
+    if (
+      imageUrl &&
+      !imageUrl.includes("res.cloudinary.com")
+    ) {
+      imageUrl = await uploadImage(imageUrl);
+    }
+
+    return {
+      title: article.title,
+      description: article.description,
+      url: article.url,
+      image: imageUrl,
+      publishedAt: article.publishedAt
+    };
+
+  })
+
+);
+
+    // STEP 3: save to Firestore
+    await setDoc(doc(db, "news", today), {
+
+      articles: processed,
+      createdAt: new Date()
+
+    });
+
+    console.log("Saved to Firestore");
+
+  }
+  catch {
+
+    await fetchFromFirestore();
+
+    setLoading(false);
+
+  }
+
+};
 
   useEffect(() => {
 
-    const fetchNews = async () => {
+  const load = async () => {
 
-      try {
+    // ✅ Load Firestore backup instantly
+    await fetchFromFirestore();
 
-         const baseURL =
-          window.location.port === "3000"
-            ? "http://192.168.0.127:5000"
-            : "";
+    // ✅ Then update from GNews silently
+    await fetchFromGNews();
 
-        const response = await fetch(`${baseURL}/api/news`);
+    setLoading(false);
 
-        const data = await response.json();
-
-        if (data.articles) {
-          setArticles(data.articles);
-        }
-
-      } catch (error) {
-        console.error("Fetch error:", error);
-      }
-
-      setLoading(false);
-
-    };
-
-    fetchNews();
-
-  }, []);
-
-  // Calculate pagination indexes
-  const indexOfLastArticle = currentPage * articlesPerPage;
-  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-
-  const currentArticles = articles.slice(
-    indexOfFirstArticle,
-    indexOfLastArticle
-  );
-
-  const totalPages = Math.ceil(articles.length / articlesPerPage);
-
-  const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
   };
 
+  load();
+
+}, []);
+
   return (
+
     <section className="news-page">
 
       <div className="news-container">
@@ -72,72 +220,63 @@ export default function News() {
 
         {loading ? (
 
-          <p className="news-loading">Loading news...</p>
+          <p>Loading...</p>
+
+        ) : articles.length === 0 ? (
+
+          <p>No news available</p>
 
         ) : (
 
-          <>
-            <div className="news-grid">
+          <div className="news-grid">
 
-              {currentArticles.map((article, index) => (
+            {articles.map((article, i) => (
 
-                <a
-                  key={index}
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="news-card"
-                >
+              <a
+                key={i}
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="news-card"
+              >
 
-                  <div className="news-content">
+                {article.image && (
 
-                    <h3>{article.title}</h3>
+                  <img
+                    src={article.image}
+                    alt=""
+                    className="news-image"
+                  />
 
-                    <p>{article.description}</p>
+                )}
 
-                    <span className="news-date">
-                      {new Date(article.publishedAt)
-                        .toLocaleDateString()}
-                    </span>
+                <div className="news-content">
 
-                  </div>
+                  <h3>{article.title}</h3>
 
-                </a>
+                  <p>{article.description}</p>
 
-              ))}
+                  <span>
 
-            </div>
+                    {new Date(article.publishedAt)
+                      .toLocaleDateString()}
 
-            {/* Pagination buttons */}
-            {totalPages > 1 && (
-              <div className="pagination">
+                  </span>
 
-                {Array.from({ length: totalPages }, (_, i) => (
+                </div>
 
-                  <button
-                    key={i}
-                    onClick={() => goToPage(i + 1)}
-                    className={
-                      currentPage === i + 1
-                        ? "page-btn active"
-                        : "page-btn"
-                    }
-                  >
-                    {i + 1}
-                  </button>
+              </a>
 
-                ))}
+            ))}
 
-              </div>
-            )}
-
-          </>
+          </div>
 
         )}
 
       </div>
 
     </section>
+
   );
 
 }
