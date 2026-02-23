@@ -160,11 +160,9 @@ export default function AppointmentStrip() {
 
           <div className="address-text">
 
-            Vikas Homoeo Clinic<br />
-            Padmavathi Nagar<br />
-            Nandyal, Andhra Pradesh<br />
-            India
-
+            Venugopala Swamy Temple,<br />
+                    Perala, Chirala,<br />
+                    Andhra Pradesh 523157
           </div>
 
         </div>

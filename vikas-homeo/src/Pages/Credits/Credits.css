@@ -1,0 +1,219 @@
+:root {
+  --gradient1: linear-gradient(
+    to right,
+    rgba(2, 95, 173) 0%,
+    rgba(2, 95, 173) 35%,
+    rgba(2, 95, 173) 70%,
+    orange 100%
+  );
+
+  --gradient_bottom: linear-gradient(
+    to bottom,
+    rgba(2, 96, 173, 1) 0%,
+    rgba(2, 95, 173, 0.95) 35%,
+    rgba(2, 95, 173, 0.5) 70%,
+    orange 100%
+  );
+
+  --font1:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --parafont: "Poppins", sans-serif;
+}
+
+
+/* PAGE */
+
+.credits-page {
+
+  padding: 120px 20px;
+
+  margin-top: 150px;
+
+  background: var(--gradient1);
+
+  min-height: 100vh;
+
+}
+
+
+/* GLASS CONTAINER */
+
+.credits-container {
+
+  max-width: 1000px;
+
+  margin: auto;
+
+  padding: 50px;
+
+  border-radius: 24px;
+
+  background: rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  color: white;
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+
+/* SHINE EFFECT */
+
+.credits-container::after {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -60%;
+
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: creditsShine 8s infinite;
+
+}
+
+@keyframes creditsShine {
+
+  0% { left: -60%; }
+
+  100% { left: 130%; }
+
+}
+
+
+/* TITLE */
+
+.credits-container h1 {
+
+  font-family: var(--font1);
+
+  font-size: 44px;
+
+  text-align: center;
+
+  margin-bottom: 10px;
+
+}
+
+
+/* UPDATED */
+
+.credits-updated {
+
+  text-align: center;
+
+  font-family: var(--parafont);
+
+  opacity: 0.8;
+
+  margin-bottom: 30px;
+
+}
+
+
+/* HEADINGS */
+
+.credits-container h2 {
+
+  font-family: var(--font1);
+
+  margin-top: 30px;
+
+  margin-bottom: 10px;
+
+}
+
+
+/* TEXT */
+
+.credits-container p,
+.credits-container li {
+
+  font-family: var(--parafont);
+
+  line-height: 1.7;
+
+}
+
+
+/* LINKS */
+
+.credits-container a {
+
+  color: white;
+
+  text-decoration: underline;
+
+}
+
+.credits-container a:hover {
+
+  opacity: 0.8;
+
+}
+
+
+/* CONTACT BOX */
+
+.credits-contact {
+
+  margin-top: 15px;
+
+  padding: 15px;
+
+  background: rgba(255,255,255,0.08);
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 1024px) {
+
+  .credits-page {
+
+    background: var(--gradient_bottom);
+
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .credits-container {
+
+    padding: 25px;
+
+  }
+
+  .credits-container h1 {
+
+    font-size: 30px;
+
+  }
+
+}

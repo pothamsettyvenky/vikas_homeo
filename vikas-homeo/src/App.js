@@ -12,6 +12,8 @@ import AllTreatments from "./Pages/Treatments/AllTreatments";
 import Quotes from "./Pages/Quotes/Quotes"
 import News from "./Pages/News/News"
 import ScrollToTop from "./components/ScrollToTop";
+import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
+import Credits from "./Pages/Credits/Credits";
 function App() {
   return (
     <>
@@ -27,6 +29,8 @@ function App() {
         <Route path = "/treatments" element={<AllTreatments/>}/>
         <Route path="/quotes" element= {<Quotes/>}/>
         <Route path="/news" element = {<News/>}/>
+        <Route path= "/privacy-policy" element={<PrivacyPolicy/>}/>
+        <Route path="/credits" element={<Credits/>}/>
       </Routes>
       <Footer />
     </>

@@ -53,12 +53,14 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://www.google.com/maps/place/DR+VIKAS+HOMOEOPATHY+AND+NATUROPATHY+CLINIC"
+                href="https://www.google.com/maps/place/DR+VIKAS+HOMOEOPATHY+AND+NATUROPATHY+CLINIC/@15.8336397,80.3595303,17z/data=!3m1!4b1!4m14!1m7!3m6!1s0x3a4a690036e01655:0xb1d342c67986b74d!2sDR.+VIKAS+HOMOEOPATHY+AND+NATUROPATHY+CLINIC!8m2!3d15.8336335!4d80.3621033!16s%2Fg%2F11x7t4n6kc!3m5!1s0x3a4a45f9f4bacaeb:0x69186a61b0dda8a8!8m2!3d15.8336346!4d80.3621052!16s%2Fg%2F11x7t8r7lq?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaMapMarkerAlt />
-                Chirala, Andhra Pradesh
+                Venugopala Swamy Temple,<br />
+                    Perala, Chirala,<br />
+                    Andhra Pradesh 523157
               </a>
 
             </div>
@@ -158,8 +160,28 @@ export default function Footer() {
 
       <div className="footer-bottom">
 
-        © {new Date().getFullYear()} Vikas Homoeopathy & Naturopathy Clinic.
-        All Rights Reserved.
+        <div className="footer-bottom-content">
+
+    <span>
+      © {new Date().getFullYear()} Vikas Homoeopathy & Naturopathy Clinic.
+      All Rights Reserved.
+    </span>
+
+    <div className="footer-legal-links">
+
+      <span onClick={() => navigate("/privacy-policy")}>
+        Privacy Policy
+      </span>
+
+      <span className="footer-divider">|</span>
+
+      <span onClick={() => navigate("/Credits")}>
+        Credits
+      </span>
+
+    </div>
+
+  </div>
 
       </div>
 
