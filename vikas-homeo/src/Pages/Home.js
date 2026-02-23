@@ -241,7 +241,10 @@ useEffect(() => {
         <div className=" doctor-profile " ref={(el) => (doctorRef.current[0] = el)}>
           <div className="doctor-details">
             <h3 className="doctor-name"> Dr. Vikas Ballipalli</h3>
-            <p className="doctor-qualifications">M.D (HOM), F,Hom</p>
+             <p className="doctor-role">
+         Founder of Dr vikas homoeopathy and naturopathy clinic
+      </p>
+            <p className="doctor-qualifications"> Homoeopathic Physician & Holistic Health Specialist</p>
             <p>
               Dr. Vikas is a dedicated homeopathic physician with a strong focus
               on holistic healing, personalized care, and long-term wellness.
@@ -269,7 +272,9 @@ useEffect(() => {
         <div className="doctor-profile reverse" ref={(el) => (doctorRef.current[1] = el)} >
           <div className="doctor-details">
             <h3 className="doctor-name">Dr. Sandhya Ballipalli</h3>
-
+ <p className="doctor-role">
+         Co-Founder of Dr vikas homoeopathy and naturopathy clinic
+      </p>
             <p className="doctor-qualifications">
               Consultant Physician | Holistic Care Specialist
             </p>
@@ -306,7 +311,7 @@ useEffect(() => {
       <TreatmentsTabs />
       <TherapyCards />
       <Testimonials />
-      <FAQ />
+      <FAQ  variant = "blog"/>
 
       {/* FOOTER */}
     </div>

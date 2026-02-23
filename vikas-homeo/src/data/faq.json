@@ -1,0 +1,44 @@
+{
+  "faqs": [
+    {
+      "question": "Does homeopathy have side effects?",
+      "answer": "Homeopathic medicines are prepared using highly diluted natural substances and are generally considered safe when prescribed by a qualified homeopathic doctor. They are gentle and non-toxic. However, treatment should always be taken under professional supervision for best results."
+    },
+    {
+      "question": "Is there any restriction to use homeopathy?",
+      "answer": "Homeopathy is suitable for people of all ages, including infants, children, adults, and elderly patients. There are generally no strict restrictions, but medicines should be taken as prescribed by a qualified practitioner."
+    },
+    {
+      "question": "Is homeopathy slow acting?",
+      "answer": "Homeopathy works by stimulating the body's natural healing process. In acute conditions, results can be quick, while chronic conditions may take more time depending on the severity, duration, and individual response."
+    },
+    {
+      "question": "Can homeopathy be used along with allopathy and Ayurveda medicine?",
+      "answer": "Yes, homeopathy can often be used alongside other systems of medicine. However, it is important to inform your doctor about all treatments you are taking so they can guide you properly."
+    },
+    {
+      "question": "Is there any diet restriction while using homeopathy medicine?",
+      "answer": "Generally, no strict diet restrictions are required. However, maintaining a healthy lifestyle and following your doctor's advice can improve treatment effectiveness."
+    },
+    {
+      "question": "Can homeopathy treat serious diseases like cancer or diabetes?",
+      "answer": "Homeopathy can help support overall health, improve quality of life, and manage symptoms in chronic and serious conditions. It should be used as part of a comprehensive treatment plan under medical supervision."
+    },
+    {
+      "question": "Is it true that tea, onion, garlic, etc. are prohibited during homeopathic treatment?",
+      "answer": "In most cases, normal dietary items like tea, onion, and garlic can be consumed. Your doctor may advise specific precautions depending on your individual treatment."
+    },
+    {
+      "question": "Can homeopathy treat anything and everything?",
+      "answer": "Homeopathy is used to support treatment for a wide range of acute and chronic conditions. Effectiveness depends on the individual case, medical history, and proper remedy selection."
+    },
+    {
+      "question": "Can diabetic patients take homeopathy pills which contain sugar?",
+      "answer": "Homeopathic pills contain very small amounts of lactose or sucrose and are generally considered safe. However, diabetic patients should consult their doctor for personalized advice."
+    },
+    {
+      "question": "Does homeopathy first aggravate the disease?",
+      "answer": "In some cases, mild and temporary symptom changes may occur as the body responds to treatment. This is usually short-lived and indicates the body's healing response. Always consult your doctor if you have concerns."
+    }
+  ]
+}

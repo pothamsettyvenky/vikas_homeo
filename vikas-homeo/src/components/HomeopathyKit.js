@@ -4,7 +4,7 @@ import "./HomeopathyKit.css";
 import Travelkit from "../asessts/kit/travelkit.png";
 import Homekit from "../asessts/kit/homekit.png";
 // import travelBasic from "../assets/kits/travel-basic.jpg";
-// import travelEco from "../assets/kits/travel-eco.jpg";
+import travelEco from "../asessts/kit/eco_freindly.png";
 
 export default function HomeopathyKit() {
   const [activeTab, setActiveTab] = useState("family");
@@ -29,7 +29,7 @@ export default function HomeopathyKit() {
         {
           name: "Eco-Friendly Kit",
           price: "₹2499",
-          image: Homekit,
+          image: travelEco,
           features: [
             "Eco premium storage box",
             "German made remedies",

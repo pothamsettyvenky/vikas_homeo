@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram ,FaYoutube,FaWhatsapp } from "react-icons/fa";
 
 import EmailForm from "../../components/EmailForm";
 import AddressAutocomplete from "../../components/AddressAutocomplete";
@@ -159,7 +159,7 @@ export default function Contact() {
 
         {/* FORM */}
 
-        <div className="appointment-bg">
+        <div className="appointment-bg" id="appointment" >
 
           <div className="appointment-overlay"></div>
 
@@ -315,15 +315,33 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/vikas_homeo_naturopathy_clinic/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-item"
             >
+            
               <FaInstagram className="social-icon" />
               <span>Instagram</span>
             </a>
-
+ <a
+              href="https://wa.me/917396803203"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-item"
+            >
+              <FaWhatsapp className="social-icon" />
+              <span>WhatsApp</span>
+            </a>
+             <a
+              href="https://www.Youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-item"
+            >
+              <FaYoutube className="social-icon" />
+              <span>YouTUbe</span>
+            </a>
           </div>
 
         </div>

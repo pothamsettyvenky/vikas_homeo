@@ -247,7 +247,7 @@ margin-top: 170px;
   z-index: 2;
 }
 .glass-panel {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(30px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -331,8 +331,8 @@ margin-top: 170px;
 }
 
 .contact-social p {
-  color: var(--green);
-  font-size: 24px;
+  color: orange;
+  font-size: 36px;
   letter-spacing: 4px;
   margin-bottom: 10px;
   font-family: var(--parafont);

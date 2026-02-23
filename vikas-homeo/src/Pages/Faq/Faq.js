@@ -1,49 +1,26 @@
 import React, { useState } from "react";
 import "./Faq.css";
+import faqData from "../../data/faq.json"
 
-const faqData = [
-  {
-    question: "Is homeopathy a steroid?",
-    answer:
-      "No. Homeopathy medicines are natural and do not contain steroids. They work by stimulating the body's healing system."
-  },
-  {
-    question:
-      "Is homeopathy safe for pregnant women and infants or children?",
-    answer:
-      "Yes, homeopathy is safe for pregnant women, infants, and children. It helps manage post-partum complaints and supports overall health."
-  },
-  {
-    question: "How long does homeopathy treatment take?",
-    answer:
-      "Treatment duration depends on the condition, severity, and individual response."
-  }
-];
+export default function FAQ({ variant = "default" }) {
 
-export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
-    if (openIndex === index) {
-      setOpenIndex(null);
-    } else {
-      setOpenIndex(index);
-    }
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="faq-section">
-    <div className = "faq-heading">
-            <p className = "faq-subtitle"> 
-            FAQ</p>
-             <h2 className="faq-title">Frequently Ask Questions</h2>
-    </div>
+    <section className={`faq-section faq-${variant}`}>
 
-     
+      <div className="faq-heading">
+        <p className="faq-subtitle">FAQ</p>
+        <h2 className="faq-title">Frequently Asked Questions</h2>
+      </div>
 
       <div className="faq-container">
 
-        {faqData.map((item, index) => (
+        {faqData.faqs.map((item, index) => (
           <div key={index} className="faq-item">
 
             <div className="faq-question">
@@ -51,21 +28,15 @@ export default function FAQ() {
               <span>{item.question}</span>
 
               <button
-                className={`faq-icon ${
-                  openIndex === index ? "active" : ""
-                }`}
+                className={`faq-icon ${openIndex === index ? "active" : ""}`}
                 onClick={() => toggleFAQ(index)}
               >
-                {openIndex === index ? "⌃" : "?"}
+                {openIndex === index ? "⌃" : "+"}
               </button>
 
             </div>
 
-            <div
-              className={`faq-answer ${
-                openIndex === index ? "show" : ""
-              }`}
-            >
+            <div className={`faq-answer ${openIndex === index ? "show" : ""}`}>
               {item.answer}
             </div>
 

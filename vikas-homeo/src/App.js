@@ -14,6 +14,7 @@ import News from "./Pages/News/News"
 import ScrollToTop from "./components/ScrollToTop";
 import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import Credits from "./Pages/Credits/Credits";
+import FAQ from "./Pages/Faq/Faq";
 function App() {
   return (
     <>
@@ -31,6 +32,7 @@ function App() {
         <Route path="/news" element = {<News/>}/>
         <Route path= "/privacy-policy" element={<PrivacyPolicy/>}/>
         <Route path="/credits" element={<Credits/>}/>
+        <Route path="faqs" element={<FAQ/>}/>
       </Routes>
       <Footer />
     </>
