@@ -117,8 +117,8 @@
 }
 
 .dropdown li:hover {
-  background: var(--green-light);
-  color: var(--green);
+  background: orange;
+  color: white;
 }
 
 /* BOOK BUTTON */

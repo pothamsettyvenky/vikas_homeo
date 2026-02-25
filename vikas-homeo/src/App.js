@@ -15,6 +15,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import Credits from "./Pages/Credits/Credits";
 import FAQ from "./Pages/Faq/Faq";
+import Chatbot from "./components/Chatbot/Chatbot";
 function App() {
   return (
     <>
@@ -34,7 +35,9 @@ function App() {
         <Route path="/credits" element={<Credits/>}/>
         <Route path="faqs" element={<FAQ/>}/>
       </Routes>
+      <Chatbot/>
       <Footer />
+
     </>
   );
 }

@@ -1,52 +1,168 @@
 const express = require("express");
-const Parser = require("rss-parser");
 const cors = require("cors");
+const dotenv = require("dotenv");
+const axios = require("axios");
+
+dotenv.config();
 
 const app = express();
-const parser = new Parser();
 
 app.use(cors());
+app.use(express.json());
 
-app.get("/api/news", async (req, res) => {
+// Gemini API
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+const GEMINI_API_URL =
+  "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent";
+
+// store conversation per session
+const sessions = {};
+
+// greeting function
+function getGreeting() {
+  const hour = new Date().getHours();
+
+  if (hour < 12) return "Good morning!";
+  if (hour < 18) return "Good afternoon!";
+  return "Good evening!";
+}
+
+// greeting detection
+function isGreeting(text) {
+  const msg = text.toLowerCase().trim();
+
+  return ["hi", "hello", "hey"].includes(msg);
+}
+
+// build Gemini messages
+function buildGeminiMessages(chatHistory) {
+  const instruction = {
+    role: "user",
+
+    parts: [
+      {
+        text: `
+You are the official assistant for Dr Vikas Homeopathy and Naturopathy Clinic.
+
+PERSONALITY:
+
+• Friendly and human-like
+• Professional clinic receptionist
+• Caring and conversational
+
+CRITICAL RULES:
+
+• ONLY discuss Homeopathy and Naturopathy health topics.
+• Ask ONLY ONE question at a time.
+• Do NOT ask multiple questions at once.
+• Guide conversation naturally like a real clinic assistant.
+• Collect patient details step-by-step.
+
+GOAL:
+
+Ask questions gradually to understand:
+
+• condition
+• location
+• duration
+• severity
+• symptoms
+
+Once enough info is collected, provide:
+
+• summary
+• homeopathy approach
+• natural treatment suggestions
+
+Always end with:
+"Feel free to ask any other questions related to Homeopathy and Naturopathy."
+
+Do not ask unrelated questions.
+`,
+      },
+    ],
+  };
+
+  return [
+    instruction,
+    ...chatHistory.map((m) => ({
+      role: m.role,
+      parts: [{ text: m.text }],
+    })),
+  ];
+}
+
+// main chat endpoint
+app.post("/api/chat", async (req, res) => {
   try {
+    const { message, sessionId } = req.body;
 
-    const feed = await parser.parseURL(
-      "https://news.google.com/rss/search?q=homoeopathy+naturopathy&hl=en-IN&gl=IN&ceid=IN:en"
+    if (!message || !sessionId) {
+      return res.json({
+        reply: "Please refresh page and try again.",
+      });
+    }
+
+    // greeting handled locally
+    if (isGreeting(message)) {
+      return res.json({
+        reply: `${getGreeting()} Welcome to Dr Vikas Homeopathy and Naturopathy Clinic. Please tell me your health concern.`,
+      });
+    }
+
+    // create session
+    if (!sessions[sessionId]) {
+      sessions[sessionId] = [];
+    }
+
+    const chatHistory = sessions[sessionId];
+
+    // add user message
+    chatHistory.push({
+      role: "user",
+
+      text: message,
+    });
+
+    const geminiMessages = buildGeminiMessages(chatHistory);
+
+    // call Gemini
+    const response = await axios.post(
+      `${GEMINI_API_URL}?key=${GEMINI_API_KEY}`,
+
+      {
+        contents: geminiMessages,
+      },
+
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
     );
 
-    const articles = feed.items.map(item => {
+    const reply =
+      response.data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+      "Sorry, I couldn't generate a response.";
 
-      let image = null;
+    // save reply
+    chatHistory.push({
+      role: "model",
 
-      if (item.content) {
-        const match = item.content.match(/<img[^>]+src="([^">]+)"/);
-        if (match) image = match[1];
-      }
-
-      return {
-        title: item.title,
-        description: item.contentSnippet,
-        url: item.link,
-        publishedAt: item.pubDate,
-        image: image
-      };
-
+      text: reply,
     });
 
-    res.json({ articles });
-
+    res.json({ reply });
   } catch (error) {
+    console.error(error.response?.data || error.message);
 
-    console.error(error);
-
-    res.status(500).json({
-      error: "Failed to fetch news"
+    res.json({
+      reply: "Unable to respond right now.",
     });
-
   }
 });
 
-// IMPORTANT: allow LAN access
-app.listen(5000, "0.0.0.0", () => {
-  console.log("API running on http://192.168.0.127:5000");
+app.listen(3001, () => {
+  console.log("Server running on port 3001");
 });

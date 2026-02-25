@@ -83,11 +83,11 @@ const navigate = useNavigate();
           <h2 className="about-title">Pioneering Holistic Homeopathic Healing</h2>
 
           <p className="about-text">
-            Vikas Homeopathy provides safe, natural, and effective treatments
+            Dr Vikas Homoeopathy and Naturopathy Clinic provides safe, natural, and effective treatments
             using holistic homeopathic principles.We focus on identifying the
             root cause and providing personalized healing solutions for
-            long-term wellness.We have successfully treated thousands of
-            patients with excellent results.
+            long-term wellness.we have succesfully treated havinng accute and chronic illness of patients with excellent results
+.
           </p>
         </div>
       </div>

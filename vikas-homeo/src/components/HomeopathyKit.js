@@ -11,60 +11,111 @@ export default function HomeopathyKit() {
 
   const kitData = {
     family: {
-      title: "Family Kit",
-      description:
-        "A natural first aid solution for over 20 common ailments. Safe for all ages and easy to use.",
+      title: "Basic Kit",
       kits: [
         {
-          name: "Basic Kit",
-          price: "₹1499",
+          name: "Children Kit",
+          price: "₹999",
           image: Homekit,
+          description:
+            "Safe and gentle remedies for common childhood conditions.",
           features: [
-            "20+ common remedies",
-            "Portable and easy to use",
-            "Safe for all ages",
-            "Quick home solution",
+             "Child safe",
+          "Gentle remedies",
+          "Fever relief",
+          "Easy use"
           ],
         },
         {
-          name: "Eco-Friendly Kit",
-          price: "₹2499",
+          name: "First Aid Kit",
+          price: "₹1299",
           image: travelEco,
-          features: [
-            "Eco premium storage box",
-            "German made remedies",
-            "Long shelf life",
-            "Premium packaging",
+           description: "Natural emergency kit for injuries, pain, and acute conditions.",
+        features: [
+          "Injury relief",
+          "Pain support",
+          "Quick recovery",
+          "Emergency care"
+          ],
+        },
+        {
+           name: "Travel Kit",
+        price: "₹699",
+          image: travelEco,
+           description: "Compact homeopathic kit for safe and effective travel care.",
+        features: [
+          "Compact size",
+          "Travel safe",
+          "Easy carry",
+          "Quick relief"
+          ],
+        },
+        {
+          name: "Family Kit",
+        price: "₹1499",
+          image: travelEco,
+          description: "Complete homeopathy kit for everyday family health care.",
+        features: [
+          "Family safe",
+          "Daily care",
+          "Common remedies",
+          "Easy use"
           ],
         },
       ],
     },
 
     travel: {
-      title: "Travel Kit",
+      title: "Eco-Friendly Kit",
       description:
         "Travel confidently with safe and effective homeopathic remedies.",
       kits: [
         {
-          name: "Basic Kit",
-          price: "₹699",
+          name: "Children Kit",
+        price: "₹1499",
           image: Travelkit,
-          features: [
-            "Compact size",
-            "Travel safe remedies",
-            "Lightweight",
-            "Easy to carry",
+          description: "Premium eco-friendly pediatric homeopathy kit.",
+        features: [
+          "German remedies",
+          "Eco storage",
+          "Premium quality",
+          "Child safe"
           ],
         },
         {
-          name: "Eco-Friendly Kit",
-          price: "₹999",
+          name: "First Aid Kit",
+        price: "₹1999",
           image: Travelkit,
-          features: [
-            "Eco travel case",
-            "German remedies",
-            "Durable case",
-            "Premium design",
+          description: "Premium eco-friendly emergency homeopathy kit.",
+        features: [
+          "German remedies",
+          "Eco storage",
+          "Emergency care",
+          "Durable case"
+          ],
+        },
+        {
+           name: "Travel Kit",
+        price: "₹999",
+          image: Travelkit,
+            description: "Eco-friendly premium kit for travel health support.",
+        features: [
+          "Eco case",
+          "German remedies",
+          "Travel friendly",
+          "Premium quality"
+          ],
+        },
+        {
+           name: "Family Kit",
+        price: "₹2499",
+          image: Travelkit,
+           description: "Premium eco-friendly complete family care kit.",
+        features: [
+          "German remedies",
+          "Eco storage",
+          "Family safe",
+          "Long shelf"
           ],
         },
       ],
@@ -108,6 +159,7 @@ export default function HomeopathyKit() {
 
             <div className="kit-card-inner">
               <h3>{kit.name}</h3>
+              <h3 className="desc">{kit.description}</h3>
 
               <div className="kit-price">{kit.price}</div>
 
@@ -117,7 +169,7 @@ export default function HomeopathyKit() {
                 ))}
               </ul>
 
-              <button className="kit-btn">Order Now</button>
+              <button className="kit-btn">Call Us to Orderc</button>
             </div>
           </div>
         ))}
