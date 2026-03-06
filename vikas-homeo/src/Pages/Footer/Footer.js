@@ -44,7 +44,7 @@ export default function Footer() {
 
               <a href="tel:+917396803203">
                 <FaPhoneAlt />
-                +91 7396803203
+                +91 80960 50488
               </a>
 
               <a href="mailto:vikashomoeopathy@gmail.com">

@@ -16,6 +16,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import Credits from "./Pages/Credits/Credits";
 import FAQ from "./Pages/Faq/Faq";
 import Chatbot from "./components/Chatbot/Chatbot";
+import PatientFeedback from "./Pages/PatientsFeedback/PatientsFeedback";
 function App() {
   return (
     <>
@@ -33,7 +34,8 @@ function App() {
         <Route path="/news" element = {<News/>}/>
         <Route path= "/privacy-policy" element={<PrivacyPolicy/>}/>
         <Route path="/credits" element={<Credits/>}/>
-        <Route path="faqs" element={<FAQ/>}/>
+        <Route path="/faqs" element={<FAQ/>}/>
+        <Route path= "/patient-feedback" element= {<PatientFeedback/>}/>
       </Routes>
       <Chatbot/>
       <Footer />

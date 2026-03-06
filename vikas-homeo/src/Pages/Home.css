@@ -19,6 +19,9 @@
     -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
   --parafont: "Poppins", sans-serif;
+   --heading-font: "Google Sans Flex", sans-serif;
+
+  --body-font: "SN Pro", sans-serif;
 }
 
 /* =====================
@@ -517,18 +520,18 @@ line-height: 1.1;
 }
 
 .doctor-name {
-  font-size: 36px;
-  letter-spacing: 2px;
+  font-size: 42px;
+  letter-spacing: 1px;
   text-wrap: nowrap;
   margin-bottom: 0px;
   color: #fff;
-  font-family: var(--font);
+  font-family: var(--body-font);
   text-transform: uppercase;
 }
 
 .doctor-details .doctor-qualifications {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 0;
   margin-bottom: 30px;
   color: white;
   width: 100%;

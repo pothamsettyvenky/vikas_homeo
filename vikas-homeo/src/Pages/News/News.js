@@ -123,6 +123,7 @@ export default function News() {
       else {
 
         await fetchFromFirestore();
+        setLoading(false);
         return;
 
       }
@@ -142,7 +143,6 @@ export default function News() {
         }));
 
       setArticles(instantArticles);
-
       setLoading(false);
 
 
@@ -183,7 +183,6 @@ export default function News() {
     catch {
 
       await fetchFromFirestore();
-
       setLoading(false);
 
     }
@@ -199,17 +198,13 @@ export default function News() {
 
     const load = async () => {
 
-      await fetchFromFirestore();
-
       await fetchFromGNews();
-
-      setLoading(false);
 
     };
 
     load();
 
-  }, [fetchFromFirestore, fetchFromGNews]);
+  }, [fetchFromGNews]);
 
 
   /* --------------------------
@@ -227,24 +222,26 @@ export default function News() {
         </h2>
 
 
-        {loading  ? (
+        {loading ? (
 
-  <div className="homeo-loader-container">
+          <div className="homeo-loader-container">
 
-    <div className="homeo-bottle">
+            <div className="homeo-bottle">
 
-      <div className="globule g1"></div>
-      <div className="globule g2"></div>
-      <div className="globule g3"></div>
-      <div className="globule g4"></div>
+              <div className="globule g1"></div>
+              <div className="globule g2"></div>
+              <div className="globule g3"></div>
+              <div className="globule g4"></div>
 
-    </div>
+            </div>
 
-    <h3 className="homeo-loading-text">
-      Preparing your remedies...
-    </h3>
+            <h3 className="homeo-loading-text">
+              Preparing your remedies...
+            </h3>
 
-  </div>) : articles.length === 0 ? (
+          </div>
+
+        ) : articles.length === 0 ? (
 
           <p>No news available</p>
 

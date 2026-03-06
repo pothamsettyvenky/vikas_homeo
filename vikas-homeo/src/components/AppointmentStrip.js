@@ -173,9 +173,9 @@ export default function AppointmentStrip() {
 
           <h3>Please Call Us</h3>
 
-          <span className="phone">
+          {/* <span className="phone">
             +91 73968 03203
-          </span>
+          </span> */}
 
           <span className="phone">
             +91 80960 50488

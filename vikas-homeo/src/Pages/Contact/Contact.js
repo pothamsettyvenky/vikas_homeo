@@ -99,11 +99,11 @@ export default function Contact() {
 
                 <h3>Let's Talk</h3>
 
-                <p>
+                {/* <p>
                   <a href="tel:+917396803203" className="contact-link">
                     +91 7396803203
                   </a>
-                </p>
+                </p> */}
 
                 <p>
                   <a href="tel:+918096050488" className="contact-link">
@@ -325,7 +325,7 @@ export default function Contact() {
               <span>Instagram</span>
             </a>
  <a
-              href="https://wa.me/917396803203"
+              href="https://wa.me/918096050488"
               target="_blank"
               rel="noopener noreferrer"
               className="social-item"

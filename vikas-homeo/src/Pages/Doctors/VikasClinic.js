@@ -48,7 +48,7 @@ export default function VikasClinic() {
               Dr. Vikas Ballipalli is a highly respected Homoeopathic Physician
               with extensive experience in providing safe, natural, and
               effective treatment for a wide range of acute and chronic health
-              conditions. He completed his M.D. in Homoeopathy and has dedicated
+              conditions. He completed his Homoeopathy in Maharajas institute of Homoeopathic Medical Sciences in Vizianagaram and has dedicated
               his professional career to helping patients achieve long-term
               healing through gentle and holistic methods. His approach focuses
               on understanding each patient as a whole, including their physical

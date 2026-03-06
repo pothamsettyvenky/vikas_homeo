@@ -1,322 +1,144 @@
-:root {
+:root{
 
-  --green: #1e7f4f;
-  --green-dark: #0f5d08;
---blue: #004aad;
-  --glass: rgba(255,255,255,0.18);
-  --glass-border: rgba(255,255,255,0.35);
---fontcolor: #1c2b4a;
-   --font1:
-    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --green:#1e7f4f;
+  --green-dark:#0f5d08;
+  --blue:#004aad;
+
   --parafont:"Poppins", sans-serif;
 
 }
 
+/* Section */
 
-/* =========================
-   SECTION BASE
-========================= */
+.testimonials{
 
-.testimonials {
+  position:relative;
+  width:100%;
+  min-height:100vh;
 
-  position: relative;
-
-  width: 100%;
-
-  min-height: 100vh;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  overflow: hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
 }
 
+/* Background */
 
-/* =========================
-   BACKGROUND IMAGE
-========================= */
+.testimonials-bg{
 
-.testimonials-bg {
+  position:absolute;
+  inset:0;
 
-  position: absolute;
-
-  inset: 0;
-
-  background-position: center;
-
-  background-size: cover;
-
-  z-index: 1;
+  background-size:cover;
+  background-position:center;
 
 }
 
+.testimonials-bg::after{
 
-/* GLASS GRADIENT OVERLAY */
+  content:"";
+  position:absolute;
+  inset:0;
 
-.testimonials-bg::after {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: linear-gradient(
+  background:linear-gradient(
     135deg,
     rgba(30,127,79,0.3),
     rgba(15,93,8,0.7)
   );
 
-  backdrop-filter: blur(6px);
+  backdrop-filter:blur(6px);
 
 }
 
+/* Content */
 
-/* =========================
-   CONTENT WRAPPER
-========================= */
+.testimonials-content{
 
-.testimonials-content {
+  position:relative;
+  z-index:2;
 
-  position: relative;
+  width:90%;
+  max-width:1200px;
 
-  z-index: 2;
+  padding:100px 0;
 
-  width: 90%;
-
-  max-width: 1300px;
-
-  padding: 100px 0;
-
-  text-align: center;
+  text-align:center;
 
 }
 
+/* Titles */
 
-/* =========================
-   HEADINGS
-========================= */
+.subtitle{
 
-.subtitle {
+  color:#fff;
 
-  color: #ffffff;
+  font-size:30px;
+  font-weight:bold;
 
-  letter-spacing: 2px;
+  font-family:var(--parafont);
 
-  margin-bottom: 10px;
-
-  font-family: var(--parafont);
-
-  font-size: 32px;
-font-weight: bold;
-  opacity: 0.9;
+  margin-bottom:10px;
 
 }
 
-.title {
+.title{
 
-  font-size: 54px;
+  color:var(--blue);
 
-  margin-bottom: 60px;
+  font-size:50px;
 
-  color: var(--blue);
-
-  font-family: var(--font);
-
-  text-transform: uppercase;
+  margin-bottom:60px;
 
 }
 
+/* Limit homepage reviews */
 
-/* =========================
-   GLASS REVIEW CARD
-========================= */
+.home-reviews{
 
-.review-card {
+  max-height:700px;
 
-  position: relative;
-
-  padding: 12px;
-
-  border-radius: 18px;
-
-  background: rgba(255,255,255,0.85);
-
-  backdrop-filter: blur(12px);
-
-  border: 1px solid rgba(255,255,255,0.4);
-
-  box-shadow:
-
-    0 15px 40px rgba(0,0,0,0.18),
-
-    inset 0 1px 0 rgba(255,255,255,0.6);
-
-  transition: all 0.35s ease;
+  overflow:hidden;
 
 }
 
+/* View more button */
 
-/* GLASS SHINE EFFECT */
+.view-more-btn{
 
-.review-card::before {
+  display:inline-block;
 
-  content: "";
+  margin-top:40px;
 
-  position: absolute;
+  padding:12px 28px;
 
-  inset: 0;
+  background:var(--green);
 
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.4),
-    transparent
-  );
+  color:#fff;
 
-  opacity: 0;
+  border-radius:30px;
 
-  transition: 0.4s;
+  text-decoration:none;
 
-}
+  font-family:var(--parafont);
 
-.review-card:hover::before {
-
-  opacity: 1;
+  transition:0.3s;
 
 }
 
+.view-more-btn:hover{
 
-/* HOVER EFFECT */
-
-.review-card:hover {
-
-  transform: translateY(-10px);
-
-  box-shadow:
-
-    0 25px 60px rgba(0,0,0,0.25);
+  background:var(--green-dark);
 
 }
 
+/* Remove widget white background */
 
-/* =========================
-   IMAGE
-========================= */
+.sk-ww-google-reviews{
 
-.review-card img {
+  background:transparent !important;
 
-  width: 100%;
+  max-width:1400px;
 
-  height: 300px;
-
-  object-fit: contain;
-
-  border-radius: 10px;
-
-}
-
-
-/* =========================
-   PAGINATION
-========================= */
-
-.swiper-pagination {
-
-  margin-top: 30px;
-
-}
-
-.swiper-pagination-bullet {
-
-  background: rgba(255,255,255,0.6);
-
-  opacity: 1;
-
-}
-
-.swiper-pagination-bullet-active {
-
-  background: #ffffff;
-
-  transform: scale(1.2);
-
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1024px) {
-
-  .title {
-
-    font-size: 34px;
-
-  }
-
-  .review-card img {
-
-    height: 260px;
-
-  }
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-  .testimonials {
-
-    min-height: auto;
-
-  }
-
-  .testimonials-content {
-
-    padding: 70px 0;
-
-  }
-  .subtitle{
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-  .title {
-
-    font-size: 38px;
-
-  }
-
-  .review-card img {
-
-    height: 240px;
-
-  }
-
-}
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 480px) {
-
-  .review-card img {
-
-    height: 220px;
-
-  }
+  margin:auto;
 
 }

@@ -1,0 +1,179 @@
+:root{
+
+  --gradient1: linear-gradient(
+    to right,
+    rgba(2,95,173,1) 0%,
+    rgba(2,95,173,0.95) 40%,
+    rgba(2,95,173,0.6) 75%,
+    orange 100%
+  );
+
+  --font1:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --parafont:"Poppins", sans-serif;
+
+}
+
+
+/* PAGE BACKGROUND */
+
+.feedback{
+
+  padding:120px 20px;
+
+  margin-top:150px;
+
+  background:var(--gradient1);
+
+  min-height:100vh;
+
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:center;
+
+}
+
+
+/* GLASS CONTAINER */
+
+.feedback-container{
+
+  max-width:1100px;
+
+  width:100%;
+
+  margin:auto;
+
+  padding:50px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(25px);
+
+  -webkit-backdrop-filter:blur(25px);
+
+  border:1px solid rgba(255,255,255,0.3);
+
+  position:relative;
+
+  overflow:hidden;
+
+  color:white;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+
+}
+
+
+/* SHINE EFFECT */
+
+.feedback-container::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+
+  left:-60%;
+
+  width:50%;
+
+  height:100%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+
+  transform:skewX(-20deg);
+
+  pointer-events:none;
+
+  animation:feedbackShine 8s infinite;
+
+}
+
+@keyframes feedbackShine{
+
+  0%{
+    left:-60%;
+  }
+
+  100%{
+    left:130%;
+  }
+
+}
+
+
+/* TITLE */
+
+.feedback-title{
+
+  font-family:var(--font1);
+
+  font-size:42px;
+
+  margin-bottom:40px;
+
+  text-align:center;
+
+}
+
+
+/* WIDGET FIX */
+
+.sk-ww-google-reviews{
+
+  background:transparent !important;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+  .feedback-container{
+
+    padding:25px 18px;
+
+  }
+
+  .feedback-title{
+
+    font-size:30px;
+
+  }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width:468px){
+
+  .feedback{
+
+    padding:100px 12px;
+
+  }
+
+  .feedback-container{
+
+    padding:20px 14px;
+
+  }
+
+}

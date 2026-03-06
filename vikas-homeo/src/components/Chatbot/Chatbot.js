@@ -14,9 +14,7 @@ export default function Chatbot() {
   ]);
 
   const [input, setInput] = useState("");
-
   const [loading, setLoading] = useState(false);
-
   const [sessionId, setSessionId] = useState("");
 
   const chatBodyRef = useRef(null);
@@ -30,7 +28,6 @@ export default function Chatbot() {
     if (!id) {
 
       id = crypto.randomUUID();
-
       localStorage.setItem("chatSessionId", id);
 
     }
@@ -55,59 +52,68 @@ export default function Chatbot() {
 
   async function sendMessage() {
 
-    if (!input.trim()) return;
+  if (!input.trim()) return;
 
-    const userText = input;
+  const userText = input;
+
+  setMessages(prev => [
+    ...prev,
+    { role: "user", text: userText }
+  ]);
+
+  setInput("");
+  setLoading(true);
+
+  try {
+
+    const API_URL =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3001/api/chat"
+        : "/api/chat";
+
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: userText,
+        sessionId
+      })
+    });
+
+    // check response status
+    if (!res.ok) {
+      throw new Error("API request failed");
+    }
+
+    const data = await res.json();
 
     setMessages(prev => [
       ...prev,
-      { role: "user", text: userText }
+      {
+        role: "bot",
+        text: data.reply || "I couldn't generate a response."
+      }
     ]);
 
-    setInput("");
+  } catch (error) {
 
-    setLoading(true);
+    console.error("Chatbot API error:", error);
 
-    try {
-
-      const res = await fetch("/api/chat", {
-
-        method: "POST",
-
-        headers: {
-          "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify({
-          message: userText,
-          sessionId
-        })
-
-      });
-
-      const data = await res.json();
-
-      setMessages(prev => [
-        ...prev,
-        { role: "bot", text: data.reply }
-      ]);
-
-    }
-    catch {
-
-      setMessages(prev => [
-        ...prev,
-        {
-          role: "bot",
-          text: "Unable to respond now."
-        }
-      ]);
-
-    }
-
-    setLoading(false);
+    setMessages(prev => [
+      ...prev,
+      {
+        role: "bot",
+        text: "Unable to respond right now."
+      }
+    ]);
 
   }
+
+  setLoading(false);
+
+}
 
 
   return (

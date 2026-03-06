@@ -94,12 +94,12 @@ export default function Header() {
               {activeMenu === "patients" && (
                 <ul className="dropdown">
                   <li onClick={() => handleNavigate("/faqs")}>FAQs</li>
-                  <li onClick={() => handleNavigate("/feedback")}>
+                  <li onClick={() => handleNavigate("/patient-feedback")}>
                     Patient Feedback
                   </li>
-                  <li onClick={() => handleNavigate("/case-history")}>
+                  {/* <li onClick={() => handleNavigate("/case-history")}>
                     Case History Form
-                  </li>
+                  </li> */}
                 </ul>
               )}
             </li>

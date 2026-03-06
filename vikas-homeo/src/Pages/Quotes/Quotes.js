@@ -7,6 +7,8 @@ import quoteImg3 from "../../asessts/quotes/gandhi.jpg";
 import quoteImg4 from "../../asessts/quotes/samuel.jpg";
 import quoteImg5 from "../../asessts/quotes/srisri.jpg";
 import quoteImg6 from "../../asessts/quotes/par.jpg";
+import quoteImg7 from "../../asessts/quotes/quoteImg7.jpg";
+import quoteImg8 from "../../asessts/quotes/quoteImg8.jpg";
 
 export default function Quotes() {
 
@@ -46,7 +48,25 @@ export default function Quotes() {
       text: "The art of healing comes from nature, not from the physician.",
       author: "Paracelsus",
       image: quoteImg6,
-    },
+    },{
+  text: "Health is the greatest possession. Contentment is the greatest treasure.",
+  author: "Lao Tzu",
+  image: quoteImg7,
+},
+
+{
+  text: "The doctor of the future will give no medicine, but will interest his patients in the care of the human frame, in diet and in the cause and prevention of disease.",
+  author: "Thomas Edison",
+  image: quoteImg8,
+},
+
+
+
+{
+  text: "Wherever the art of medicine is loved, there is also a love of humanity.",
+  author: "Hippocrates",
+  image: quoteImg1,
+},
 
   ];
 
