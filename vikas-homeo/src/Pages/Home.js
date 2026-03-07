@@ -244,7 +244,11 @@ useEffect(() => {
              <p className="doctor-role">
          Founder of Dr vikas homoeopathy and naturopathy clinic
       </p>
-            <p className="doctor-qualifications"> Homoeopathic Physician & Holistic Health Specialist</p>
+            <div className="doctor-qualifications">
+  <span>Homoeopathic Physician</span>
+  <span>&</span>
+  <span>Holistic Health Specialist</span>
+</div>
             <p>
               Dr. Vikas is a dedicated homeopathic physician with a strong focus
               on holistic healing, personalized care, and long-term wellness.

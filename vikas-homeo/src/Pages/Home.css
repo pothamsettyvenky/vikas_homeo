@@ -531,10 +531,12 @@ line-height: 1.1;
 
 .doctor-details .doctor-qualifications {
   font-size: 18px;
-  line-height: 0;
+  line-height: 1.5;   /* Fix overlapping */
   margin-bottom: 30px;
   color: white;
   width: 100%;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .doctor-details p {
@@ -679,4 +681,8 @@ line-height: 1.1;
     .slide-content{
       margin-top: 20px;
     }
+     .doctor-details .doctor-qualifications {
+    font-size: 16px;
+    line-height: 1.4;
+  }
 }
