@@ -6,7 +6,7 @@ import travelEco from "../asessts/kit/eco_freindly.png";
 
 export default function HomeopathyKit() {
 
-  const whatsappNumber = "YOURNUMBER"; // add your number later
+  const whatsappNumber = "918096050488"; // add your number later
 
   const handleWhatsApp = (kitName) => {
     const message = `Hello, I want to order the ${kitName}.`;
