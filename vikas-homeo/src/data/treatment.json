@@ -82,7 +82,7 @@
     },
     {
       "name": "Asthma",
-      "image": "/images/",
+      "image": "/images/Asthma.jpg",
       "description": "Improves breathing capacity and reduces frequency of asthma attacks."
     },
     {
@@ -132,47 +132,47 @@
     },
     {
       "name": "Sinusitis",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Sinusitis.jpg",
       "description": "Reduces sinus inflammation and improves breathing."
     },
     {
       "name": "Adenoids",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Adenoids.jpg",
       "description": "Reduces swelling and improves breathing naturally."
     },
     {
       "name": "Polyps",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Polyps.jpg",
       "description": "Helps reduce abnormal tissue growth naturally."
     },
     {
       "name": "PCOD / PCOS",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Pcod.jpg",
       "description": "Restores hormonal balance and improves reproductive health."
     },
     {
       "name": "Sexual problems",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Sexualproblems.jpg",
       "description": "Improves reproductive function and restores hormonal balance."
     },
     {
       "name": "UTI",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/UTI.jpg",
       "description": "Helps eliminate infection and prevents recurrence."
     },
     {
       "name": "Vitiligo",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Vitiligo.jpg",
       "description": "Supports skin pigmentation and immune system balance."
     },
     {
       "name": "Stricture",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/str.jpg",
       "description": "Improves urinary flow and reduces narrowing naturally."
     },
     {
       "name": "Anxiety",
-      "image": "/asessts/Treatments/Anxiety.jpg",
+      "image": "/images/Anxiety.jpg",
       "description": "Promotes emotional stability and improves mental well-being."
     }
   ],
@@ -195,12 +195,12 @@
     },
     {
       "name": "BP (Hypertension)",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Hyper.jpg",
       "description": "Helps regulate blood pressure and improve heart health."
     },
     {
       "name": "DM (Diabetes Mellitus)",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Diabetis.jpg",
       "description": "Supports healthy blood sugar levels naturally."
     },
     {
@@ -210,7 +210,7 @@
     },
     {
       "name": "Hormonal imbalance",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Hormonalimbalance.jpg",
       "description": "Restores hormonal balance through natural therapy."
     },
     {
@@ -225,12 +225,12 @@
     },
     {
       "name": "Fatigue",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/Fatigue.jpg",
       "description": "Improves energy levels and overall vitality."
     },
     {
       "name": "Fatty liver",
-      "image": "/asessts/logo.jpeg",
+      "image": "/images/fatttyliver.jpg",
       "description": "Supports liver detoxification and improves liver health."
     },
     {
@@ -250,7 +250,7 @@
     },
     {
       "name": "Back pain",
-      "image": "/images",
+      "image": "/images/pain.jpg",
       "description": "Relieves muscle tension and improves spinal health."
     },
     {

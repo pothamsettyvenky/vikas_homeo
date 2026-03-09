@@ -15,7 +15,7 @@ export default function Quotes() {
   const quotes = [
 
     {
-      text: "Let food be thy medicine and medicine be thy food.",
+      text: "Let food be the medicine and medicine be the food.",
       author: "Hippocrates",
       image: quoteImg1,
     },
