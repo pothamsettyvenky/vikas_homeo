@@ -1,22 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AppointmentStrip.css";
 import AddressAutocomplete from "./AddressAutocomplete";
+import EmailForm from "./EmailForm";
+import EmailSuccessPopup from "./EmailSuccessPopup/EmailSuccessPopup";
 
 export default function AppointmentStrip() {
 
   const stripRef = useRef();
 
+  const [showPopup, setShowPopup] = useState(false);
 
-
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    treatment: "",
-    date: "",
+  const [addressData, setAddressData] = useState({
     address: "",
-    lat: null,
-    lng: null
+    lat: "",
+    lng: ""
   });
 
   useEffect(() => {
@@ -36,157 +33,189 @@ export default function AppointmentStrip() {
 
   }, []);
 
-  function handleChange(e) {
-
-    const { name, value } = e.target;
-
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-
-  }
-
   function handleAddressSelect(data) {
 
-    setFormData(prev => ({
-      ...prev,
+    setAddressData({
       address: data.address,
       lat: data.lat,
       lng: data.lng
-    }));
-
-  }
-
-  function handleSubmit() {
-
-    console.log("Appointment:", formData);
-
-    alert("Appointment submitted successfully");
+    });
 
   }
 
   return (
 
-    <section className="appointment-strip" ref={stripRef}>
+    <>
+      <section className="appointment-strip" ref={stripRef}>
 
-      <div className="appointment-wrapper">
+        <div className="appointment-wrapper">
 
-        {/* FORM */}
+          {/* FORM */}
 
-        <div className="appointment-box form">
+          <div className="appointment-box form">
 
-          <h3>Book an Appointment</h3>
+            <h3>Book an Appointment</h3>
 
-          <p>
-            Fill the form and our team will schedule your appointment
-          </p>
+            <p>
+              Fill the form and our team will schedule your appointment
+            </p>
 
-          <div className="form-grid">
+            <EmailForm
+              className="form-grid"
+              onSuccess={() => {
+  setShowPopup(true);
 
-            <input
-              name="name"
-              placeholder="Name"
-              onChange={handleChange}
-            />
-
-            <input
-              name="phone"
-              placeholder="Phone"
-              onChange={handleChange}
-            />
-
-            <input
-              name="email"
-              placeholder="Email"
-              onChange={handleChange}
-            />
-
-            <AddressAutocomplete
-              onSelect={handleAddressSelect}
-            />
-
-            <select
-              name="treatment"
-              onChange={handleChange}
+  setAddressData({
+    address: "",
+    lat: "",
+    lng: ""
+  });
+}}
+              onError={() => alert("Failed to send email")}
             >
-              <option value="">Select Treatment</option>
-              <option value="homeopathy">Homeopathy</option>
-              <option value="naturopathy">Naturopathy</option>
-              <option value="acupuncture">Acupuncture</option>
-              <option value="cupping">Cupping Therapy</option>
-              <option value="diet">Diet & Nutrition</option>
-            </select>
 
-            <input
-              type="date"
-              name="date"
-              onChange={handleChange}
-            />
+              <input
+                name="name"
+                placeholder="Name"
+                required
+              />
+
+              <input
+                name="phone"
+                placeholder="Phone"
+                required
+              />
+
+              <input
+                name="email"
+                type="email"
+                placeholder="Email"
+                required
+              />
+
+              {/* ADDRESS AUTOCOMPLETE */}
+
+              <AddressAutocomplete
+                onSelect={handleAddressSelect}
+              />
+
+              {/* hidden fields for EmailJS */}
+
+              <input
+                type="hidden"
+                name="address"
+                value={addressData.address}
+              />
+
+              <input
+                type="hidden"
+                name="lat"
+                value={addressData.lat}
+              />
+
+              <input
+                type="hidden"
+                name="lng"
+                value={addressData.lng}
+              />
+
+              <select name="treatment" required>
+
+                <option value="">Select Treatment</option>
+
+                <option value="Homeopathy">
+                  Homeopathy
+                </option>
+
+                <option value="Naturopathy">
+                  Naturopathy
+                </option>
+
+                <option value="Acupuncture">
+                  Acupuncture
+                </option>
+
+                <option value="Cupping Therapy">
+                  Cupping Therapy
+                </option>
+
+                <option value="Diet & Nutrition">
+                  Diet & Nutrition
+                </option>
+
+              </select>
+
+              <input
+                type="date"
+                name="date"
+                required
+              />
+
+              <button type="submit" className="submit-btn">
+                Submit
+              </button>
+
+            </EmailForm>
 
           </div>
 
-          <button
-            className="submit-btn"
-            onClick={handleSubmit}
-          >
-            Submit
-          </button>
+          {/* HOURS */}
 
-        </div>
+          <div className="appointment-box hours">
 
-        {/* HOURS */}
+            <h3>Opening Hours</h3>
 
-        <div className="appointment-box hours">
+            <div className="hours-text">
+              Mon–Sat: 9:30 am–1:30 pm<br />
+              5:30 pm–9:00 pm
+            </div>
 
-          <h3>Opening Hours</h3>
+            <div className="hours-text">
+              Sunday: 9:30 am–1:30 pm
+            </div>
 
-          <div className="hours-text">
-            Mon–Sat: 9:30 am–1:30 pm<br />
-            5:30 pm–9:00 pm
           </div>
 
-          <div className="hours-text">
-            Sunday: 9:30 am–1:30 pm
+          {/* ADDRESS */}
+
+          <div className="appointment-box address">
+
+            <h3>Our Address</h3>
+
+            <div className="address-text">
+
+              Venugopala Swamy Temple,<br />
+              Perala, Chirala,<br />
+              Andhra Pradesh 523157
+
+            </div>
+
+          </div>
+
+          {/* PHONE */}
+
+          <div className="appointment-box emergency">
+
+            <h3>Please Call Us</h3>
+
+            <span className="phone">
+              +91 80960 50488
+            </span>
+
           </div>
 
         </div>
 
-        {/* CLINIC ADDRESS */}
+      </section>
 
-        <div className="appointment-box address">
+      {/* SUCCESS POPUP */}
 
-          <h3>Our Address</h3>
+      <EmailSuccessPopup
+        show={showPopup}
+        onClose={() => setShowPopup(false)}
+      />
 
-          <div className="address-text">
-
-            Venugopala Swamy Temple,<br />
-                    Perala, Chirala,<br />
-                    Andhra Pradesh 523157
-          </div>
-
-        </div>
-
-        {/* PHONE */}
-
-        <div className="appointment-box emergency">
-
-          <h3>Please Call Us</h3>
-
-          {/* <span className="phone">
-            +91 73968 03203
-          </span> */}
-
-          <span className="phone">
-            +91 80960 50488
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
+    </>
   );
 
 }

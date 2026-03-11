@@ -2,44 +2,53 @@ import React, { useState } from "react";
 import "./VikasHomoeo.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import clinicImg from "../../asessts/logo.jpeg";
 import "swiper/css";
 import "swiper/css/pagination";
-import review1 from "../../asessts/reviews/review1.png";
-import review2 from "../../asessts/reviews/review2.png";
-import review3 from "../../asessts/reviews/review3.png";
-import review4 from "../../asessts/reviews/review4.png";
-import review5 from "../../asessts/reviews/review5.png";
-import review6 from "../../asessts/reviews/review6.png";
-import review7 from "../../asessts/reviews/review7.png";
-import review8 from "../../asessts/reviews/review8.png";
 
 import { useNavigate } from "react-router-dom";
+
 export default function VikasHomoeo() {
+
+  const navigate = useNavigate();
+
+  /* CLOUDINARY IMAGES */
+
   const galleryImages = [
-    review1,
-    review2,
-    review3,
-    review4,
-    review5,
-    review6,
-    review7,
-    review8,
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175370/gallery10_hl2dwt.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175370/gallery9_llz90r.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175376/galleryy8_nolacq.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175369/gallery7_roemag.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery1_rtrcj8.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176507/gallery11_pvcixy.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery5_ztdfnq.jpg"
+  ];
+
+   const sliderImages = [
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175376/galleryy8_nolacq.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175370/gallery10_hl2dwt.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175369/gallery4_ry0rq8.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery1_rtrcj8.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175774/gallery11_jupuah.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176508/gallery14_vnijmm.jpg",
+    
   ];
 
   const [activeTab, setActiveTab] = useState("function");
   const [fade, setFade] = useState(true);
-const navigate = useNavigate();
+
   const changeTab = (tab) => {
+
     setFade(false);
 
     setTimeout(() => {
       setActiveTab(tab);
       setFade(true);
     }, 150);
+
   };
 
   const tabData = {
+
     function: [
       "We take the consultations on a prior appointment basis only.",
       "We will get back to you within 2–3 working days.",
@@ -66,36 +75,52 @@ const navigate = useNavigate();
       "Late joining will result in rescheduling.",
       "Paid amount is non-refundable.",
     ],
+
   };
 
   return (
+
     <section className="about-section">
+
       {/* TOP SECTION */}
 
       <div className="about-container">
+
         <div className="about-image">
-          <img src={clinicImg} alt="clinic" />
+          <img src="https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery1_rtrcj8.jpg" alt="clinic" />
         </div>
 
         <div className="about-content">
-          <p className="about-subtitle">Dr VIKAS <span className="subtitle-line">HOMOEOPATHY & NATUROPATHY</span></p>
 
-          <h2 className="about-title">Pioneering Holistic Homeopathic Healing</h2>
+          <p className="about-subtitle">
+            Dr VIKAS
+            <span className="subtitle-line">
+              HOMOEOPATHY & NATUROPATHY
+            </span>
+          </p>
+
+          <h2 className="about-title">
+            Pioneering Holistic Homeopathic Healing
+          </h2>
 
           <p className="about-text">
-            Dr Vikas Homoeopathy and Naturopathy Clinic provides safe, natural, and effective treatments
-            using holistic homeopathic principles.We focus on identifying the
-            root cause and providing personalized healing solutions for
-            long-term wellness.we have succesfully treated having acute and chronic illness of patients with excellent results
-.
+            Dr Vikas Homoeopathy and Naturopathy Clinic provides safe,
+            natural, and effective treatments using holistic homeopathic
+            principles. We focus on identifying the root cause and providing
+            personalized healing solutions for long-term wellness.
           </p>
+
         </div>
+
       </div>
+
 
       {/* TABS */}
 
       <div className="about-tabs-section">
+
         <div className="tabs-header">
+
           <button
             className={activeTab === "function" ? "active" : ""}
             onClick={() => changeTab("function")}
@@ -116,81 +141,107 @@ const navigate = useNavigate();
           >
             ONLINE CONSULTATION
           </button>
+
         </div>
 
         <div className={`tabs-content ${fade ? "fade-in" : "fade-out"}`}>
+
           <ul>
             {tabData[activeTab].map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
+
         </div>
+
       </div>
 
-      {/* COLLAGE GALLERY */}
+
+      {/* PHOTO GALLERY */}
 
       <div className="gallery-section">
-        <p className="gallery-subtitle">OUR CLINIC</p>
 
-        <h2 className="gallery-title">Photo Gallery</h2>
+        <p className="gallery-subtitle">
+          OUR CLINIC
+        </p>
 
-        {/* DESKTOP COLLAGE */}
+        <h2 className="gallery-title">
+          Photo Gallery
+        </h2>
+
         <div className="gallery-bg">
+
+          {/* DESKTOP COLLAGE */}
+
           <div className="collage-grid desktop-gallery">
+
             {galleryImages[0] && (
               <img
                 src={galleryImages[0]}
                 className="collage-item item-large"
-                alt=""
+                alt="clinic"
               />
             )}
 
             {galleryImages.slice(1, 7).map((img, index) => (
+
               <img
                 src={img}
                 key={index}
                 className={`collage-item item-${index + 1}`}
-                alt=""
+                alt="clinic"
               />
+
             ))}
+
           </div>
 
-          {/* MOBILE & TABLET SLIDER */}
+
+          {/* MOBILE / TABLET SLIDER */}
 
           <div className="gallery-slider">
+
             <Swiper
               modules={[Pagination, Autoplay]}
               spaceBetween={15}
-              autoplay={{ delay: 3000 }}
+              autoplay={{ delay: 2000 }}
               pagination={{ clickable: true }}
               breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                },
-
-                600: {
-                  slidesPerView: 2,
-                },
-
-                1024: {
-                  slidesPerView: 2,
-                },
+                0: { slidesPerView: 1 },
+                600: { slidesPerView: 2 },
+                1024: { slidesPerView: 2 },
               }}
             >
-              {galleryImages.map((img, index) => (
+
+              {sliderImages.map((img, index) => (
+
                 <SwiperSlide key={index}>
-                  <img src={img} className="slider-image" alt="" />
+                  <img src={img} className="slider-image" alt="clinic" />
                 </SwiperSlide>
+
               ))}
+
             </Swiper>
+
           </div>
+
         </div>
-       <div className="gallery-more">
-  <button onClick={() => navigate("/gallery")}>
-    View More Images →
-  </button>
-</div>
+
+
+        {/* VIEW MORE BUTTON */}
+
+        <div className="gallery-more">
+
+          <button onClick={() => navigate("/gallery")}>
+            View More Images →
+          </button>
+
+        </div>
+
       </div>
+
     </section>
+
   );
+
 }

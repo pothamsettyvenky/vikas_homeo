@@ -190,7 +190,7 @@
 }
 
 .about-image img {
-  width: 100%;
+  width: 80%;
   border-radius: 18px;
 
   border: 1px solid var(--glass-border);

@@ -18,9 +18,27 @@ export default function Header() {
   };
 
   const handleNavigate = (path) => {
+    if (path.includes("#")) {
+
+    const [page, hash] = path.split("#");
+
+    navigate(page);
+
+    setTimeout(() => {
+
+      const element = document.getElementById(hash);
+
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+
+    }, 300);
+
+  } else {
+
     navigate(path);
-    setMobileOpen(false);
-    setActiveMenu(null);
+
+  }
   };
 
   return (
@@ -146,7 +164,7 @@ export default function Header() {
 
         {/* BOOK BUTTON */}
         <div className="contact-btn">
-          <button onClick={() => handleNavigate("/appointment")}>
+          <button onClick={() => handleNavigate("/Contact#appointment")}>
             Book Appointment
           </button>
         </div>

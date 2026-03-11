@@ -521,11 +521,10 @@ line-height: 1.1;
 
 .doctor-name {
   font-size: 42px;
-  letter-spacing: 1px;
   text-wrap: nowrap;
   margin-bottom: 0px;
   color: #fff;
-  font-family: var(--body-font);
+  font-family: var(--font1);
   text-transform: uppercase;
 }
 
@@ -535,8 +534,7 @@ line-height: 1.1;
   margin-bottom: 30px;
   color: white;
   width: 100%;
-  text-align: center;
-  padding: 0 10px;
+ font-family:var(--body-font)
 }
 
 .doctor-details p {
@@ -576,7 +574,7 @@ line-height: 1.1;
 
 .doctor-portrait img {
   width: 100%;
-  max-width: 560px;
+  max-width: 320px;
   object-fit: cover;
 }
 

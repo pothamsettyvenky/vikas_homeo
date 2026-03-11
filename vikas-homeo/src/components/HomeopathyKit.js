@@ -1,6 +1,6 @@
 import "./HomeopathyKit.css";
 
-import Travelkit from "../asessts/kit/travelkit.png";
+
 import Homekit from "../asessts/kit/homekit.png";
 import travelEco from "../asessts/kit/eco_freindly.png";
 
@@ -16,7 +16,7 @@ export default function HomeopathyKit() {
 
   const kits = [
     {
-      title: "Children Kit",
+      title: "Children Kit (Pediatric Kit)",
       items: [
         {
           variant: "Basic Kit",
@@ -33,7 +33,7 @@ export default function HomeopathyKit() {
         {
           variant: "Eco-Friendly Kit",
           price: "₹1499",
-          image: Travelkit,
+          image: travelEco,
           description: "Premium eco-friendly pediatric homeopathy kit.",
           features: [
             "German remedies",
@@ -51,7 +51,7 @@ export default function HomeopathyKit() {
         {
           variant: "Basic Kit",
           price: "₹1299",
-          image: travelEco,
+          image: Homekit,
           description: "Natural emergency kit for injuries and pain.",
           features: [
             "Injury relief",
@@ -63,7 +63,7 @@ export default function HomeopathyKit() {
         {
           variant: "Eco-Friendly Kit",
           price: "₹1999",
-          image: Travelkit,
+          image: travelEco,
           description: "Premium eco-friendly emergency homeopathy kit.",
           features: [
             "German remedies",
@@ -81,7 +81,7 @@ export default function HomeopathyKit() {
         {
           variant: "Basic Kit",
           price: "₹699",
-          image: travelEco,
+          image: Homekit,
           description: "Compact homeopathic kit for safe travel care.",
           features: [
             "Compact size",
@@ -93,7 +93,7 @@ export default function HomeopathyKit() {
         {
           variant: "Eco-Friendly Kit",
           price: "₹999",
-          image: Travelkit,
+          image: travelEco,
           description: "Eco-friendly premium kit for travel health support.",
           features: [
             "Eco case",
@@ -111,7 +111,7 @@ export default function HomeopathyKit() {
         {
           variant: "Basic Kit",
           price: "₹1499",
-          image: travelEco,
+          image: Homekit,
           description: "Complete homeopathy kit for family health care.",
           features: [
             "Family safe",
@@ -123,7 +123,7 @@ export default function HomeopathyKit() {
         {
           variant: "Eco-Friendly Kit",
           price: "₹2499",
-          image: Travelkit,
+          image: travelEco,
           description: "Premium eco-friendly complete family care kit.",
           features: [
             "German remedies",

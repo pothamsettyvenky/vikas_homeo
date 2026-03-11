@@ -5,13 +5,14 @@ import { useNavigate } from "react-router-dom";
 export default function VikasClinic() {
   const navigate = useNavigate();
 
-  const galleryImages = [
-    "https://images.unsplash.com/photo-1582750433449-648ed127bb54",
-    "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
-    "https://images.unsplash.com/photo-1584982751601-97dcc096659c",
-    "https://images.unsplash.com/photo-1551190822-a9333d879b1f",
-    "https://images.unsplash.com/photo-1537368910025-700350fe46c7",
-    "https://images.unsplash.com/photo-1584515933487-779824d29309",
+   const galleryImages = [
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175376/galleryy8_nolacq.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175370/gallery10_hl2dwt.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175369/gallery4_ry0rq8.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery1_rtrcj8.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175774/gallery11_jupuah.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176508/gallery14_vnijmm.jpg",
+    
   ];
 
   return (
@@ -32,7 +33,7 @@ export default function VikasClinic() {
         <div className="vikas-intro">
           <div className="vikas-image">
             <img
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2"
+              src="https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176508/gallery15_pw8cdm.jpg"
               alt="Dr Vikas"
             />
             <button

@@ -268,7 +268,7 @@ useEffect(() => {
           </div>
           <div className="doctor-portrait">
             <img
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2"
+              src="https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176508/gallery15_pw8cdm.jpg"
               alt="Dr. Vikas"
             />
           </div>
@@ -279,9 +279,11 @@ useEffect(() => {
  <p className="doctor-role">
          Co-Founder of Dr vikas homoeopathy and naturopathy clinic
       </p>
-            <p className="doctor-qualifications">
-              Consultant Physician | Holistic Care Specialist
-            </p>
+             <div className="doctor-qualifications">
+  <span>Homoeopathic Physician</span>
+  <span>&</span>
+  <span>Holistic Health Specialist</span>
+</div>
 
             <p>
               Dr. Sandhya brings a compassionate and patient-centered approach
