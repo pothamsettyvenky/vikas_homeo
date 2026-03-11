@@ -37,7 +37,8 @@ export default function Header() {
   } else {
 
     navigate(path);
-
+setMobileOpen(false);
+    setActiveMenu(null);
   }
   };
 
@@ -86,7 +87,7 @@ export default function Header() {
               {activeMenu === "about" && (
                 <ul className="dropdown">
                   <li onClick={() => handleNavigate("/about/vikas-homeopathy")}>
-                    Vikas homoeopathy Clinic
+                    DR Vikas Clinic
                   </li>
                   <li onClick={() => handleNavigate("/about/dr-vikas")}>
                     Dr. Vikas Ballipalli

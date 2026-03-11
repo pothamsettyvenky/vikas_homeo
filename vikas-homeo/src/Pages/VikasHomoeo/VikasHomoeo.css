@@ -190,7 +190,7 @@
 }
 
 .about-image img {
-  width: 80%;
+  width: 100%;
   border-radius: 18px;
 
   border: 1px solid var(--glass-border);
@@ -624,6 +624,7 @@
           /* rgba(0, 128, 0) 80%, */ orange 100%
         );
   }
+  
   .about-container {
     flex-direction: column;
     padding: 30px 20px;
