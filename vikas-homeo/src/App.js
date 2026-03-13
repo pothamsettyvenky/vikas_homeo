@@ -18,6 +18,7 @@ import FAQ from "./Pages/Faq/Faq";
 import Chatbot from "./components/Chatbot/Chatbot";
 import PatientFeedback from "./Pages/PatientsFeedback/PatientsFeedback";
 import Gallery from "./Pages/gallery/gallery";
+import Awards from "./Pages/Awards/Awards"
 function App() {
   return (
     <>
@@ -38,6 +39,7 @@ function App() {
         <Route path="/faqs" element={<FAQ/>}/>
         <Route path= "/patient-feedback" element= {<PatientFeedback/>}/>
         <Route path="/gallery" element={<Gallery/>}/>
+        <Route path="/awards" element={<Awards/>}/>
       </Routes>
       <Chatbot/>
       <Footer />

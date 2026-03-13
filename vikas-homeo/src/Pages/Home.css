@@ -402,8 +402,7 @@
   }
 
   .doctor-image img {
-    width: 100%;
-    max-width: 320px;
+   width:100px; 
   }
 }
 /* =====================
@@ -475,7 +474,7 @@
 
   transition: 0.6s;
 }
-.doctor-details .doctor-role {
+.doctor-details .doctor-roles {
 
   font-family: var(--parafont);
 

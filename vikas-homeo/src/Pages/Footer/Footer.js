@@ -89,8 +89,8 @@ export default function Footer() {
                   Treatments
                 </li>
 
-                <li onClick={() => navigate("/appointment")}>
-                  Book Appointment
+                <li onClick={() => navigate("/gallery")}>
+                 Gallery
                 </li>
 
                 <li onClick={() => navigate("/contact")}>

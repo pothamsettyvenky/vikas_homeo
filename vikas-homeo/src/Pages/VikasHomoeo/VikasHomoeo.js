@@ -18,8 +18,8 @@ export default function VikasHomoeo() {
     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175370/gallery9_llz90r.jpg",
     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175376/galleryy8_nolacq.jpg",
     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175369/gallery7_roemag.jpg",
-    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery1_rtrcj8.jpg",
-    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176507/gallery11_pvcixy.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333879/gallery25_p6goy1.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333879/gallery24_i8kvth.jpg",
     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery5_ztdfnq.jpg"
   ];
 
@@ -95,7 +95,7 @@ export default function VikasHomoeo() {
           <p className="about-subtitle">
             Dr VIKAS
             <span className="subtitle-line">
-              HOMOEOPATHY & NATUROPATHY
+              HOMOEOPATHY & NATUROPATHY CLINIC
             </span>
           </p>
 
@@ -204,7 +204,7 @@ export default function VikasHomoeo() {
             <Swiper
               modules={[Pagination, Autoplay]}
               spaceBetween={15}
-              autoplay={{ delay: 2000 }}
+              autoplay={{ delay: 1000 }}
               pagination={{ clickable: true }}
               breakpoints={{
                 0: { slidesPerView: 1 },

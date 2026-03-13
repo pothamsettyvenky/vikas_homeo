@@ -1,29 +1,81 @@
 import React from "react";
-import "./VikasClinic.css";
+import "./Sandhya.css";
 import { useNavigate } from "react-router-dom";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 export default function Sandhya() {
   const navigate = useNavigate();
 
   const galleryImages = [
-    "https://images.unsplash.com/photo-1582750433449-648ed127bb54",
-    "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
-    "https://images.unsplash.com/photo-1584982751601-97dcc096659c",
-    "https://images.unsplash.com/photo-1551190822-a9333d879b1f",
-    "https://images.unsplash.com/photo-1537368910025-700350fe46c7",
-    "https://images.unsplash.com/photo-1584515933487-779824d29309",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175376/galleryy8_nolacq.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175370/gallery10_hl2dwt.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175369/gallery4_ry0rq8.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery1_rtrcj8.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175774/gallery11_jupuah.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773336376/gallery40_jqxotl.png",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773416476/sandy_oqbekz.jpg",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333879/gallery25_p6goy1.jpg",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333879/gallery23_o3ha5s.jpg",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176508/gallery14_vnijmm.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773334096/compressed_gallery34_tnqiqx.jpg",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333878/gallery16_bx15xr.jpg",
+    // "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773416376/WhatsApp_Image_2026-03-13_at_7.05.44_AM_drqjtm.jpg",
+    
+    
+    
   ];
+  const SliderImages = [
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175376/galleryy8_nolacq.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175370/gallery10_hl2dwt.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175369/gallery4_ry0rq8.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery1_rtrcj8.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175774/gallery11_jupuah.jpg",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773416476/sandy_oqbekz.jpg",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333879/gallery25_p6goy1.jpg",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333879/gallery23_o3ha5s.jpg",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176508/gallery14_vnijmm.jpg",
+    "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773334096/compressed_gallery34_tnqiqx.jpg",
+     "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333878/gallery16_bx15xr.jpg",
+    // "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773416376/WhatsApp_Image_2026-03-13_at_7.05.44_AM_drqjtm.jpg",
+    
+    
+    
+  ];
+const handleNavigate = (path) => {
+    if (path.includes("#")) {
 
+    const [page, hash] = path.split("#");
+
+    navigate(page);
+
+    setTimeout(() => {
+
+      const element = document.getElementById(hash);
+
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+
+    }, 300);
+
+  } else {
+
+    navigate(path);
+
+  }
+  };
   return (
-    <section className="credits-page">
-      <div className="credits-container">
+    <section className="vikas-page">
+      <div className="vikas-container">
         {/* TITLE */}
 
-        <h1>Dr. Sandhya Ballipalli</h1>
+        <h1>Dr. Sandhya</h1>
         <p className="doctor-role">
-          Co-Founder of Dr vikas homoeopathy and naturopathy clinic
+          Co-Founder of Dr Vikas Homoeopathy and Naturopathy Clinic
         </p>
-        <p className="credits-role">
+        <p className="vikas-role">
          Consultant Physician | Holistic Care Specialist
         </p>
 
@@ -32,12 +84,12 @@ export default function Sandhya() {
         <div className="vikas-intro">
           <div className="vikas-image">
             <img
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2"
+              src="https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773416476/sandy_oqbekz.jpg"
               alt="Dr Vikas"
             />
             <button
               className="appointment-btn"
-              onClick={() => navigate("/contact#appointment")}
+              onClick={() => handleNavigate("/contact#appointment")}
             >
               Book an Appointment
             </button>
@@ -45,14 +97,9 @@ export default function Sandhya() {
 
           <div className="vikas-text">
             <p>
-              Dr. Sandhya Ballipalli is a highly skilled and compassionate
-              holistic healthcare specialist with extensive experience in
-              Acupuncture, Ozone Therapy, Cupping Therapy, and Naturopathy. She
-              is dedicated to helping patients achieve optimal health through
-              safe, natural, and scientifically supported therapies. Her
-               approach focuses on restoring balance in the body by stimulating
-               the body's natural healing mechanisms and addressing the root
-               causes of disease.
+             Dr. Sandhya is a dedicated naturopathy physician who completed her Bachelor of Naturopathy and Yogic Sciences (BNYS), a rigorous 5½-year medical degree from Care Yoga Naturopathy Medical College and Hospital. Her education provided extensive training in natural healing sciences, therapeutic yoga, clinical nutrition, and holistic patient care.
+
+To further advance her clinical expertise, she completed a Fellowship in Advanced Acupuncture from National Institute of Naturopathy in Pune, where she gained specialized knowledge in traditional and modern acupuncture techniques for managing various acute and chronic health conditions. She is also a Certified Ozone Therapy Practitioner accredited by Ozone Forum of India in Mumbai, enabling her to incorporate advanced ozone-based therapies in her clinical practice
             </p>
           </div>
         </div>
@@ -61,13 +108,7 @@ export default function Sandhya() {
 
         <div className="vikas-full-text">
           <p>
-           She has successfully treated patients suffering from chronic
-                pain, hormonal imbalance, stress-related disorders, fatigue, and
-                metabolic conditions. Through her expertise in acupuncture, she
-                helps improve energy flow, enhance circulation, and promote
-                natural healing. Her ozone therapy treatments support immune
-                system strengthening, detoxification, and faster tissue
-                recovery.
+          Dr. Sandhya focuses on a holistic and patient-centered approach, addressing the root cause of disease rather than only managing symptoms. Her treatment methods combine evidence-based naturopathy therapies such as therapeutic diet planning, acupuncture, cupping therapy, and ozone therapy to support the body’s natural healing process.
           </p>
 
           <p>
@@ -79,26 +120,69 @@ export default function Sandhya() {
             ensure safe and effective results while enhancing overall wellness.
           </p>
           <p>
-            Dr. Sandhya believes that true healing occurs when the body, mind,
-           and lifestyle are in harmony. She provides personalized treatment
-             plans tailored to each patient’s individual needs. Her compassionate
-             care, combined with modern holistic therapies, helps patients
-             achieve lasting health, improved energy levels, and better quality
-             of life.
+           She has successfully treated numerous patients suffering from chronic pain conditions, including musculoskeletal pain, joint disorders, and lifestyle-related ailments. By integrating various naturopathy techniques and individualized treatment protocols, she helps patients achieve long-term relief, improved mobility, and better overall health.
+
+Dr. Sandhya is committed to promoting natural healing, preventive healthcare, and sustainable lifestyle practices that empower patients to maintain optimal well-being.
           </p>
         </div>
 
         {/* GALLERY */}
 
-        <h2 className="gallery-title">Clinic Gallery</h2>
+        <h2 className="gallery-title">Gallery</h2>
 
-        <div className="gallery-grid">
-          {galleryImages.map((img, index) => (
-            <div key={index} className="gallery-item">
-              <img src={img} alt="Clinic" />
-            </div>
-          ))}
-        </div>
+      <div className="sandy-gallery-bg">
+
+  {/* DESKTOP COLLAGE */}
+
+  <div className="sandy-collage-grid sandy-desktop-gallery">
+
+    {galleryImages[0] && (
+      <img
+        src={galleryImages[0]}
+        className="collage-item sandy-item-large"
+        alt="clinic"
+      />
+    )}
+
+    {galleryImages.slice(1, 12).map((img, index) => (
+      <img
+        src={img}
+        key={index}
+        className={`sandy-collage-item sandy-item-${index + 1}`}
+        alt="clinic"
+      />
+    ))}
+
+  </div>
+
+
+  {/* MOBILE / TABLET SLIDER */}
+
+  <div className="gallery-slider">
+
+    <Swiper
+      modules={[Pagination, Autoplay]}
+      spaceBetween={15}
+      autoplay={{ delay: 2000 }}
+      pagination={{ clickable: true }}
+      breakpoints={{
+        0: { slidesPerView: 1 },
+        600: { slidesPerView: 2 },
+        1024: { slidesPerView: 2 },
+      }}
+    >
+
+      {SliderImages.map((img, index) => (
+        <SwiperSlide key={index}>
+          <img src={img} className="slider-image" alt="clinic" />
+        </SwiperSlide>
+      ))}
+
+    </Swiper>
+
+  </div>
+
+</div>
 
         {/* BUTTONS */}
 

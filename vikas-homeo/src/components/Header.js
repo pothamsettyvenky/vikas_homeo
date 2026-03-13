@@ -87,7 +87,7 @@ setMobileOpen(false);
               {activeMenu === "about" && (
                 <ul className="dropdown">
                   <li onClick={() => handleNavigate("/about/vikas-homeopathy")}>
-                    DR Vikas Clinic
+                    Our Clinic
                   </li>
                   <li onClick={() => handleNavigate("/about/dr-vikas")}>
                     Dr. Vikas Ballipalli

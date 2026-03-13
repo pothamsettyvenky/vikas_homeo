@@ -241,7 +241,7 @@ useEffect(() => {
         <div className=" doctor-profile " ref={(el) => (doctorRef.current[0] = el)}>
           <div className="doctor-details">
             <h3 className="doctor-name"> Dr. Vikas Ballipalli</h3>
-             <p className="doctor-role">
+             <p className="doctor-roles">
          Founder of Dr vikas homoeopathy and naturopathy clinic
       </p>
             <div className="doctor-qualifications">
@@ -268,7 +268,7 @@ useEffect(() => {
           </div>
           <div className="doctor-portrait">
             <img
-              src="https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176508/gallery15_pw8cdm.jpg"
+              src="https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773334345/compressed_gallery32_vzyjep.jpg"
               alt="Dr. Vikas"
             />
           </div>
@@ -276,7 +276,7 @@ useEffect(() => {
         <div className="doctor-profile reverse" ref={(el) => (doctorRef.current[1] = el)} >
           <div className="doctor-details">
             <h3 className="doctor-name">Dr. Sandhya Ballipalli</h3>
- <p className="doctor-role">
+ <p className="doctor-roles">
          Co-Founder of Dr vikas homoeopathy and naturopathy clinic
       </p>
              <div className="doctor-qualifications">
@@ -306,7 +306,7 @@ useEffect(() => {
 
           <div className="doctor-portrait">
             <img
-              src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6"
+              src="https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773416376/WhatsApp_Image_2026-03-13_at_7.05.44_AM_drqjtm.jpg"
               alt="Dr. Sandhya"
             />
           </div>

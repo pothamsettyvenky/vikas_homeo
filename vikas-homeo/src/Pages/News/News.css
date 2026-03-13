@@ -314,8 +314,12 @@ pointer-events: none;
   }
 }
 @media (max-width: 768px) {
+   .news-page {
+    padding: 60px 15px;
+  
+  }
       .news-container {
-        padding: 25px 12px;
+        padding: 20px;
   }
     .news-grid {
 
@@ -325,6 +329,13 @@ pointer-events: none;
   .news-title {
     font-size: 36px;
   }
+  .news-image {
+    height: 180px;
+  }
+
+  .news-content {
+    padding: 16px;
+  }
 
 }
 @media (max-width: 468px) {
@@ -333,6 +344,6 @@ pointer-events: none;
     font-size: 18px;
   }
   .news-content p {
-    color: black;
+    color: white;
   }
 }

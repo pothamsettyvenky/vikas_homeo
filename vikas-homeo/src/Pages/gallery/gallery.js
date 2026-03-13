@@ -15,7 +15,15 @@ const images = [
   "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176508/gallery13_cbgzee.jpg",
   "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery2_d3j1yx.jpg",
   "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773176508/gallery15_pw8cdm.jpg",
-  "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery3_pezfbk.jpg"
+  "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773175368/gallery3_pezfbk.jpg",
+  "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333880/gallery28_z5pq25.jpg",
+  "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333880/gallery27_zadzpr.jpg",
+  "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333879/gallery25_p6goy1.jpg",
+  "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333879/gallery24_i8kvth.jpg",
+  "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773333879/gallery23_o3ha5s.jpg",
+  "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773416376/gallery41_uabql6.jpg",
+  "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773416476/sandy_oqbekz.jpg",
+  
 ];
 
 export default function Gallery() {

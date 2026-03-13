@@ -237,7 +237,7 @@
   color: white;
   display: block; /* forces next line */
 
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   letter-spacing: 0px;
 
@@ -245,7 +245,7 @@
 }
 
 .about-title {
-  font-size: 28px;
+  font-size: 24px;
 
   font-family: var(--heading);
 
@@ -635,7 +635,7 @@
   }
 
   .about-title {
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
   }
 .tabs-content li{

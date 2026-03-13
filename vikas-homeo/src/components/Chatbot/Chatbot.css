@@ -89,7 +89,7 @@
 
   border-radius: 20px;
 
-  background: var(--chat-glass);
+  background: white;
 
   backdrop-filter: blur(20px);
 
@@ -112,7 +112,7 @@
 
 .chatbot-header {
 
-  background: var(--color);
+  background: var(--chat-glass);
 
   color: white;
 font-family: var(--font1);
@@ -172,7 +172,7 @@ font-family: var(--parafont);
 
 .chatbot-message.bot {
 
-  background: rgba(255,255,255,0.5);
+  background: var(--chat-glass);
 
   color: #000;
 
@@ -187,7 +187,7 @@ font-family: var(--parafont);
 
 .chatbot-message.user {
 
-  background: var(--color);
+  background: green;
 
   color: white;
 font-weight: bold;
@@ -240,7 +240,7 @@ font-weight: bold;
 
 .chatbot-input button {
 
-  background: var(--color);
+  background: var(--chat-glass);
 
   border: none;
 
