@@ -15,7 +15,6 @@ export default function News() {
 
   const today = new Date().toISOString().split("T")[0];
 
-
   /* --------------------------
      Upload image to Cloudinary
   -------------------------- */
@@ -56,7 +55,6 @@ export default function News() {
 
   }, []);
 
-
   /* --------------------------
      Fetch Firestore backup
   -------------------------- */
@@ -66,30 +64,26 @@ export default function News() {
     try {
 
       const ref = doc(db, "news", today);
-
       const snap = await getDoc(ref);
 
       if (snap.exists()) {
 
         const data = snap.data().articles;
 
-        setArticles(data);
-
-      } else {
-
-        setArticles([]);
+        if (data && data.length > 0) {
+          setArticles(data);
+        }
 
       }
 
     }
-    catch {
+    catch (error) {
 
-      setArticles([]);
+      console.log("Firestore fetch failed");
 
     }
 
   }, [today]);
-
 
   /* --------------------------
      Fetch from GNews
@@ -107,20 +101,23 @@ export default function News() {
 
       let gnewsArticles = [];
 
-      if (data.articles?.length > 0) {
+      if (data.articles && data.articles.length > 0) {
 
         gnewsArticles = data.articles;
 
       }
-      else if (
-        data.articlesRemovedFromResponse?.historicalArticles
-      ) {
+      else if (data.articlesRemovedFromResponse?.historicalArticles) {
 
         gnewsArticles =
           data.articlesRemovedFromResponse.historicalArticles;
 
       }
-      else {
+
+      /* If API returned empty → fallback */
+
+      if (gnewsArticles.length === 0) {
+
+        console.log("GNews empty → using Firestore backup");
 
         await fetchFromFirestore();
         setLoading(false);
@@ -128,23 +125,20 @@ export default function News() {
 
       }
 
-
       /* show instantly */
 
-      const instantArticles =
-        gnewsArticles.map(article => ({
+      const instantArticles = gnewsArticles.map(article => ({
 
-          title: article.title,
-          description: article.description,
-          url: article.url,
-          image: article.image,
-          publishedAt: article.publishedAt
+        title: article.title,
+        description: article.description,
+        url: article.url,
+        image: article.image,
+        publishedAt: article.publishedAt
 
-        }));
+      }));
 
       setArticles(instantArticles);
       setLoading(false);
-
 
       /* upload images in background */
 
@@ -152,8 +146,7 @@ export default function News() {
 
         gnewsArticles.map(async article => {
 
-          const imageUrl =
-            await uploadImage(article.image);
+          const imageUrl = await uploadImage(article.image);
 
           return {
 
@@ -169,18 +162,23 @@ export default function News() {
 
       );
 
+      /* save backup only if valid */
 
-      /* save backup */
+      if (processed.length > 0) {
 
-      await setDoc(doc(db, "news", today), {
+        await setDoc(doc(db, "news", today), {
 
-        articles: processed,
-        createdAt: new Date()
+          articles: processed,
+          createdAt: new Date()
 
-      });
+        });
+
+      }
 
     }
-    catch {
+    catch (error) {
+
+      console.log("GNews failed → Firestore fallback");
 
       await fetchFromFirestore();
       setLoading(false);
@@ -189,23 +187,15 @@ export default function News() {
 
   }, [API_KEY, today, fetchFromFirestore, uploadImage]);
 
-
   /* --------------------------
      useEffect
   -------------------------- */
 
   useEffect(() => {
 
-    const load = async () => {
-
-      await fetchFromGNews();
-
-    };
-
-    load();
+    fetchFromGNews();
 
   }, [fetchFromGNews]);
-
 
   /* --------------------------
      Render
@@ -220,7 +210,6 @@ export default function News() {
         <h2 className="news-title">
           Latest Homoeopathy & Naturopathy News
         </h2>
-
 
         {loading ? (
 
