@@ -76,7 +76,7 @@ const handleNavigate = (path) => {
           Co-Founder of Dr Vikas Homoeopathy and Naturopathy Clinic
         </p>
         <p className="vikas-role">
-         Consultant Physician | Holistic Care Specialist
+         Naturopathy Physician | Holistic Care Specialist
         </p>
 
         {/* IMAGE + PARAGRAPH */}

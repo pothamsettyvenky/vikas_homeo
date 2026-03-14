@@ -218,7 +218,10 @@ useEffect(() => {
               <div className="slide-overlay"></div>
               <div className="slide-content left-text">
                 <div className="slide-text">
-                  <h1>Ozone</h1>
+                 <h1>
+  Ozone <span className="coming-soon">Coming Soon</span>
+</h1>
+                  
                   <p>
                     A natural therapy that enhances oxygen delivery, strengthens
                     immunity, and supports faster healing. Helps improve
@@ -280,7 +283,7 @@ useEffect(() => {
          Co-Founder of Dr vikas homoeopathy and naturopathy clinic
       </p>
              <div className="doctor-qualifications">
-  <span>Homoeopathic Physician</span>
+  <span>Naturopathy Physician</span>
   <span>&</span>
   <span>Holistic Health Specialist</span>
 </div>
