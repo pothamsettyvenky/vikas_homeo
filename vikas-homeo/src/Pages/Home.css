@@ -569,12 +569,14 @@ line-height: 1.1;
   flex: 1;
   display: flex;
   justify-content: center;
+  
 }
 
 .doctor-portrait img {
   width: 100%;
   max-width: 320px;
   object-fit: cover;
+  border-radius:20px;
 }
 
 /* =====================

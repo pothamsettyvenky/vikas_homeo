@@ -2,177 +2,177 @@
   "homeopathy": [
     {
       "name": "Psoriasis",
-      "image": "/images/Psoriasis.svg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446605/Psoriasis_twzm8k.svg",
       "description": "Helps reduce skin inflammation, itching, and scaling by correcting immune imbalance naturally."
     },
     {
       "name": "Schizophrenia",
-      "image": "/images/scc.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446619/scc_xy9vnl.jpg",
       "description": "Supports mental stability, emotional balance, and improves overall neurological health."
     },
     {
       "name": "Prostate enlargement",
-      "image": "/images/Prostate.png",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446606/Prostate_t4kh0z.png",
       "description": "Improves urinary flow, reduces prostate swelling, and restores normal prostate function."
     },
     {
       "name": "Pneumonia",
-      "image": "/images/pnenumonia.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446604/pnenumonia_gxlwop.jpg",
       "description": "Strengthens lung function and supports faster recovery from respiratory infections."
     },
     {
       "name": "Paralysis",
-      "image": "/images/paralasis.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446599/paralasis_nyxxjl.jpg",
       "description": "Stimulates nerve healing, improves muscle strength, and supports mobility recovery."
     },
     {
       "name": "Infertility",
-      "image": "/images/fertility.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446589/fertility_aiulff.jpg",
       "description": "Addresses hormonal imbalance and improves reproductive health naturally."
     },
     {
       "name": "Migraine",
-      "image": "/images/migrane.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446596/migrane_hh0z2n.jpg",
       "description": "Reduces frequency and severity of headaches by treating root causes."
     },
     {
       "name": "Tumors",
-      "image": "/images/tumor.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446627/tumor_fij0rg.jpg",
       "description": "Supports immune function and helps control abnormal tissue growth."
     },
     {
       "name": "Ankylosing spondylitis",
-      "image": "/images/Spondylitis.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446621/Spondylitis_crcufz.jpg",
       "description": "Helps relieve joint stiffness, inflammation, and improves spinal flexibility."
     },
     {
       "name": "Haemorrhoids (Piles)",
-      "image": "/images/Hemorrhoids.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446591/Hemorrhoids_inwnmx.jpg",
       "description": "Relieves pain, bleeding, and swelling while promoting healing naturally."
     },
     {
       "name": "Varicose veins",
-      "image": "/images/veins.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446633/veins_xlofoe.jpg",
       "description": "Improves blood circulation and reduces vein swelling and discomfort."
     },
     {
       "name": "Burns",
-      "image": "/images/burns.png",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446581/burns_lzy9sc.png",
       "description": "Promotes faster healing, reduces pain, and minimizes scar formation."
     },
     {
       "name": "Ulcers",
-      "image": "/images/ulcers.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446633/ulcers_hqqi9v.jpg",
       "description": "Supports healing of stomach lining and reduces acidity and discomfort."
     },
     {
       "name": "Thyroid problems",
-      "image": "/images/thyroid.png",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446626/thyroid_ozlp1r.png",
       "description": "Helps regulate thyroid hormones and improve metabolism naturally."
     },
     {
       "name": "Autism",
-      "image": "/images/Autism.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446581/Autism_gev847.jpg",
       "description": "Supports cognitive development, behavior improvement, and emotional balance."
     },
     {
       "name": "Skin infections",
-      "image": "/images/skin.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446620/skin_w6pwkg.jpg",
       "description": "Promotes faster skin healing and strengthens immunity against infections."
     },
     {
       "name": "Asthma",
-      "image": "/images/Asthma.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446581/Asthma_y2svaa.jpg",
       "description": "Improves breathing capacity and reduces frequency of asthma attacks."
     },
     {
       "name": "Allergies",
-      "image": "/images/allergy.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446576/allergy_hc0fmv.jpg",
       "description": "Strengthens immune system and reduces allergic reactions naturally."
     },
     {
       "name": "Autoimmune diseases",
-      "image": "/images/Autoimmune.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446581/Autoimmune_yandep.jpg",
       "description": "Balances immune response and reduces inflammation naturally."
     },
     {
       "name": "Fibroids",
-      "image": "/images/Fibroids.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446590/Fibroids_fr6gtn.jpg",
       "description": "Helps shrink fibroids and restores hormonal balance naturally."
     },
     {
       "name": "Tuberculosis",
-      "image": "/images/tuber.svg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446626/tuber_xaivi5.svg",
       "description": "Supports recovery, improves lung strength, and boosts immunity."
     },
     {
       "name": "Acne / warts",
-      "image": "/images/acne.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446575/acne_yceb6u.jpg",
       "description": "Clears skin naturally and prevents recurrence without side effects."
     },
     {
       "name": "Gallstones",
-      "image": "/images/gall.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446591/gall_zjchi6.jpg",
       "description": "Supports gallbladder health and reduces stone formation naturally."
     },
     {
       "name": "Renal stones",
-      "image": "/images/renal.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446607/Renal_v9azkl.jpg",
       "description": "Helps dissolve kidney stones and prevents recurrence."
     },
     {
       "name": "Hypertension (High BP)",
-      "image": "/images/Hyper.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446596/Hyper_b4u9q2.jpg",
       "description": "Regulates blood pressure and improves cardiovascular health."
     },
     {
       "name": "Diabetes",
-      "image": "/images/Diabetis.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446581/Diabetis_dbxdx8.jpg",
       "description": "Helps regulate blood sugar and improve metabolic balance."
     },
     {
       "name": "Sinusitis",
-      "image": "/images/Sinusitis.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446620/Sinusitis_vt5aeo.jpg",
       "description": "Reduces sinus inflammation and improves breathing."
     },
     {
       "name": "Adenoids",
-      "image": "/images/Adenoids.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446575/Adenoids_xsqckh.jpg",
       "description": "Reduces swelling and improves breathing naturally."
     },
     {
       "name": "Polyps",
-      "image": "/images/Polyps.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446607/Polyps_piek4r.jpg",
       "description": "Helps reduce abnormal tissue growth naturally."
     },
     {
       "name": "PCOD / PCOS",
-      "image": "/images/Pcod.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446605/Pcod_aooxel.jpg",
       "description": "Restores hormonal balance and improves reproductive health."
     },
     {
       "name": "Sexual problems",
-      "image": "/images/Sexualproblems.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446619/Sexualproblems_rb2rew.jpg",
       "description": "Improves reproductive function and restores hormonal balance."
     },
     {
       "name": "UTI",
-      "image": "/images/UTI.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446633/UTI_wku6ha.jpg",
       "description": "Helps eliminate infection and prevents recurrence."
     },
     {
       "name": "Vitiligo",
-      "image": "/images/Vitiligo.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446633/Vitiligo_rznls1.jpg",
       "description": "Supports skin pigmentation and immune system balance."
     },
     {
       "name": "Stricture",
-      "image": "/images/str.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446626/str_rdpu10.jpg",
       "description": "Improves urinary flow and reduces narrowing naturally."
     },
     {
       "name": "Anxiety",
-      "image": "/images/Anxiety.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446577/Anxiety_jzfzbd.jpg",
       "description": "Promotes emotional stability and improves mental well-being."
     }
   ],
@@ -180,82 +180,82 @@
   "naturopathy": [
     {
       "name": "Arthritis",
-      "image": "/images/Arthritis.png",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446576/Arthritis_ij2jbt.png",
       "description": "Reduces joint inflammation and improves mobility naturally."
     },
     {
       "name": "PCOD",
-      "image": "/images/Pcod.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446605/Pcod_aooxel.jpg",
       "description": "Restores hormonal balance through diet and natural therapy."
     },
     {
       "name": "Thyroid disorders",
-      "image": "/images/thyroid.png",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446626/thyroid_ozlp1r.png",
       "description": "Improves thyroid function and metabolism naturally."
     },
     {
       "name": "BP (Hypertension)",
-      "image": "/images/Hyper.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446596/Hyper_b4u9q2.jpg",
       "description": "Helps regulate blood pressure and improve heart health."
     },
     {
       "name": "DM (Diabetes Mellitus)",
-      "image": "/images/Diabetis.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446581/Diabetis_dbxdx8.jpg",
       "description": "Supports healthy blood sugar levels naturally."
     },
     {
       "name": "Obesity",
-      "image": "/images/Obesity.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446597/Obesity_jq3jss.jpg",
       "description": "Promotes natural weight loss and metabolic balance."
     },
     {
       "name": "Hormonal imbalance",
-      "image": "/images/Hormonalimbalance.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446596/Hormonalimbalance_fyypvr.jpg",
       "description": "Restores hormonal balance through natural therapy."
     },
     {
       "name": "Stress management",
-      "image": "/images/stress.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446626/stress_tuimev.jpg",
       "description": "Reduces stress and improves mental wellness."
     },
     {
       "name": "Pain management",
-      "image": "/images/pain.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446596/Pain_m6gbel.jpg",
       "description": "Relieves pain and improves body function naturally."
     },
     {
       "name": "Fatigue",
-      "image": "/images/Fatigue.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446583/Fatigue_mt0rqr.jpg",
       "description": "Improves energy levels and overall vitality."
     },
     {
       "name": "Fatty liver",
-      "image": "/images/fatttyliver.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446589/fatttyliver_mlpins.jpg",
       "description": "Supports liver detoxification and improves liver health."
     },
     {
       "name": "Sciatica",
-      "image": "/images/sciatica.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446621/sciatica_g9qkyz.jpg",
       "description": "Relieves nerve pain and improves mobility."
     },
     {
       "name": "Migraine",
-      "image": "/images/migrane.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446596/migrane_hh0z2n.jpg",
       "description": "Reduces headache frequency naturally."
     },
     {
       "name": "Spondylitis",
-      "image": "/images/Spondylitis.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446621/Spondylitis_crcufz.jpg",
       "description": "Improves spine flexibility and reduces inflammation."
     },
     {
       "name": "Back pain",
-      "image": "/images/pain.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773433333/Pain_wznzfy.jpg",
       "description": "Relieves muscle tension and improves spinal health."
     },
     {
       "name": "Anxiety",
-      "image": "/images/Anxiety.jpg",
+      "image": "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773446577/Anxiety_jzfzbd.jpg",
       "description": "Promotes relaxation and emotional balance naturally."
     }
   ]

@@ -84,7 +84,7 @@ const handleNavigate = (path) => {
         <div className="vikas-intro">
           <div className="vikas-image">
             <img
-              src="https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773334345/compressed_gallery32_vzyjep.jpg"
+              src="https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773432735/vikas_elcj8v.jpg"
               alt="Dr Vikas"
             />
             <button

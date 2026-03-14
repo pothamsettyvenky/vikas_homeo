@@ -371,12 +371,24 @@ color: white;
 
   opacity: 0.95;
   font-weight: bold;
-
+color:white;
   font-family: var(--parafont);
 
 }
 
+.date-field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
 
+.date-field label{
+  font-size:14px;
+  color:white;
+  opacity:0.9;
+  font-weight:bold;
+  font-family: var(--parafont);
+}
 /* =====================
    MOBILE
 ===================== */

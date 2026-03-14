@@ -145,11 +145,16 @@ export default function AppointmentStrip() {
 
               </select>
 
-              <input
-                type="date"
-                name="date"
-                required
-              />
+             <div className="date-field">
+  <label>Select preferred appointment date</label>
+
+  <input
+    type="date"
+    name="date"
+    min={new Date().toISOString().split("T")[0]}
+    required
+  />
+</div>
 
               <button type="submit" className="submit-btn">
                 Submit

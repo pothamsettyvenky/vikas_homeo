@@ -21,6 +21,9 @@ export default function AllTreatments() {
   const getImage = (imagePath) => {
 
     if (!imagePath) return defaultImg;
+     if (imagePath.startsWith("http")) {
+    return imagePath;
+  }
 
     // if image is from public folder
     if (imagePath.startsWith("/")) {

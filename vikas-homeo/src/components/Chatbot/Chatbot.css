@@ -89,7 +89,7 @@
 
   border-radius: 20px;
 
-  background: white;
+  background: rgba(255,255,255,0.7);
 
   backdrop-filter: blur(20px);
 
@@ -174,7 +174,7 @@ font-family: var(--parafont);
 
   background: var(--chat-glass);
 
-  color: #000;
+  color: white;
 
   align-self: flex-start;
 
@@ -233,7 +233,7 @@ font-weight: bold;
 
 .chatbot-input input::placeholder {
 
-  color: rgba(255,255,255);
+  color: black;
 
 }
 
