@@ -3,15 +3,12 @@ import "./News.css";
 
 import { db } from "../../firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-
 import { CLOUDINARY_CONFIG } from "../../cloudinary";
 
 export default function News() {
 
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const API_KEY = "6236eb8a5be86832896372d77515edea";
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -20,9 +17,7 @@ export default function News() {
   -------------------------- */
 
   const uploadImage = useCallback(async (imageUrl) => {
-
     try {
-
       if (!imageUrl) return null;
 
       if (imageUrl.includes("res.cloudinary.com")) {
@@ -31,7 +26,11 @@ export default function News() {
 
       const fd = new FormData();
 
-      fd.append("file", imageUrl);
+      // ⚠️ IMPORTANT FIX: use fetch blob instead of direct URL
+      const imgRes = await fetch(imageUrl);
+      const blob = await imgRes.blob();
+
+      fd.append("file", blob);
       fd.append("upload_preset", CLOUDINARY_CONFIG.uploadPreset);
 
       const res = await fetch(
@@ -46,165 +45,85 @@ export default function News() {
 
       return data.secure_url || imageUrl;
 
-    }
-    catch {
-
+    } catch {
       return imageUrl;
-
     }
-
   }, []);
 
   /* --------------------------
-     Fetch Firestore backup
+     Firestore fallback
   -------------------------- */
 
   const fetchFromFirestore = useCallback(async () => {
-
     try {
-
       const ref = doc(db, "news", today);
       const snap = await getDoc(ref);
 
       if (snap.exists()) {
-
         const data = snap.data().articles;
-
         if (data && data.length > 0) {
           setArticles(data);
         }
-
       }
-
-    }
-    catch (error) {
-
+    } catch {
       console.log("Firestore fetch failed");
-
     }
-
   }, [today]);
 
   /* --------------------------
-     Fetch from GNews
+     MAIN API CALL (NO CORS)
   -------------------------- */
 
-  const fetchFromGNews = useCallback(async () => {
-
+  const fetchFromAPI = useCallback(async () => {
     try {
-
-      const res = await fetch(
-        `https://gnews.io/api/v4/search?q=homeopathy OR homoeopathy OR naturopathy OR ayurveda&max=12&token=${API_KEY}`
-      );
-
+      const res = await fetch("/api/news");
       const data = await res.json();
 
-      let gnewsArticles = [];
-
-      if (data.articles && data.articles.length > 0) {
-
-        gnewsArticles = data.articles;
-
-      }
-      else if (data.articlesRemovedFromResponse?.historicalArticles) {
-
-        gnewsArticles =
-          data.articlesRemovedFromResponse.historicalArticles;
-
-      }
-
-      /* If API returned empty → fallback */
-
-      if (gnewsArticles.length === 0) {
-
-        console.log("GNews empty → using Firestore backup");
-
+      if (!data.articles || data.articles.length === 0) {
         await fetchFromFirestore();
         setLoading(false);
         return;
-
       }
 
-      /* show instantly */
-
-      const instantArticles = gnewsArticles.map(article => ({
-
-        title: article.title,
-        description: article.description,
-        url: article.url,
-        image: article.image,
-        publishedAt: article.publishedAt
-
-      }));
-
-      setArticles(instantArticles);
+      // show instantly
+      setArticles(data.articles);
       setLoading(false);
 
-      /* upload images in background */
-
+      // upload images in background
       const processed = await Promise.all(
-
-        gnewsArticles.map(async article => {
-
-          const imageUrl = await uploadImage(article.image);
-
-          return {
-
-            title: article.title,
-            description: article.description,
-            url: article.url,
-            image: imageUrl,
-            publishedAt: article.publishedAt
-
-          };
-
-        })
-
+        data.articles.map(async article => ({
+          ...article,
+          image: await uploadImage(article.image)
+        }))
       );
 
-      /* save backup only if valid */
+      // save backup
+      await setDoc(doc(db, "news", today), {
+        articles: processed,
+        createdAt: new Date()
+      });
 
-      if (processed.length > 0) {
-
-        await setDoc(doc(db, "news", today), {
-
-          articles: processed,
-          createdAt: new Date()
-
-        });
-
-      }
-
-    }
-    catch (error) {
-
-      console.log("GNews failed → Firestore fallback");
-
+    } catch (error) {
+      console.log("API failed → Firestore fallback");
       await fetchFromFirestore();
       setLoading(false);
-
     }
-
-  }, [API_KEY, today, fetchFromFirestore, uploadImage]);
+  }, [fetchFromFirestore, uploadImage, today]);
 
   /* --------------------------
      useEffect
   -------------------------- */
 
   useEffect(() => {
-
-    fetchFromGNews();
-
-  }, [fetchFromGNews]);
+    fetchFromAPI();
+  }, [fetchFromAPI]);
 
   /* --------------------------
-     Render
+     UI
   -------------------------- */
 
   return (
-
     <section className="news-page">
-
       <div className="news-container">
 
         <h2 className="news-title">
@@ -212,22 +131,16 @@ export default function News() {
         </h2>
 
         {loading ? (
-
           <div className="homeo-loader-container">
-
             <div className="homeo-bottle">
-
               <div className="globule g1"></div>
               <div className="globule g2"></div>
               <div className="globule g3"></div>
               <div className="globule g4"></div>
-
             </div>
-
             <h3 className="homeo-loading-text">
               Preparing your remedies...
             </h3>
-
           </div>
 
         ) : articles.length === 0 ? (
@@ -239,7 +152,6 @@ export default function News() {
           <div className="news-grid">
 
             {articles.map((article, i) => (
-
               <a
                 key={i}
                 href={article.url}
@@ -249,41 +161,28 @@ export default function News() {
               >
 
                 {article.image && (
-
                   <img
                     src={article.image}
                     alt=""
                     className="news-image"
                   />
-
                 )}
 
                 <div className="news-content">
-
                   <h3>{article.title}</h3>
-
                   <p>{article.description}</p>
-
                   <span>
-                    {new Date(
-                      article.publishedAt
-                    ).toLocaleDateString()}
+                    {new Date(article.publishedAt).toLocaleDateString()}
                   </span>
-
                 </div>
 
               </a>
-
             ))}
 
           </div>
-
         )}
 
       </div>
-
     </section>
-
   );
-
 }

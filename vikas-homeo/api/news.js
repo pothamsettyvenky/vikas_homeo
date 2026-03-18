@@ -1,29 +1,33 @@
-import Parser from "rss-parser";
-
-const parser = new Parser();
-
 export default async function handler(req, res) {
   try {
+    const API_KEY = "6236eb8a5be86832896372d77515edea";
 
-    const feed = await parser.parseURL(
-      "https://news.google.com/rss/search?q=homeopathy+naturopathy+naturopathy+ayurveda&hl=en-IN&gl=IN"
+    const response = await fetch(
+      `https://gnews.io/api/v4/search?q=homeopathy OR homoeopathy OR naturopathy OR ayurveda&max=12&token=${API_KEY}`
     );
 
-    const articles = feed.items.slice(0, 12).map(item => ({
-      title: item.title,
-      description: item.contentSnippet,
-      url: item.link,
-      image: null,
-      publishedAt: item.pubDate
+    const data = await response.json();
+
+    let articles = [];
+
+    if (data.articles && data.articles.length > 0) {
+      articles = data.articles;
+    } else if (data.articlesRemovedFromResponse?.historicalArticles) {
+      articles = data.articlesRemovedFromResponse.historicalArticles;
+    }
+
+    const formatted = articles.map(article => ({
+      title: article.title,
+      description: article.description,
+      url: article.url,
+      image: article.image,
+      publishedAt: article.publishedAt
     }));
 
-    res.status(200).json({ articles });
+    res.status(200).json({ articles: formatted });
 
   } catch (error) {
-
-    res.status(500).json({
-      error: "Failed to fetch news"
-    });
-
+    console.log(error);
+    res.status(500).json({ error: "Failed to fetch news" });
   }
 }
