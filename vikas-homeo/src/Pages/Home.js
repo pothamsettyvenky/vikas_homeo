@@ -213,28 +213,7 @@ useEffect(() => {
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="custom-slide slide-ozone">
-              <div className="slide-overlay"></div>
-              <div className="slide-content left-text">
-                <div className="slide-text">
-                 <h1>
-  Ozone <span className="coming-soon">Coming Soon</span>
-</h1>
-                  
-                  <p>
-                    A natural therapy that enhances oxygen delivery, strengthens
-                    immunity, and supports faster healing. Helps improve
-                    circulation, reduce inflammation, and promote overall
-                    wellness safely and effectively..
-                  </p>
-                </div>
-                <div className="slide-image">
-                  {/* <img src="/images/cupping.jpg" alt="Cupping" /> */}
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
+         
         </Swiper>
       </section>
 

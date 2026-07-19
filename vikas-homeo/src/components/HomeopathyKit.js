@@ -21,7 +21,7 @@ export default function HomeopathyKit() {
         {
           variant: "Basic Kit",
           price: "₹999",
-          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773422574/CHILDRENBASICC_cqjj40.png",
+          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1784482432/kit1_exxnnc.jpg",
           description: "Safe and gentle remedies for common childhood conditions.",
           features: [
             "Child safe",
@@ -33,7 +33,7 @@ export default function HomeopathyKit() {
         {
           variant: "Eco-Friendly Kit",
           price: "₹1499",
-          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773422576/CHILDRENECO_gzlvgh.png",
+          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1784482432/kit2_wymghl.jpg",
           description: "Premium eco-friendly pediatric homeopathy kit.",
           features: [
             "German remedies",
@@ -81,7 +81,7 @@ export default function HomeopathyKit() {
         {
           variant: "Basic Kit",
           price: "₹699",
-          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773422576/TRAVELBASIC_xfvzsi.png",
+          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1784482432/kit3_x2rfov.jpg",
           description: "Compact homeopathic kit for safe travel care.",
           features: [
             "Compact size",
@@ -93,7 +93,7 @@ export default function HomeopathyKit() {
         {
           variant: "Eco-Friendly Kit",
           price: "₹999",
-          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773422582/TRAVELECO_e52eoc.png",
+          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1784482433/kit4_lqagut.jpg",
           description: "Eco-friendly premium kit for travel health support.",
           features: [
             "Eco case",
@@ -111,7 +111,7 @@ export default function HomeopathyKit() {
         {
           variant: "Basic Kit",
           price: "₹1499",
-          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773422575/FAMILYBASIC_xxwmsr.png",
+          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1784482433/kit5_xjlkyu.jpg",
           description: "Complete homeopathy kit for family health care.",
           features: [
             "Family safe",
@@ -123,7 +123,7 @@ export default function HomeopathyKit() {
         {
           variant: "Eco-Friendly Kit",
           price: "₹2499",
-          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1773422579/FAMILYECO_i0f9i4.png",
+          image: "https://res.cloudinary.com/dwxbd1gg2/image/upload/v1784482433/kit6_kbypaj.jpg",
           description: "Premium eco-friendly complete family care kit.",
           features: [
             "German remedies",

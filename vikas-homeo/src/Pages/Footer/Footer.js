@@ -3,7 +3,7 @@ import "./Footer.css";
 import Logo from "../../asessts/logo.jpeg";
 
 import {
-  FaFacebookF,
+
   FaInstagram,
   FaYoutube,
   FaWhatsapp,
@@ -108,17 +108,9 @@ export default function Footer() {
 
               <div className="footer-social">
 
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-circle"
-                >
-                  <FaFacebookF />
-                </a>
 
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/vikas_homeo_naturopathy_clinic/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-circle"
@@ -127,7 +119,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@DrVikasBallipalli"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-circle"
@@ -135,14 +127,14 @@ export default function Footer() {
                   <FaYoutube />
                 </a>
 
-                <a
-                  href="https://whatsapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-circle"
-                >
-                  <FaWhatsapp />
-                </a>
+              <a
+  href="https://wa.me/918096050488"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-circle"
+>
+  <FaWhatsapp />
+</a>
 
               </div>
 
