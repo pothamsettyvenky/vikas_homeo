@@ -9,6 +9,7 @@ import AppointmentStrip from "../components/AppointmentStrip";
 import TreatmentsTabs from "../components/TreatmentsTabs";
 import TherapyCards from "../components/TherapyCards";
 import Testimonials from "./Testmonials/Testimonials";
+import HomeopathyKits from "../components/HomeopathyKits/HomeopathyKits";
 import FAQ from "./Faq/Faq";
 
 export default function Home() {
@@ -297,6 +298,7 @@ useEffect(() => {
 
       <AppointmentStrip />
       <TreatmentsTabs />
+      <HomeopathyKits />
       <TherapyCards />
       <Testimonials />
       <FAQ  variant = "blog"/>
