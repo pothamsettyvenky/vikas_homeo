@@ -72,22 +72,17 @@ export default function HomeopathyKit() {
     },
   ];
 
-  // default: show all kits (0 = All). If redirected from home with a specific kit, preselect it.
-  const findIndexByTitle = (title) => {
-    const idx = kits.findIndex((k) => k.title === title);
-    return idx === -1 ? "all" : idx;
-  };
-
   const [activeFilter, setActiveFilter] = useState("all");
 
   useEffect(() => {
     if (location.state?.scrollTo) {
-      setActiveFilter(findIndexByTitle(location.state.scrollTo));
-      // scroll to top of the page/section once it renders
+      const idx = kits.findIndex((k) => k.title === location.state.scrollTo);
+      setActiveFilter(idx === -1 ? "all" : idx);
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }, 100);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.state]);
 
   const visibleKits =
